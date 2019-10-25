@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { ModalConnexionComponent } from '../core/authentification/connexion/modal-connexion/modal-connexion.component';
+import { ModalInscriptionComponent } from '../core/authentification/inscription/modal-inscription/modal-inscription.component';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
 
-  constructor() { }
+  constructor(
+    public dialog: MatDialog,
+  ) { }
 
-  ngOnInit() {
+  openConnectModal(): void {
+    this.dialog.open(ModalConnexionComponent);
+  }
+
+  openRegisterModal(): void {
+    this.dialog.open(ModalInscriptionComponent);
   }
 
 }

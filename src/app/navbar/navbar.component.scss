@@ -1,0 +1,117 @@
+@import "../../variables";
+
+%box-shadow {
+  @include box-shadow(0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23));
+}
+
+/* Partie Navbar Desktop */
+.navbar-desktop {
+  @extend %box-shadow;
+  position: fixed;
+  z-index: 2;
+  background-image: url("../../assets/img/dark-back.jpg");
+
+  .toolbarWidth {
+    width: 100%;
+
+    .authButton {
+      width: 150px;
+      margin: 5px;
+      height: 40px;
+      font-size: 20px;
+    }
+  }
+
+}
+
+/* Partie Sidenav Mobile */
+.toolbarXs {
+  position: fixed;
+  z-index: 2;
+  background-image: url("../../assets/img/dark-back.jpg");
+  @extend %box-shadow;
+}
+
+.sidenav-container {
+
+  .sidenavblack {
+    background-color: $black;
+
+    .ButtonAuthRowXs {
+      margin: 15px;
+    }
+
+    .authButtonXs {
+      width: 130px;
+      height: 45px;
+      font-size: 16px;
+    }
+  }
+
+  .contentMobile {
+    margin-top: 64px;
+    overflow: hidden;
+  }
+
+  .contentDesktop {
+    margin-top: 64px;
+    background-color: $white;
+  }
+}
+
+.toolbarWidthXs {
+  width: 100%;
+  margin-top: 10px;
+  padding: 0;
+}
+
+/* CSS commun aux versions desktop et responsive */
+
+.logo-navbar {
+  height: 40px;
+}
+
+.navlink {
+  text-decoration: none;
+  color: $white;
+  margin-left: 30px;
+}
+
+.inscriptionButton {
+  background-color: $primary;
+  color: $white;
+
+  &:hover {
+    background-color: $white;
+    color: $primary;
+    border: 2px solid $primary;
+  }
+}
+
+.connexionButton {
+  color: $white;
+  border-color: $white;
+
+  &:hover {
+    color: $primary;
+    border-color: $primary;
+  }
+}
+
+.homeLogo {
+  text-decoration: none;
+  color: $white;
+
+    &:hover {
+      color: $primary;
+    }
+}
+
+.navlink:hover,
+.router-link-active {
+  color: $primary;
+}
+
+.toolbar-icon {
+  color: $white;
+}

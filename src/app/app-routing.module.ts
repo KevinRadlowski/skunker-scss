@@ -6,7 +6,7 @@ import { ArticlesComponent } from './blog/articles/articles.component';
 import { ArticleComponent } from './blog/article/article.component';
 
 const appRoutes: Routes = [
-  { path: '',   redirectTo: '/', pathMatch: 'full' },
+  { path: '',   redirectTo: '/index', pathMatch: 'full' },
   { path: 'inscription', component: InscriptionComponent },
   { path: 'connexion', component: ConnexionComponent },
   { path: 'blog',  component: ArticlesComponent, children: [
