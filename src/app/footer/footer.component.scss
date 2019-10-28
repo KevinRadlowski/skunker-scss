@@ -1,0 +1,43 @@
+@import "../../variables";
+
+.footer {
+  padding-top: 2%;
+  padding-bottom: 2%;
+  background-image: url('../../assets/img/dark-back.jpg');
+  background-size: cover;
+  color: $white;
+
+  img {
+    height: 100px;
+  }
+
+  a {
+    &:link {
+      color: $white;
+
+    }
+
+    &:visited {
+      color: rgb(110, 21, 226);
+    }
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+
+  .footerLinks {
+    margin-right: 10px;
+  }
+
+  .footerText {
+    text-align: center;
+  }
+}
+
+.copyright {
+  background-color: #181717;
+  color: $white;
+  height: 40px;
+}

@@ -1,4 +1,80 @@
-/* You can add global styles to this file, and also import other style files */
+/* ANGULAR CALENDAR */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+
+
+/* THEMES MATERIAL ANGULAR */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+/* @import '@angular/material/prebuilt-themes/deeppurple-amber.css'; */
+/* @import '@angular/material/prebuilt-themes/purple-green.css'; */
+
+/* THEME BOUTONS DE PARTAGE RESEAUX */
+@import '~@ngx-share/button/themes/circles/circles-dark-theme';
+
+/* AJOUT DE POLICES PERSONNALISEES */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+
+
+.roboto {
+  font-family: 'Roboto';
+}
+
+.dosis {
+  font-family: 'Dosis', sans-serif;
+}
+
+.times-new-roman {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.arial {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.source-sans-pro {
+  font-family: 'Source Sans Pro';
+}
+
+.noto-sans {
+  font-family: 'Noto Sans';
+}
+
+/* STYLE DE LA PAGE */
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+
+  p {
+      margin: auto;
+  }
+
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 36px;
+    margin-bottom: 18px;
+  }
+  
+  h2 {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 18px;
+    margin-bottom: 18px;
+  }
+  
+  h3 {
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 18px;
+  }
+}
