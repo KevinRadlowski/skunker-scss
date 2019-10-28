@@ -1,0 +1,11 @@
+/* COULEURS DE L'APP */
+$primary: #771b1b;
+$white: #ffffff;
+$black: #000000;
+
+/* Ombre de la navbar */
+@mixin box-shadow($params...) {
+  -webkit-box-shadow: $params;
+  -moz-box-shadow: $params;
+  box-shadow: $params;
+}

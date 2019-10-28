@@ -1,3 +1,61 @@
-<p>
-  navbar works!
-</p>
+<!-- NAVBAR-DESKTOP -->
+
+<mat-toolbar ngClass.gt-sm="toolbarMd" class="navbar-desktop" 
+             fxHide.lt-md="true" fxLayout.md="column" fxLayoutAlign.md="center none">
+  <div fxLayout.md="row" ngClass.gt-md="toolbarWidth" ngClass.md="toolbarWidthMd" fxLayoutAlign="space-between center">
+    <div fxLayoutAlign="none center">
+      <a routerLink="/" class="homeLogo" fxLayoutAlign="none center">
+        <img class="logo-navbar" src="../assets/img/navbar-logo1.png" alt="Logo">
+      </a>
+      <a class="navlink" routerLink="/index" routerLinkActive="router-link-active">Accueil</a>
+      <a class="navlink" routerLink="/blog" routerLinkActive="router-link-active">Articles</a>
+      <a class="navlink" routerLink="#" routerLinkActive="router-link-active">Rosters</a>
+      <a class="navlink" routerLink="#" routerLinkActive="router-link-active">Guides</a>
+    </div>
+    <div fxLayoutAlign="none center">
+      <button class="authButton connexionButton" mat-stroked-button (click)="openConnectModal()">Se connecter</button>
+      <button class="authButton inscriptionButton" mat-raised-button (click)="openRegisterModal()">S'inscrire</button>
+    </div>
+  </div>
+</mat-toolbar>
+
+<!-- NAVBAR MOBILE -->
+
+<div class="containerXs">
+  <mat-toolbar fxLayout="column" fxHide.gt-sm="true" class="toolbarXs">
+    <div fxLayout="row" class="toolbarWidthXs" fxLayoutAlign="space-between center">
+      <div class="leftButton">
+        <button mat-icon-button (click)="snav.toggle();">
+          <mat-icon class="toolbar-icon">menu</mat-icon>
+        </button>
+      </div>
+      <a routerLink="/" class="homeLogo" (click)="snav.close();" fxLayoutAlign="none center">
+        <img class="logo-navbar" src="../assets/img/navbar-logo1.png" alt="Logo">
+        SKUNKER
+      </a>
+      <span class="toolbar-spacer"></span>
+    </div>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav class="sidenavblack" #snav fxHide.gt-sm="true" [fixedInViewport]="true" fixedTopGap="56">
+      <mat-nav-list>
+          <a mat-list-item class="navlink" (click)="snav.close();" routerLink="/index" routerLinkActive="router-link-active">Accueil</a>
+        <a mat-list-item class="navlink" (click)="snav.close();" routerLink="/blog" routerLinkActive="router-link-active">Articles</a>
+        <a mat-list-item class="navlink" (click)="snav.close();" routerLink="#" routerLinkActive="router-link-active">Rosters</a>
+        <a mat-list-item class="navlink" (click)="snav.close();" routerLink="#" routerLinkActive="router-link-active">Guides</a>
+        <div class="ButtonAuthRowXs">
+          <button routerLink="/inscription" (click)="snav.close();" mat-raised-button class="authButtonXs inscriptionButton">S'inscrire</button>
+        </div>
+        <div class="ButtonAuthRowXs">
+          <button routerLink="/connexion" (click)="snav.close();" mat-stroked-button class="authButtonXs connexionButton">Se connecter</button>
+        </div>
+      </mat-nav-list>
+    </mat-sidenav>
+
+<!-- ROUTEUR COMMUN -->
+    <mat-sidenav-content ngClass.lt-md="contentMobile" ngClass.gt-sm="contentDesktop">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
