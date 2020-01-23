@@ -13,13 +13,6 @@
 
   .toolbarWidth {
     width: 100%;
-
-    .authButton {
-      width: 150px;
-      margin: 5px;
-      height: 40px;
-      font-size: 20px;
-    }
   }
 
 }
@@ -37,19 +30,13 @@
   .sidenavblack {
     background-color: $black;
 
-    .ButtonAuthRowXs {
+    .ButtonDiscordRowXs {
       margin: 15px;
-    }
-
-    .authButtonXs {
-      width: 130px;
-      height: 45px;
-      font-size: 16px;
     }
   }
 
   .contentMobile {
-    margin-top: 64px;
+    margin-top: 55px;
     overflow: hidden;
   }
 
@@ -71,31 +58,24 @@
   height: 40px;
 }
 
+
+.btnDiscord {
+  padding: 0;
+  border-radius: 10px;
+  background-color: #7289DA;
+  &:hover {
+    background-color: $primary;
+  }
+
+  img {
+    height: 40px;
+  }
+}
+
 .navlink {
   text-decoration: none;
   color: $white;
   margin-left: 30px;
-}
-
-.inscriptionButton {
-  background-color: $primary;
-  color: $white;
-
-  &:hover {
-    background-color: $white;
-    color: $primary;
-    border: 2px solid $primary;
-  }
-}
-
-.connexionButton {
-  color: $white;
-  border-color: $white;
-
-  &:hover {
-    color: $primary;
-    border-color: $primary;
-  }
 }
 
 .homeLogo {

@@ -15,9 +15,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 
 import { AccueilModule } from './accueil/accueil.module';
-import { BlogModule } from './blog/blog.module';
+import { RostersModule } from './rosters/roster/rosters.module';
 import { SharedModule } from './shared/shared.module';
-import { AuthentificationModule } from './core/authentification/shared/authentification.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -34,9 +33,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       useFactory: adapterFactory
     }),
     AccueilModule,
-    BlogModule,
+    RostersModule,
     SharedModule,
-    AuthentificationModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr-FR' },

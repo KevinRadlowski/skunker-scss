@@ -1,0 +1,48 @@
+.cd-section {
+  min-height: 80vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.cd-section:nth-child(1) {
+  background-image: url("../../assets/img/maxresdefault.jpg");
+}
+
+.cd-section:nth-child(2) {
+  background-image: url('../../assets/img/dark-background-1.jpg');
+}
+
+.cd-section:nth-child(3) {
+  background-image: url('../../assets/img/340435.jpg');
+}
+
+.cd-section:nth-child(4) {
+  background-image: url('../../assets/img/dark-back.jpg');
+}
+
+.cd-section:nth-child(5) {
+  background-image: url('../../assets/img/down-ragnaros.jpg');
+}
+
+
+@media only screen and (max-width: 600px) {
+  .cd-section--bg-fixed {
+    min-height: 50vh;
+    background-attachment: fixed;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .cd-section--bg-fixed {
+    min-height: 80vh;
+    background-attachment: fixed;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .cd-section--bg-fixed {
+    min-height: 100vh;
+    background-attachment: fixed;
+  }
+}

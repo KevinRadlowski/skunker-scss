@@ -1,0 +1,107 @@
+@import "../../../variables";
+
+%text-shadow {
+  @include text-shadow(0 0 1px transparent, 0 1px 2px rgba(0, 0, 0, .8));
+}
+
+.videoPane-bg {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+#myVideo {
+  position: absolute;
+  margin-top: -100px;
+  width: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.contentDescription {
+  position: absolute;
+  padding: 12%;
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+}
+
+.contentDescriptionMd {
+  padding-top: 10%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+h1 {
+  color: white;
+  font-size: 36px;
+}
+
+.text {
+  color: white;
+  padding: 3%;
+  @extend %text-shadow;
+}
+
+.logoClass {
+  width: 20px;
+}
+
+.recrutementTable {
+  color: white;
+  @extend %text-shadow;
+
+  .recrutement {
+    background-color: rgba(0, 0, 0, 0.521);
+    border-radius: 7px;
+  }
+
+  td {
+    padding-right: 15px;
+  }
+
+  th {
+    padding-left: 15px;
+    padding-top: 5px;
+  }
+
+  .open {
+    color: green;
+  }
+
+  .closed {
+    color: red;
+  }
+
+
+  .mage {
+    color: rgb(0, 217, 255);
+  }
+
+  .voleur {
+    color: rgb(238, 238, 118);
+  }
+
+  .chasseur {
+    color: rgb(83, 141, 83)
+  }
+
+  .guerrier {
+    color: rgb(107, 85, 60);
+  }
+
+  .druide {
+    color: rgb(247, 95, 40);
+  }
+
+  .demo {
+    color: rgb(101, 35, 163);
+  }
+
+  .chaman {
+    color: rgb(30, 30, 255);
+  }
+
+}

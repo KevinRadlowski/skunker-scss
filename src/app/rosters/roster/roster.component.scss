@@ -1,0 +1,70 @@
+@import "../../../variables";
+
+%text-shadow-tank {
+  @include text-shadow(2px 2px 13px rgb(0, 76, 163), -2px -2px 13px rgb(0, 76, 163));
+}
+
+%text-shadow-heal {
+  @include text-shadow(2px 2px 13px rgb(8, 114, 34), -2px -2px 13px rgb(8, 114, 34));
+}
+
+%text-shadow-dps {
+  @include text-shadow(2px 2px 13px rgb(163, 0, 0), -2px -2px 13px rgb(163, 0, 0));
+}
+
+.row {
+  margin: 0;
+}
+
+.logoClass {
+  width: 25px;
+}
+
+.bodyRoster {
+  background-image: url("../../../assets/img/nafarianbackground.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.tank {
+  color: white;
+  @extend %text-shadow-tank;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.heal {
+  color: white;
+  @extend %text-shadow-heal;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dps {
+    color: white;
+    @extend %text-shadow-dps;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.titleTable {
+    padding-top: 15px;
+}
+
+.titleDPS {
+    text-shadow: 10px 10px 25px rgb(163, 0, 0), -10px -10px 25px rgb(163, 0, 0), -10px 10px 25px rgb(163, 0, 0), 10px -10px 25px rgb(163, 0, 0);
+    padding: 3px 10px 3px 10px;
+    border-radius: 7px;
+    color: rgb(255, 255, 255);
+}
+
+.titleTank {
+    text-shadow: 10px 10px 25px rgb(0, 76, 163), -10px -10px 25px rgb(0, 76, 163), -10px 10px 25px rgb(0, 76, 163), 10px -10px 25px rgb(0, 76, 163) ;
+    padding: 3px 10px 3px 10px;
+    border-radius: 7px;
+    color: rgb(255, 255, 255);
+}
+
+.titleHeal {
+    text-shadow: 10px 10px 25px rgb(8, 114, 34), -10px -10px 25px rgb(8, 114, 34), -10px 10px 25px rgb(8, 114, 34), 10px -10px 25px rgb(8, 114, 34);
+    padding: 3px 10px 3px 10px;
+    border-radius: 7px;
+    color: rgb(255, 255, 255);
+}

@@ -6,7 +6,7 @@ import { Component, HostListener, ElementRef } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'skunker-scss';
+  title = 'skunker-classic';
 
   isShow: boolean;
   topPosToStartShowing = 100;
@@ -15,8 +15,6 @@ export class AppComponent {
   checkScroll() {
 
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-
-    console.log('[scroll]', scrollPosition);
 
     if (scrollPosition >= this.topPosToStartShowing) {
       this.isShow = true;
