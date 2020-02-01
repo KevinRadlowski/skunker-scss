@@ -3,6 +3,7 @@
 %box-shadow {
   @include box-shadow(3px 3px 6px black);
 }
+
 .bodyCandidature {
   color: white;
   margin: auto;
@@ -11,6 +12,7 @@
 .bodyImg {
   width: 500px;
 }
+
 .textCenter {
   text-align: center;
 }
@@ -24,6 +26,7 @@
     border-radius: 10px;
     background-color: #7289DA;
     @extend %box-shadow;
+
     &:hover {
       background-color: $primary;
     }

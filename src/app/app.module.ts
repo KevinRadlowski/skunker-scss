@@ -15,6 +15,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 
 import { AccueilModule } from './accueil/accueil.module';
+import { PaneladminModule } from './paneladmin/paneladmin.module';
 import { RostersModule } from './rosters/roster/rosters.module';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,7 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -35,6 +36,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AccueilModule,
     RostersModule,
     SharedModule,
+    PaneladminModule,
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr-FR' },

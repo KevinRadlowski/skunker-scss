@@ -4,7 +4,8 @@ import { EnConstructionComponent } from './shared/en-construction/en-constructio
 
 const appRoutes: Routes = [
   { path: '',   redirectTo: '/index', pathMatch: 'full' },
-  { path: 'en-construction', component: EnConstructionComponent}
+  { path: 'en-construction', component: EnConstructionComponent},
+  // { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

@@ -1,0 +1,47 @@
+@import "../../../../variables";
+
+%text-shadow-dps {
+  @include text-shadow(2px 2px 13px rgb(163, 0, 0), -2px -2px 13px rgb(163, 0, 0));
+}
+
+.titleDPS {
+  text-shadow: 10px 10px 25px rgb(163, 0, 0), -10px -10px 25px rgb(163, 0, 0), -10px 10px 25px rgb(163, 0, 0), 10px -10px 25px rgb(163, 0, 0);
+  padding-top: 15px;
+  color: rgb(255, 255, 255);
+}
+
+table {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.215);
+  @extend %text-shadow-dps;
+  margin-bottom: 15px;
+
+  :hover {
+    background-color: rgb(34, 34, 34);
+  }
+
+  th {
+    font-size: large;
+  }
+
+  th,
+  td {
+    color: white;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+  }
+}
+
+a {
+  color: rgb(0, 195, 255);
+}
+
+.logoClass {
+  width: 25px;
+  margin-right: 5px;
+}
+
+img {
+  width: 25px;
+  margin-left: 5px;
+}

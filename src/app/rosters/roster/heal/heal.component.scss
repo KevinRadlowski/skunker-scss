@@ -1,0 +1,42 @@
+@import "../../../../variables";
+
+%text-shadow-heal {
+  @include text-shadow(2px 2px 13px rgb(8, 114, 34), -2px -2px 13px rgb(8, 114, 34));
+}
+
+.titleHeal {
+  text-shadow: 10px 10px 25px rgb(8, 114, 34), -10px -10px 25px rgb(8, 114, 34), -10px 10px 25px rgb(8, 114, 34), 10px -10px 25px rgb(8, 114, 34);
+  padding-top: 15px;
+  color: rgb(255, 255, 255);
+}
+
+table {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.215);
+  @extend %text-shadow-heal;
+
+  :hover {
+    background-color: rgb(34, 34, 34);
+  }
+
+  th {
+    font-size: large;
+  }
+
+  th,
+  td {
+    color: white;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+  }
+}
+
+.logoClass {
+  width: 25px;
+  margin-right: 5px;
+}
+
+img {
+  width: 25px;
+  margin-left: 5px;
+}
