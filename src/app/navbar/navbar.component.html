@@ -11,9 +11,14 @@
       <!-- <a class="navlink" routerLink="/blog" routerLinkActive="router-link-active">Articles</a> -->
       <a class="navlink" routerLink="/rosters">Rosters</a>
       <a class="navlink" routerLink="/en-construction">Guides</a>
+      <a class="navlink btnDiscord" href="https://discord.gg/sH4g59C" target="_blank"><img src="../../assets/img/Discord-Logo.png" alt="Discord"></a>
+
     </div>
     <div fxLayoutAlign="none center">
-    <a class="btnDiscord" href="https://discord.gg/sH4g59C" target="_blank"><img src="../../assets/img/Discord-Logo.png" alt="Discord"></a>
+      <button *ngIf="isInfo==false" class="loginButton" routerLink="/login">Connexion</button>
+      <button *ngIf="isMembre==true || isOfficier==true || isAdmin==true" class="loginButton" (click)="logout()"
+        routerLink="/index">Déconnexion</button>
+
     </div>
   </div>
 </mat-toolbar>

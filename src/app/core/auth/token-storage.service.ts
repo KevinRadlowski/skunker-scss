@@ -12,7 +12,9 @@ export class TokenStorageService {
   constructor() { }
 
   signOut() {
-    window.localStorage.clear();
+    window.localStorage.removeItem(TOKEN_KEY);
+    window.localStorage.removeItem(USERNAME_KEY);
+    window.localStorage.removeItem(AUTHORITIES_KEY);
   }
 
   public saveToken(token: string) {

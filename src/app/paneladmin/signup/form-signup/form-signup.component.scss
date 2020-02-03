@@ -1,0 +1,137 @@
+@import '../../../../variables';
+
+
+.checkcontainer {
+  text-align: center;
+
+  img {
+    border-radius: 10px;
+    border: 3px solid rgba(218, 165, 32, 0);
+    opacity: 0.666;
+    width: 60px;
+  }
+
+  .imgClasseDisabled {
+    filter: grayscale(100%);
+  }
+
+  &:hover {
+    .imgRace {
+      opacity: 1;
+    }
+
+    .imgClasse {
+        opacity: 1;
+    }
+  }
+
+  #selected:checked~.select {
+    img {
+      border: 3px solid goldenrod;
+      opacity: 1;
+    }
+    font-weight: bolder;
+  }
+}
+
+
+
+.is-invalid {
+  border-left: solid 6px red;
+}
+
+.passconfirm {
+  color: grey;
+}
+
+.material-icons {
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.bodyFormulaire {
+  background-color: white;
+  margin-top: 30px;
+}
+
+form {
+  // color: #26a69a;
+  color: $primary;
+  margin: 0 auto;
+  padding-top: 1vw;
+  padding-bottom: 2vh;
+}
+
+h1,
+h2 {
+  text-align: center;
+  font-weight: bolder;
+}
+
+hr {
+  width: 75%;
+  border: 2px solid #000;
+}
+
+input,
+select {
+  background-color: #ebebeb;
+  border: none;
+}
+
+.check {
+  padding-left: 0.5rem;
+  vertical-align: middle;
+}
+
+.btnValider {
+  background-color: #26a69a;
+  color: white;
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-top: 3vh;
+  box-shadow: 3px 3px 8px rgb(105, 105, 105);
+}
+
+.btnValider:hover {
+  background-color: #2ed1bb;
+}
+
+.btnRetour {
+  background-color: rgb(139, 139, 139);
+  color: white;
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-top: 3vh;
+  box-shadow: 3px 3px 8px rgb(105, 105, 105);
+}
+
+.btnRetour:hover {
+  background-color: #C2BFCA;
+  ;
+}
+
+::placeholder {
+  color: #C2BFCA;
+  opacity: 1;
+}
+
+.modeEmploi {
+  padding-bottom: 1vh;
+}
+
+.cguButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgb(0, 119, 255);
+}
+
+.cguButton:hover {
+  text-decoration: underline;
+}
+
+#lienFaq {
+  text-transform: uppercase;
+
+}
