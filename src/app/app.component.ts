@@ -1,4 +1,5 @@
 import { Component, HostListener, ElementRef } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +7,7 @@ import { Component, HostListener, ElementRef } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'skunker-classic';
+  title = 'ngth';
 
   isShow: boolean;
   topPosToStartShowing = 100;
@@ -21,6 +22,14 @@ export class AppComponent {
     } else {
       this.isShow = false;
     }
+  }
+
+  constructor(
+    private translate: TranslateService,
+  ) {
+    this.translate.setDefaultLang('fr');
+    const browserLang = this.translate.getBrowserLang();
+    translate.use(browserLang);
   }
 
   // TODO: Cross browsing

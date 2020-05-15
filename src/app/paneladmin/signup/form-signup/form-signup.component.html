@@ -2,7 +2,7 @@
 
   <form class="col-md-10" (ngSubmit)="onSubmit()" [formGroup]="formSignup">
     <div class="text-center">
-      <p style="font-style: italic">Les champs marqués d'un astérisque (*) sont obligatoires et doivent donc être
+      <p style="font-style: italic">Les champs marqués d'un astérisque (*) sont obligatoires et doivent être
         remplis.</p>
     </div>
     <br>
@@ -11,11 +11,11 @@
     </div>
 
     <div class="form-group formPseudo">
-      <label for="pseudo">Pseudo*</label>
-      <input id="pseudo" formControlName="pseudo" type="text" class="form-control"
-        [ngClass]="{ 'is-invalid': submitted && f.pseudo.errors }" placeholder="Pseudo">
-      <div *ngIf="submitted && f.pseudo.errors" class="invalid-feedback">
-        <div *ngIf="f.pseudo.errors.required">Le pseudo est requis!</div>
+      <label for="username">Pseudo*</label>
+      <input id="username" formControlName="username" type="text" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f.username.errors }" placeholder="Pseudo">
+      <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+        <div *ngIf="f.username.errors.required">Le pseudo est requis!</div>
       </div>
     </div>
 
@@ -69,13 +69,12 @@
     <mat-divider class="m-4"></mat-divider>
 
     <div class="col-sm-12 titres">
-      <h2>Sexe du personnage*</h2>
+      <h2>Sexe du personnage</h2>
     </div>
     <div class="form-row formGenrePersonnage justify-content-center">
       <div class="form-group col-md-2 d-flex justify-content-center">
         <label class="checkcontainer">
-          <input type="radio" class="d-none" checked id="selected" (click)="selectHomme()" formControlName="genre"
-            value="Homme">
+          <input type="radio" class="d-none" id="selected" (click)="selectHomme()" name="genre" value="Homme" checked>
           <div class="select" for="selected">
             <img class="imgRace" src="../../../../assets/img/male.jpg" alt="Male">
             <p>Homme</p>
@@ -84,8 +83,7 @@
       </div>
       <div class="form-group col-md-2 d-flex justify-content-center">
         <label class="checkcontainer">
-          <input type="radio" class="d-none" id="selected" (click)="selectFemme()" formControlName="genre"
-            value="Femme">
+          <input type="radio" class="d-none" id="selected" (click)="selectFemme()" name="genre" value="Femme">
           <div class="select" for="selected">
             <img class="imgRace" src="../../../../assets/img/femelle.jpg" alt="Femelle">
             <p>Femme</p>
@@ -160,7 +158,8 @@
       </div>
       <div class="form-group col-md-2 d-flex justify-content-center">
         <label class="checkcontainer">
-          <input type="radio" class="d-none" id="selected" formControlName="race" value="Tauren" (click)="clickTauren()">
+          <input type="radio" class="d-none" id="selected" formControlName="race" value="Tauren"
+            (click)="clickTauren()">
           <div class="select" for="selected">
             <img class="imgRace" src="../../../../assets/img/races/tauren-f.png" alt="Tauren Femme">
             <p>Tauren</p>
@@ -169,7 +168,8 @@
       </div>
       <div class="form-group col-md-2 d-flex justify-content-center">
         <label class="checkcontainer">
-          <input type="radio" class="d-none" id="selected" formControlName="race" value="Mort-vivant" (click)="clickMortVivant()">
+          <input type="radio" class="d-none" id="selected" formControlName="race" value="Mort-vivant"
+            (click)="clickMortVivant()">
           <div class="select" for="selected">
             <img class="imgRace" src="../../../../assets/img/races/mortvivant-f.png" alt="Mort-vivant Femme">
             <p>Mort-vivant</p>
@@ -181,7 +181,7 @@
     <mat-divider class="mb-3"></mat-divider>
 
     <div class="col-sm-12 titres">
-      <h2>Classe</h2>
+      <h2>Classe*</h2>
     </div>
     <div class="form-row formClasse d-flex justify-content-between">
       <div class="form-group col-md-1 d-flex justify-content-center">
@@ -326,118 +326,460 @@
               <p>Chaman</p>
             </div>
           </div>
-          
-          
-          Chaman
         </label>
       </div>
     </div>
 
-    <div class="recolte">
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" formControlName="premierMetier" type="checkbox" id="inlineCheckbox1"
-          value="Dépeceur">
-        <label class="form-check-label" for="inlineCheckbox1">Dépeceur</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" formControlName="premierMetier" type="checkbox" id="inlineCheckbox2"
-          value="Herboriste">
-        <label class="form-check-label" for="inlineCheckbox2">Herboriste</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" formControlName="premierMetier" type="checkbox" id="inlineCheckbox3"
-          value="Mineur">
-        <label class="form-check-label" for="inlineCheckbox3">Mineur</label>
-      </div>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" formControlName="premierMetier" type="checkbox" id="inlineCheckbox4"
-        value="Alchimiste">
-      <label class="form-check-label" for="inlineCheckbox4">Alchimiste</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" formControlName="premierMetier" type="checkbox" id="inlineCheckbox5"
-        value="Couturier">
-      <label class="form-check-label" for="inlineCheckbox5">Couturier</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" formControlName="premierMetier" type="checkbox" id="inlineCheckbox6"
-        value="Enchanteur">
-      <label class="form-check-label" for="inlineCheckbox6">Enchanteur</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" formControlName="premierMetier" type="checkbox" id="inlineCheckbox7"
-        value="Forgeron">
-      <label class="form-check-label" for="inlineCheckbox7">Forgeron</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" formControlName="premierMetier" type="checkbox" id="inlineCheckbox8"
-        value="Ingénieur">
-      <label class="form-check-label" for="inlineCheckbox8">Ingénieur</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" formControlName="premierMetier" type="checkbox" id="inlineCheckbox9"
-        value="Travail du cuir">
-      <label class="form-check-label" for="inlineCheckbox9">Travail du cuir</label>
+    <mat-divider class="mb-3"></mat-divider>
+
+    <div class="col-sm-12 titres">
+      <h2>Niveau du personnage*</h2>
     </div>
 
-
-    <div class="recolte">
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" formControlName="secondMetier" type="checkbox" id="inlineCheckbox10"
-          value="Dépeceur">
-        <label class="form-check-label" for="inlineCheckbox10">Dépeceur</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" formControlName="secondMetier" type="checkbox" id="inlineCheckbox11"
-          value="Herboriste">
-        <label class="form-check-label" for="inlineCheckbox11">Herboriste</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" formControlName="secondMetier" type="checkbox" id="inlineCheckbox12"
-          value="Mineur">
-        <label class="form-check-label" for="inlineCheckbox12">Mineur</label>
-      </div>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" formControlName="secondMetier" type="checkbox" id="inlineCheckbox13"
-        value="Alchimiste">
-      <label class="form-check-label" for="inlineCheckbox13">Alchimiste</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" formControlName="secondMetier" type="checkbox" id="inlineCheckbox14"
-        value="Couturier">
-      <label class="form-check-label" for="inlineCheckbox14">Couturier</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" formControlName="secondMetier" type="checkbox" id="inlineCheckbox15"
-        value="Enchanteur">
-      <label class="form-check-label" for="inlineCheckbox15">Enchanteur</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" formControlName="secondMetier" type="checkbox" id="inlineCheckbox16"
-        value="Forgeron">
-      <label class="form-check-label" for="inlineCheckbox16">Forgeron</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" formControlName="secondMetier" type="checkbox" id="inlineCheckbox17"
-        value="Ingénieur">
-      <label class="form-check-label" for="inlineCheckbox17">Ingénieur</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" formControlName="secondMetier" type="checkbox" id="inlineCheckbox18"
-        value="Travail du cuir">
-      <label class="form-check-label" for="inlineCheckbox18">Travail du cuir</label>
-    </div>
-
-    <div class="form-group">
-      <label for="level">level</label>
-      <input id="level" formControlName="level" type="text" class="form-control"
-        [ngClass]="{ 'is-invalid': submitted && f.level.errors }" placeholder="level">
+    <div class="form-group formNiveau">
+      <label for="level">Niveau</label>
+      <input id="level" formControlName="level" type="text" class="form-control" min="1" max="60" maxlength="2"
+        [ngClass]="{ 'is-invalid': submitted && f.level.errors }" placeholder="60">
       <div *ngIf="submitted && f.level.errors" class="invalid-feedback">
-        <div *ngIf="f.level.errors.required">Le level est requis!</div>
+        <div *ngIf="f.level.errors.required">Le niveau est requis!</div>
       </div>
     </div>
+
+    <mat-divider class="mb-3"></mat-divider>
+
+    <div class="row">
+      <div class="col-6" style="border-right: 3px solid #771b1b49;">
+        <div class="col-sm-12 titres">
+          <h2>Premier Métier</h2>
+        </div>
+
+
+        <div class="form-row formRecolte d-flex justify-content-around">
+          <div class="form-group col-md-1 d-flex justify-content-center">
+            <label class="checkcontainer">
+              <div *ngIf='disableDepecageUn == true'>
+                <input type="radio" class="d-none" formControlName="premierMetier" value="Dépeçage" disabled>
+                <div class="select">
+                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/depecage.jpg" alt="Dépeçage">
+                  <p>Dépeçage</p>
+                </div>
+              </div>
+              <div *ngIf='!disableDepecageUn == true'>
+                <input type="radio" class="d-none" id="selected" formControlName="premierMetier" value="Dépeçage"
+                  (click)="choiceDepecageUn()">
+                <div class="select" for="selected">
+                  <img class="imgClasse" src="../../../../assets/img/metiers/depecage.jpg" alt="Dépeçage">
+                  <p>Dépeçage</p>
+                </div>
+              </div>
+            </label>
+          </div>
+          <div class="form-group col-md-1 d-flex justify-content-center">
+            <label class="checkcontainer">
+              <div *ngIf='disableHerboristeUn == true'>
+                <input type="radio" class="d-none" formControlName="premierMetier" value="Herboriste" disabled>
+                <div class="select">
+                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/herboriste.jpg" alt="Herboriste">
+                  <p>Herboriste</p>
+                </div>
+              </div>
+              <div *ngIf='!disableHerboristeUn == true'>
+                <input type="radio" class="d-none" id="selected" formControlName="premierMetier" value="Herboriste"
+                  (click)="choiceHerboUn()">
+                <div class="select" for="selected">
+                  <img class="imgClasse" src="../../../../assets/img/metiers/herboriste.jpg" alt="Herboriste">
+                  <p>Herboriste</p>
+                </div>
+              </div>
+            </label>
+          </div>
+          <div class="form-group col-md-1 d-flex justify-content-center">
+            <label class="checkcontainer">
+              <div *ngIf='disableMineurUn == true'>
+                <input type="radio" class="d-none" formControlName="premierMetier" value="Mineur" disabled>
+                <div class="select">
+                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/mineur.jpg" alt="Mineur">
+                  <p>Mineur</p>
+                </div>
+              </div>
+              <div *ngIf='!disableMineurUn == true'>
+                <input type="radio" class="d-none" id="selected" formControlName="premierMetier" value="Mineur"
+                  (click)="choiceMineurUn()">
+                <div class="select" for="selected">
+                  <img class="imgClasse" src="../../../../assets/img/metiers/mineur.jpg" alt="Mineur">
+                  <p>Mineur</p>
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
+        <div class="form-row formFabricationUn d-flex justify-content-around">
+          <div class="form-group col-md-1 d-flex justify-content-center">
+            <label class="checkcontainer">
+              <div *ngIf='disableTdcUn == true'>
+                <input type="radio" class="d-none" formControlName="premierMetier" value="Travail du cuir" disabled>
+                <div class="select">
+                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/travailducuir.jpg"
+                    alt="Travail du cuir">
+                  <p>Travail du cuir</p>
+                </div>
+              </div>
+              <div *ngIf='!disableTdcUn == true'>
+                <input type="radio" class="d-none" id="selected" formControlName="premierMetier" value="Travail du cuir"
+                  (click)="choiceTdcUn()">
+                <div class="select" for="selected">
+                  <img class="imgClasse" src="../../../../assets/img/metiers/travailducuir.jpg" alt="Travail du cuir">
+                  <p>Travail du cuir</p>
+                </div>
+              </div>
+            </label>
+          </div>
+          <div class="form-group col-md-1 d-flex justify-content-center">
+            <label class="checkcontainer">
+              <div *ngIf='disableCouturierUn == true'>
+                <input type="radio" class="d-none" formControlName="premierMetier" value="Couturier" disabled>
+                <div class="select">
+                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/couturier.jpg" alt="Couturier">
+                  <p>Couturier</p>
+                </div>
+              </div>
+              <div *ngIf='!disableCouturierUn == true'>
+                <input type="radio" class="d-none" id="selected" formControlName="premierMetier" value="Couturier"
+                  (click)="choiceCouturierUn()">
+                <div class="select" for="selected">
+                  <img class="imgClasse" src="../../../../assets/img/metiers/couturier.jpg" alt="Couturier">
+                  <p>Couturier</p>
+                </div>
+              </div>
+            </label>
+          </div>
+          <div class="form-group col-md-1 d-flex justify-content-center">
+            <label class="checkcontainer">
+              <div *ngIf='disableEnchanteurUn == true'>
+                <input type="radio" class="d-none" formControlName="premierMetier" value="Enchanteur" disabled>
+                <div class="select">
+                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/enchanteur.jpg" alt="Enchanteur">
+                  <p>Enchanteur</p>
+                </div>
+              </div>
+              <div *ngIf='!disableEnchanteurUn == true'>
+                <input type="radio" class="d-none" id="selected" formControlName="premierMetier" value="Enchanteur"
+                  (click)="choiceEnchantUn()">
+                <div class="select" for="selected">
+                  <img class="imgClasse" src="../../../../assets/img/metiers/enchanteur.jpg" alt="Enchanteur">
+                  <p>Enchanteur</p>
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
+        <div class="form-row formFabricationDeux d-flex justify-content-around">
+          <div class="form-group col-md-1 d-flex justify-content-center">
+            <label class="checkcontainer">
+              <div *ngIf='disableAlchiUn == true'>
+                <input type="radio" class="d-none" formControlName="premierMetier" value="Alchimiste" disabled>
+                <div class="select">
+                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/alchimiste.png" alt="Alchimiste">
+                  <p>Alchimiste</p>
+                </div>
+              </div>
+              <div *ngIf='!disableAlchiUn == true'>
+                <input type="radio" class="d-none" id="selected" formControlName="premierMetier" value="Alchimiste"
+                  (click)="choiceAlchiUn()">
+                <div class="select" for="selected">
+                  <img class="imgClasse" src="../../../../assets/img/metiers/alchimiste.png" alt="Alchimiste">
+                  <p>Alchimiste</p>
+                </div>
+              </div>
+            </label>
+          </div>
+          <div class="form-group col-md-1 d-flex justify-content-center">
+            <label class="checkcontainer">
+              <div *ngIf='disableForgeUn == true'>
+                <input type="radio" class="d-none" formControlName="premierMetier" value="Forgeron" disabled>
+                <div class="select">
+                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/forgeron.jpg" alt="Forgeron">
+                  <p>Forgeron</p>
+                </div>
+              </div>
+              <div *ngIf='!disableForgeUn == true'>
+                <input type="radio" class="d-none" id="selected" formControlName="premierMetier" value="Forgeron"
+                  (click)="choiceForgeUn()">
+                <div class="select" for="selected">
+                  <img class="imgClasse" src="../../../../assets/img/metiers/forgeron.jpg" alt="Forgeron">
+                  <p>Forgeron</p>
+                </div>
+              </div>
+            </label>
+          </div>
+          <div class="form-group col-md-1 d-flex justify-content-center">
+            <label class="checkcontainer">
+              <div *ngIf='disableIngeUn == true'>
+                <input type="radio" class="d-none" formControlName="premierMetier" value="Ingénieur" disabled>
+                <div class="select">
+                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/ingénieur.jpg" alt="Ingénieur">
+                  <p>Ingénieur</p>
+                </div>
+              </div>
+              <div *ngIf='!disableIngeUn == true'>
+                <input type="radio" class="d-none" id="selected" formControlName="premierMetier" value="Ingénieur"
+                  (click)="choiceIngeUn()">
+                <div class="select" for="selected">
+                  <img class="imgClasse" src="../../../../assets/img/metiers/ingénieur.jpg" alt="Ingénieur">
+                  <p>Ingénieur</p>
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
+        <div class="form-row formAucun d-flex justify-content-around">
+
+          <div *ngIf="disableNiveauMetierUn == true" class=" col-md-5 ">
+            <div class="form-group formNiveau">
+              <label for="niveauMetier">Niveau du métier</label>
+              <input id="niveauMetier" type="text" class="form-control niveauDisabled" min="1" max="300" maxlength="3" placeholder="Aucun" disabled>
+            </div>
+          </div>
+          <div *ngIf="!disableNiveauMetierUn == true" class=" col-md-5 ">
+            <div class="form-groupformNiveau">
+              <label for="niveauMetier">Niveau du métier</label>
+              <input id="niveauMetier" formControlName="lvlPremierMetier" type="text" class="form-control" min="1" max="300" maxlength="3" placeholder="300">
+            </div>
+          </div>
+
+
+          <div class="form-group col-md-1 d-flex justify-content-center">
+            <label class="checkcontainer">
+              <input type="radio" class="d-none" id="selected" formControlName="premierMetier" value="Aucun"
+                (click)="choiceAucunUn()">
+              <div class="select" for="selected">
+                <img class="imgClasse" src="../../../../assets/img/croix.png" alt="Aucun">
+                <p>Aucun</p>
+              </div>
+            </label>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-6">
+        <div class="col-sm-12 titres">
+          <h2>Second Métier</h2>
+        </div>
+
+        <div class="form-row formRecolte d-flex justify-content-around">
+          <div class="form-group col-md-1 d-flex justify-content-center">
+            <label class="checkcontainer">
+              <div *ngIf='disableDepecageDeux == true'>
+                <input type="radio" class="d-none" formControlName="secondMetier" value="Dépeçage" disabled>
+                <div class="select">
+                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/depecage.jpg" alt="Dépeçage">
+                  <p>Dépeçage</p>
+                </div>
+              </div>
+              <div *ngIf='!disableDepecageDeux == true'>
+                <input type="radio" class="d-none" id="selected" formControlName="secondMetier" value="Dépeçage"
+                  (click)="choiceDepecageDeux()">
+                <div class="select" for="selected">
+                  <img class="imgClasse" src="../../../../assets/img/metiers/depecage.jpg" alt="Dépeçage">
+                  <p>Dépeçage</p>
+                </div>
+              </div>
+            </label>
+          </div>
+          <div class="form-group col-md-1 d-flex justify-content-center">
+            <label class="checkcontainer">
+              <div *ngIf='disableHerboristeDeux == true'>
+                <input type="radio" class="d-none" formControlName="secondMetier" value="Herboriste" disabled>
+                <div class="select">
+                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/herboriste.jpg" alt="Herboriste">
+                  <p>Herboriste</p>
+                </div>
+              </div>
+              <div *ngIf='!disableHerboristeDeux == true'>
+                <input type="radio" class="d-none" id="selected" formControlName="secondMetier" value="Herboriste"
+                  (click)="choiceHerboDeux()">
+                <div class="select" for="selected">
+                  <img class="imgClasse" src="../../../../assets/img/metiers/herboriste.jpg" alt="Herboriste">
+                  <p>Herboriste</p>
+                </div>
+              </div>
+
+            </label>
+          </div>
+          <div class="form-group col-md-1 d-flex justify-content-center">
+            <label class="checkcontainer">
+              <div *ngIf='disableMineurDeux == true'>
+                <input type="radio" class="d-none" formControlName="secondMetier" value="Mineur" disabled>
+                <div class="select">
+                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/mineur.jpg" alt="Mineur">
+                  <p>Mineur</p>
+                </div>
+              </div>
+              <div *ngIf='!disableMineurDeux == true'>
+                <input type="radio" class="d-none" id="selected" formControlName="secondMetier" value="Mineur"
+                  (click)="choiceMineurDeux()">
+                <div class="select" for="selected">
+                  <img class="imgClasse" src="../../../../assets/img/metiers/mineur.jpg" alt="Mineur">
+                  <p>Mineur</p>
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
+        <div class="form-row formFabricationUn d-flex justify-content-around">
+          <div class="form-group col-md-1 d-flex justify-content-center">
+            <label class="checkcontainer">
+              <div *ngIf='disableTdcDeux == true'>
+                <input type="radio" class="d-none" formControlName="secondMetier" value="Travail du cuir" disabled>
+                <div class="select">
+                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/travailducuir.jpg"
+                    alt="Travail du cuir">
+                  <p>Travail du cuir</p>
+                </div>
+              </div>
+              <div *ngIf='!disableTdcDeux == true'>
+                <input type="radio" class="d-none" id="selected" formControlName="secondMetier" value="Travail du cuir"
+                  (click)="choiceTdcDeux()">
+                <div class="select" for="selected">
+                  <img class="imgClasse" src="../../../../assets/img/metiers/travailducuir.jpg" alt="Travail du cuir">
+                  <p>Travail du cuir</p>
+                </div>
+              </div>
+
+            </label>
+          </div>
+          <div class="form-group col-md-1 d-flex justify-content-center">
+            <label class="checkcontainer">
+              <div *ngIf='disableCouturierDeux == true'>
+                <input type="radio" class="d-none" formControlName="secondMetier" value="Couturier" disabled>
+                <div class="select">
+                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/couturier.jpg" alt="Couturier">
+                  <p>Couturier</p>
+                </div>
+              </div>
+              <div *ngIf='!disableCouturierDeux == true'>
+                <input type="radio" class="d-none" id="selected" formControlName="secondMetier" value="Couturier"
+                  (click)="choiceCouturierDeux()">
+                <div class="select" for="selected">
+                  <img class="imgClasse" src="../../../../assets/img/metiers/couturier.jpg" alt="Couturier">
+                  <p>Couturier</p>
+                </div>
+              </div>
+            </label>
+          </div>
+          <div class="form-group col-md-1 d-flex justify-content-center">
+            <label class="checkcontainer">
+              <div *ngIf='disableEnchanteurDeux == true'>
+                <input type="radio" class="d-none" formControlName="secondMetier" value="Enchanteur" disabled>
+                <div class="select">
+                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/enchanteur.jpg" alt="Enchanteur">
+                  <p>Enchanteur</p>
+                </div>
+              </div>
+              <div *ngIf='!disableEnchanteurDeux == true'>
+                <input type="radio" class="d-none" id="selected" formControlName="secondMetier" value="Enchanteur"
+                  (click)="choiceEnchantDeux()">
+                <div class="select" for="selected">
+                  <img class="imgClasse" src="../../../../assets/img/metiers/enchanteur.jpg" alt="Enchanteur">
+                  <p>Enchanteur</p>
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
+        <div class="form-row formFabricationDeux d-flex justify-content-around">
+          <div class="form-group col-md-1 d-flex justify-content-center">
+            <label class="checkcontainer">
+              <div *ngIf='disableAlchiDeux == true'>
+                <input type="radio" class="d-none" formControlName="secondMetier" value="Alchimiste" disabled>
+                <div class="select">
+                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/alchimiste.png" alt="Alchimiste">
+                  <p>Alchimiste</p>
+                </div>
+              </div>
+              <div *ngIf='!disableAlchiDeux == true'>
+                <input type="radio" class="d-none" id="selected" formControlName="secondMetier" value="Alchimiste"
+                  (click)="choiceAlchiDeux()">
+                <div class="select" for="selected">
+                  <img class="imgClasse" src="../../../../assets/img/metiers/alchimiste.png" alt="Alchimiste">
+                  <p>Alchimiste</p>
+                </div>
+              </div>
+            </label>
+          </div>
+          <div class="form-group col-md-1 d-flex justify-content-center">
+            <label class="checkcontainer">
+              <div *ngIf='disableForgeDeux == true'>
+                <input type="radio" class="d-none" formControlName="secondMetier" value="Forgeron" disabled>
+                <div class="select">
+                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/forgeron.jpg" alt="Forgeron">
+                  <p>Forgeron</p>
+                </div>
+              </div>
+              <div *ngIf='!disableForgeDeux == true'>
+                <input type="radio" class="d-none" id="selected" formControlName="secondMetier" value="Forgeron"
+                  (click)="choiceForgeDeux()">
+                <div class="select" for="selected">
+                  <img class="imgClasse" src="../../../../assets/img/metiers/forgeron.jpg" alt="Forgeron">
+                  <p>Forgeron</p>
+                </div>
+              </div>
+            </label>
+          </div>
+          <div class="form-group col-md-1 d-flex justify-content-center">
+            <label class="checkcontainer">
+              <div *ngIf='disableIngeDeux == true'>
+                <input type="radio" class="d-none" formControlName="secondMetier" value="Ingénieur" disabled>
+                <div class="select">
+                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/ingénieur.jpg" alt="Ingénieur">
+                  <p>Ingénieur</p>
+                </div>
+              </div>
+              <div *ngIf='!disableIngeDeux == true'>
+                <input type="radio" class="d-none" id="selected" formControlName="secondMetier" value="Ingénieur"
+                  (click)="choiceIngeDeux()">
+                <div class="select" for="selected">
+                  <img class="imgClasse" src="../../../../assets/img/metiers/ingénieur.jpg" alt="Ingénieur">
+                  <p>Ingénieur</p>
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-row formFabricationDeux d-flex justify-content-around">
+
+          <div *ngIf="disableNiveauMetierDeux == true" class=" col-md-5 ">
+            <div class="form-group formNiveau">
+              <label for="niveauMetier">Niveau du métier</label>
+              <input id="niveauMetier" type="text" class="form-control niveauDisabled" min="1" max="300" maxlength="3" placeholder="Aucun" disabled>
+            </div>
+          </div>
+          <div *ngIf="!disableNiveauMetierDeux == true" class=" col-md-5 ">
+            <div class="form-groupformNiveau">
+              <label for="niveauMetier">Niveau du métier</label>
+              <input id="niveauMetier" formControlName="lvlSecondMetier" type="text" class="form-control" min="1" max="300" maxlength="3" placeholder="300">
+            </div>
+          </div>
+
+
+          <div class="form-group col-md-1 d-flex justify-content-center">
+            <label class="checkcontainer">
+              <input type="radio" class="d-none" id="selected" formControlName="secondMetier" value="Aucun"
+                (click)="choiceAucunDeux()">
+              <div class="select" for="selected">
+                <img class="imgClasse" src="../../../../assets/img/croix.png" alt="Aucun">
+                <p>Aucun</p>
+              </div>
+            </label>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <mat-divider class="m-3"></mat-divider>
 
     <div class="form-group d-flex justify-content-around">
       <button (click)="retourPage()" type="button" class="btn btnRetour col-4 col-sm-5">Retour</button>

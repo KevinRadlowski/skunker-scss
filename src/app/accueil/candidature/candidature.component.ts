@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PanelAdminService } from 'src/app/paneladmin/services/paneladmin.service';
+import { tap, take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-candidature',
@@ -6,10 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./candidature.component.scss']
 })
 export class CandidatureComponent implements OnInit {
+  discordLink: any;
 
-  constructor() { }
+  constructor(
+    private panelAdminService: PanelAdminService,
+
+  ) { }
 
   ngOnInit() {
+
+    this.panelAdminService.getDiscordLink(1).pipe(
+      tap(data => {
+        this.discordLink = data;
+      }),
+      take(1),
+    ).subscribe();
   }
 
 }

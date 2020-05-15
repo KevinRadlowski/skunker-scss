@@ -7,7 +7,7 @@ import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { AlertService } from 'src/app/shared/alert.service';
 import { first } from 'rxjs/operators';
-import { MembreService } from '../../services/membre.service';
+import { AuthService } from 'src/app/core/auth/auth.service';
 
 @Component({
   selector: 'app-form-signup',
@@ -33,9 +33,35 @@ export class FormSignupComponent implements OnInit {
   disableMage = false;
   disableDemoniste = false;
 
+  disableHerboristeUn = false;
+  disableHerboristeDeux = false;
+  disableDepecageUn = false;
+  disableDepecageDeux = false;
+  disableMineurUn = false;
+  disableMineurDeux = false;
+  disableEnchanteurUn = false;
+  disableEnchanteurDeux = false;
+  disableTdcUn = false;
+  disableTdcDeux = false;
+  disableCouturierUn = false;
+  disableCouturierDeux = false;
+  disableIngeUn = false;
+  disableIngeDeux = false;
+  disableForgeUn = false;
+  disableForgeDeux = false;
+  disableAlchiUn = false;
+  disableAlchiDeux = false;
+
+  disableNiveauMetierUn = false;
+  disableNiveauMetierDeux = false;
+
+  depecage = false;
+
+  playerName: string;
+
   constructor(
     private token: TokenStorageService,
-    private membreService: MembreService,
+    private auth: AuthService,
     private location: Location,
     private fb: FormBuilder,
     private router: Router,
@@ -55,6 +81,92 @@ export class FormSignupComponent implements OnInit {
     };
   }
 
+  ngOnInit() {
+    this.isAdmin();
+  }
+
+  createSignupForm(): FormGroup {
+    return this.fb.group(
+      {
+        username: [
+          null,
+          Validators.compose([Validators.required])
+        ],
+        race: [
+          null,
+          Validators.compose([Validators.required])
+        ],
+        classe: [
+          null,
+          Validators.compose([Validators.required])
+        ],
+        level: null,
+        premierMetier: null,
+        secondMetier: null,
+        lvlPremierMetier: null,
+        lvlSecondMetier: null,
+        email: [
+          null,
+          Validators.compose([Validators.email, Validators.required])
+        ],
+        password: [
+          null,
+          Validators.compose([
+            Validators.required,
+            // Vérifie si le mot de passe contient un chiffre
+            CustomValidators.patternValidator(/\d/, {
+              hasNumber: true
+            }),
+            // Vérifie si le mot de passe contient une lettre majuscule
+            CustomValidators.patternValidator(/[A-Z]/, {
+              hasCapitalCase: true
+            }),
+            // Vérifie si le mot de passe contient une lettre minuscule
+            CustomValidators.patternValidator(/[a-z]/, {
+              hasSmallCase: true
+            }),
+            // Vérifie que le mot de passe contient bien au minimum 6 caractères
+            Validators.minLength(6)
+          ])
+        ],
+        confirmPassword: [null, Validators.compose([Validators.required])],
+        confirmMail: [null, Validators.compose([Validators.email, Validators.required])
+        ]
+      },
+      {
+        // Vérifie si le mdp et l'email sont bien les mêmes
+        validator: [CustomValidators.passwordMatchValidator,
+        CustomValidators.mailMatchValidator]
+      }
+    );
+  }
+
+  retourPage() {
+    this.location.back();
+  }
+
+  onSubmit() {
+    this.submitted = true;
+    if (this.formSignup.invalid) {
+      return;
+    }
+    this.loading = true;
+    const membre: Membre = this.formSignup.value;
+    this.auth.createUser(membre)
+      .pipe(first())
+      .subscribe(
+        data => {
+          this.loading = false;
+          this.router.navigate(['../login']);
+          setTimeout(() => {
+            this.alertService.success('Merci de t\'être enregistré ' + membre.username + ', tu peux utiliser le site !', true);
+          });
+        },
+        error => {
+          this.loading = false;
+        });
+
+  }
 
   selectHomme() {
     this.selectedHomme = true;
@@ -64,6 +176,256 @@ export class FormSignupComponent implements OnInit {
   selectFemme() {
     this.selectedFemme = true;
     this.selectedHomme = false;
+  }
+
+  choiceAucunUn() {
+    this.disableDepecageDeux = false;
+    this.disableHerboristeDeux = false;
+    this.disableMineurDeux = false;
+    this.disableEnchanteurDeux = false;
+    this.disableTdcDeux = false;
+    this.disableCouturierDeux = false;
+    this.disableIngeDeux = false;
+    this.disableForgeDeux = false;
+    this.disableAlchiDeux = false;
+    this.disableNiveauMetierUn = true;
+  }
+  choiceAucunDeux() {
+    this.disableDepecageUn = false;
+    this.disableHerboristeUn = false;
+    this.disableMineurUn = false;
+    this.disableEnchanteurUn = false;
+    this.disableTdcUn = false;
+    this.disableCouturierUn = false;
+    this.disableIngeUn = false;
+    this.disableForgeUn = false;
+    this.disableAlchiUn = false;
+    this.disableNiveauMetierDeux = true;
+  }
+
+  choiceDepecageUn() {
+    this.disableDepecageDeux = true;
+    this.disableHerboristeDeux = false;
+    this.disableMineurDeux = false;
+    this.disableEnchanteurDeux = false;
+    this.disableTdcDeux = false;
+    this.disableCouturierDeux = false;
+    this.disableIngeDeux = false;
+    this.disableForgeDeux = false;
+    this.disableAlchiDeux = false;
+    this.disableNiveauMetierUn = false;
+  }
+  choiceDepecageDeux() {
+    this.disableDepecageUn = true;
+    this.disableHerboristeUn = false;
+    this.disableMineurUn = false;
+    this.disableEnchanteurUn = false;
+    this.disableTdcUn = false;
+    this.disableCouturierUn = false;
+    this.disableIngeUn = false;
+    this.disableForgeUn = false;
+    this.disableAlchiUn = false;
+    this.disableNiveauMetierDeux = false;
+  }
+
+  choiceHerboUn() {
+    this.disableDepecageDeux = false;
+    this.disableHerboristeDeux = true;
+    this.disableMineurDeux = false;
+    this.disableEnchanteurDeux = false;
+    this.disableTdcDeux = false;
+    this.disableCouturierDeux = false;
+    this.disableIngeDeux = false;
+    this.disableForgeDeux = false;
+    this.disableAlchiDeux = false;
+    this.disableNiveauMetierUn = false;
+  }
+  choiceHerboDeux() {
+    this.disableDepecageUn = false;
+    this.disableHerboristeUn = true;
+    this.disableMineurUn = false;
+    this.disableEnchanteurUn = false;
+    this.disableTdcUn = false;
+    this.disableCouturierUn = false;
+    this.disableIngeUn = false;
+    this.disableForgeUn = false;
+    this.disableAlchiUn = false;
+    this.disableNiveauMetierDeux = false;
+  }
+
+  choiceMineurUn() {
+    this.disableDepecageDeux = false;
+    this.disableHerboristeDeux = false;
+    this.disableMineurDeux = true;
+    this.disableEnchanteurDeux = false;
+    this.disableTdcDeux = false;
+    this.disableCouturierDeux = false;
+    this.disableIngeDeux = false;
+    this.disableForgeDeux = false;
+    this.disableAlchiDeux = false;
+    this.disableNiveauMetierUn = false;
+  }
+  choiceMineurDeux() {
+    this.disableDepecageUn = false;
+    this.disableHerboristeUn = false;
+    this.disableMineurUn = true;
+    this.disableEnchanteurUn = false;
+    this.disableTdcUn = false;
+    this.disableCouturierUn = false;
+    this.disableIngeUn = false;
+    this.disableForgeUn = false;
+    this.disableAlchiUn = false;
+    this.disableNiveauMetierDeux = false;
+  }
+
+  choiceTdcUn() {
+    this.disableDepecageDeux = false;
+    this.disableHerboristeDeux = false;
+    this.disableMineurDeux = false;
+    this.disableEnchanteurDeux = false;
+    this.disableTdcDeux = true;
+    this.disableCouturierDeux = false;
+    this.disableIngeDeux = false;
+    this.disableForgeDeux = false;
+    this.disableAlchiDeux = false;
+    this.disableNiveauMetierUn = false;
+  }
+  choiceTdcDeux() {
+    this.disableDepecageUn = false;
+    this.disableHerboristeUn = false;
+    this.disableMineurUn = false;
+    this.disableEnchanteurUn = false;
+    this.disableTdcUn = true;
+    this.disableCouturierUn = false;
+    this.disableIngeUn = false;
+    this.disableForgeUn = false;
+    this.disableAlchiUn = false;
+    this.disableNiveauMetierDeux = false;
+  }
+
+  choiceCouturierUn() {
+    this.disableDepecageDeux = false;
+    this.disableHerboristeDeux = false;
+    this.disableMineurDeux = false;
+    this.disableEnchanteurDeux = false;
+    this.disableTdcDeux = false;
+    this.disableCouturierDeux = true;
+    this.disableIngeDeux = false;
+    this.disableForgeDeux = false;
+    this.disableAlchiDeux = false;
+    this.disableNiveauMetierUn = false;
+  }
+  choiceCouturierDeux() {
+    this.disableDepecageUn = false;
+    this.disableHerboristeUn = false;
+    this.disableMineurUn = false;
+    this.disableEnchanteurUn = false;
+    this.disableTdcUn = false;
+    this.disableCouturierUn = true;
+    this.disableIngeUn = false;
+    this.disableForgeUn = false;
+    this.disableAlchiUn = false;
+    this.disableNiveauMetierDeux = false;
+  }
+
+  choiceEnchantUn() {
+    this.disableDepecageDeux = false;
+    this.disableHerboristeDeux = false;
+    this.disableMineurDeux = false;
+    this.disableEnchanteurDeux = true;
+    this.disableTdcDeux = false;
+    this.disableCouturierDeux = false;
+    this.disableIngeDeux = false;
+    this.disableForgeDeux = false;
+    this.disableAlchiDeux = false;
+    this.disableNiveauMetierUn = false;
+  }
+  choiceEnchantDeux() {
+    this.disableDepecageUn = false;
+    this.disableHerboristeUn = false;
+    this.disableMineurUn = false;
+    this.disableEnchanteurUn = true;
+    this.disableTdcUn = false;
+    this.disableCouturierUn = false;
+    this.disableIngeUn = false;
+    this.disableForgeUn = false;
+    this.disableAlchiUn = false;
+    this.disableNiveauMetierDeux = false;
+  }
+
+  choiceAlchiUn() {
+    this.disableDepecageDeux = false;
+    this.disableHerboristeDeux = false;
+    this.disableMineurDeux = false;
+    this.disableEnchanteurDeux = false;
+    this.disableTdcDeux = false;
+    this.disableCouturierDeux = false;
+    this.disableIngeDeux = false;
+    this.disableForgeDeux = false;
+    this.disableAlchiDeux = true;
+    this.disableNiveauMetierUn = false;
+  }
+  choiceAlchiDeux() {
+    this.disableDepecageUn = false;
+    this.disableHerboristeUn = false;
+    this.disableMineurUn = false;
+    this.disableEnchanteurUn = false;
+    this.disableTdcUn = false;
+    this.disableCouturierUn = false;
+    this.disableIngeUn = false;
+    this.disableForgeUn = false;
+    this.disableAlchiUn = true;
+    this.disableNiveauMetierDeux = false;
+  }
+
+  choiceForgeUn() {
+    this.disableDepecageDeux = false;
+    this.disableHerboristeDeux = false;
+    this.disableMineurDeux = false;
+    this.disableEnchanteurDeux = false;
+    this.disableTdcDeux = false;
+    this.disableCouturierDeux = false;
+    this.disableIngeDeux = false;
+    this.disableForgeDeux = true;
+    this.disableAlchiDeux = false;
+    this.disableNiveauMetierUn = false;
+  }
+  choiceForgeDeux() {
+    this.disableDepecageUn = false;
+    this.disableHerboristeUn = false;
+    this.disableMineurUn = false;
+    this.disableEnchanteurUn = false;
+    this.disableTdcUn = false;
+    this.disableCouturierUn = false;
+    this.disableIngeUn = false;
+    this.disableForgeUn = true;
+    this.disableAlchiUn = false;
+    this.disableNiveauMetierDeux = false;
+  }
+
+  choiceIngeUn() {
+    this.disableDepecageDeux = false;
+    this.disableHerboristeDeux = false;
+    this.disableMineurDeux = false;
+    this.disableEnchanteurDeux = false;
+    this.disableTdcDeux = false;
+    this.disableCouturierDeux = false;
+    this.disableIngeDeux = true;
+    this.disableForgeDeux = false;
+    this.disableAlchiDeux = false;
+    this.disableNiveauMetierUn = false;
+  }
+  choiceIngeDeux() {
+    this.disableDepecageUn = false;
+    this.disableHerboristeUn = false;
+    this.disableMineurUn = false;
+    this.disableEnchanteurUn = false;
+    this.disableTdcUn = false;
+    this.disableCouturierUn = false;
+    this.disableIngeUn = true;
+    this.disableForgeUn = false;
+    this.disableAlchiUn = false;
+    this.disableNiveauMetierDeux = false;
   }
 
   clickTauren() {
@@ -108,103 +470,5 @@ export class FormSignupComponent implements OnInit {
     this.disablePretre = false;
     this.disableMage = false;
     this.disableDemoniste = false;
-  }
-
-  ngOnInit() {
-    this.isAdmin();
-  }
-
-  createSignupForm(): FormGroup {
-    return this.fb.group(
-      {
-        pseudo: [
-          null,
-          Validators.compose([Validators.required])
-        ],
-        genre: [
-          null,
-          Validators.compose([Validators.required])
-        ],
-        race: [
-          null,
-          Validators.compose([Validators.required])
-        ],
-        classe: [
-          null,
-          Validators.compose([Validators.required])
-        ],
-        level: null,
-        premierMetier: null,
-        secondMetier: null,
-        email: [
-          null,
-          Validators.compose([Validators.email, Validators.required])
-        ],
-        password: [
-          null,
-          Validators.compose([
-            Validators.required,
-            // check whether the entered password has a number
-            CustomValidators.patternValidator(/\d/, {
-              hasNumber: true
-            }),
-            // check whether the entered password has upper case letter
-            CustomValidators.patternValidator(/[A-Z]/, {
-              hasCapitalCase: true
-            }),
-            // check whether the entered password has a lower case letter
-            CustomValidators.patternValidator(/[a-z]/, {
-              hasSmallCase: true
-            }),
-            // check whether the entered password has a special character
-            /*
-             * CustomValidators.patternValidator(
-             *  /[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/,
-             *  {
-             *    hasSpecialCharacters: true
-             *  }
-             *  )
-            */
-            Validators.minLength(6)
-          ])
-        ],
-        confirmPassword: [null, Validators.compose([Validators.required])],
-        confirmMail: [null, Validators.compose([Validators.email, Validators.required])
-        ]
-      },
-      {
-        // Vérifie si le mdp et l'email sont bien les mêmes
-        validator: [CustomValidators.passwordMatchValidator,
-        CustomValidators.mailMatchValidator]
-      }
-    );
-  }
-
-  retourPage() {
-    this.location.back();
-  }
-
-  onSubmit() {
-    this.submitted = true;
-    if (this.formSignup.invalid) {
-      return;
-    }
-    this.loading = true;
-    const membre: Membre = this.formSignup.value;
-    membre.username = membre.pseudo;
-    this.membreService.createMembre(membre)
-      .pipe(first())
-      .subscribe(
-        data => {
-          this.loading = false;
-          this.router.navigate(['../login']);
-          setTimeout(() => {
-            this.alertService.success('Merci de t\'être enregistré ' + membre.pseudo + ', tu peux utiliser le site !', true);
-          });
-        },
-        error => {
-          this.loading = false;
-        });
-
   }
 }

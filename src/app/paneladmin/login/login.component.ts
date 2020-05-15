@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   isLoginFailed = false;
   errorMessage = '';
   loading = false;
+  submitted = false;
   roles: string[] = [];
   returnUrl: string;
   public loginForm: FormGroup;
@@ -28,7 +29,7 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) { }
 
-
+  get f() { return this.loginForm.controls; }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -42,17 +43,18 @@ export class LoginComponent implements OnInit {
       ]
     });
 
-    // reset login status
-    // this.authenticationService.logout();
   }
 
   onSubmit() {
     this.loginInfo = this.loginForm.value;
     this.loading = true;
-    // stop here if form is invalid
+    this.submitted = true;
+    // Retourne une erreur si le formulaire est invalide
     if (this.loginForm.invalid) {
       return;
     }
+
+
     this.authService.attemptAuth(this.loginInfo).subscribe(
       data => {
         this.tokenStorage.saveToken(data.accessToken);
@@ -63,8 +65,9 @@ export class LoginComponent implements OnInit {
 
         this.roles = this.tokenStorage.getAuthorities();
 
+        if (this.roles[0] === 'ROLE_USER') { this.router.navigate(['../index']); }
         if (this.roles[0] === 'ROLE_MEMBRE') { this.router.navigate(['../index']); }
-        if (this.roles[0] === 'ROLE_OFFICIER') { this.router.navigate(['../index']); }
+        if (this.roles[0] === 'ROLE_OFFICER') { this.router.navigate(['../index']); }
         if (this.roles[0] === 'ROLE_ADMIN') { this.router.navigate(['../index']); }
       },
       error => {

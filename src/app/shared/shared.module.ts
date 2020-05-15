@@ -13,6 +13,10 @@ import { ShareButtonsModule } from '@ngx-share/buttons';
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { BypassHtmlSecurity } from './bypass-html-security';
 
+import { GalleryModule } from '@ngx-gallery/core';
+import { LightboxModule } from '@ngx-gallery/lightbox';
+import { GallerizeModule } from '@ngx-gallery/gallerize';
+
 @NgModule({
   declarations: [
     AlertComponent,
@@ -31,6 +35,9 @@ import { BypassHtmlSecurity } from './bypass-html-security';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    GalleryModule,
+    LightboxModule,
+    GallerizeModule
   ],
   exports: [
     BrowserModule,
@@ -46,6 +53,9 @@ import { BypassHtmlSecurity } from './bypass-html-security';
     AlertComponent,
     EnConstructionComponent,
     BypassHtmlSecurity,
+    GalleryModule,
+    LightboxModule,
+    GallerizeModule
   ]
 })
 export class SharedModule { }

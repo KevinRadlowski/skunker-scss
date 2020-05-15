@@ -17,6 +17,13 @@
 
 }
 
+p {
+  color: white;
+  font-weight: lighter;
+  font-size: 16px;
+  margin: 15px;
+}
+
 /* Partie Sidenav Mobile */
 .toolbarXs {
   position: fixed;
@@ -68,6 +75,33 @@
 
   img {
     height: 40px;
+  }
+}
+
+.loginButton {
+  color: white;
+  border-radius: 7px;
+  border: 1px solid white;
+  background: none;
+
+  &:hover {
+    color: white;
+    background-color: $primary;
+    border-color: white;
+  }
+}
+
+.registerButton {
+  margin: 15px;
+  color: white;
+  border-radius: 7px;
+  border: 1px solid white;
+  background: none;
+
+  &:hover {
+    color: white;
+    background-color: $primary;
+    border-color: white;
   }
 }
 

@@ -1,0 +1,58 @@
+<div class="row col-12">
+  <div class="col-8">
+    <app-dkphistorique></app-dkphistorique>
+  </div>
+
+  <div class="col-4">
+    <p *ngIf="isValidFormSubmitted" class="success">
+      Form submitted successfully.
+    </p>
+    <form [formGroup]="formDkp" (ngSubmit)="onFormSubmit()">
+      <div class="form-group col-auto">
+        <label for="Raison">Raison de l'ajustement</label>
+        <select formControlName="raison" id="Raison" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.raison.errors }">
+          <option selected>Sélectionnez raison.</option>
+          <option *ngFor="let raison of raisons, let i = index" [value]="raisons[i].value">
+              {{raisons[i].raName}}
+          </option>
+        </select>
+        <div *ngIf="submitted && f.raison.errors" class="invalid-feedback">
+          <div *ngIf="f.raison.errors.required">Raison requise</div>
+        </div>
+      </div>
+
+      <!-- <div *ngIf="formDkp.raison == BossKill" class="form-group col-auto">
+        <label for="Raison">Raison de l'ajustement</label>
+        <select formControlName="raid" id="Raison" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.raison.errors }">
+          <option selected>Sélectionnez raison.</option>
+          <option value="BonusHeure">Bonus à l'heure</option>
+          <option value="BossKill">Bonus de Boss Kill</option>
+          <option value="FinRaid">Bonus d'achèvement de raid</option>
+          <option value="BonusFirstKill">Nouveau bonus de Boss Kill</option>
+          <option value="CorrectionErreur">Correction d'erreur</option>
+          <option value="DKPAjuster">DKP Ajuster</option>
+          <option value="Absence">Absence injustifiée</option>
+          <option value="Autre">Autre</option>
+        </select>
+        <div *ngIf="submitted && f.raison.errors" class="invalid-feedback">
+          <div *ngIf="f.raison.errors.required">Raison requise</div>
+        </div>
+      </div> -->
+
+      <!-- <div class="form-group col-auto">
+        <label>Points</label>
+        <input type="text" formControlName="points" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.points.errors }" />
+        <div *ngIf="submitted && f.points.errors" class="invalid-feedback">
+          <div *ngIf="f.points.errors.required">Nombre de points requis</div>
+        </div>
+      </div> -->
+      <div class="text-center">
+        <button class="btn btn-primary mr-1">Register</button>
+        <button class="btn btn-secondary" type="reset">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>

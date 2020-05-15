@@ -16,12 +16,16 @@ const httpOptions = {
 })
 export class AuthService {
 
-  private loginUrl = 'http://localhost:8080/api/auth/signin';
+  private authUrl = 'http://localhost:8080/api/auth';
 
   constructor(private http: HttpClient) {
   }
 
   attemptAuth(credentials: AuthLoginInfo): Observable<JwtResponse> {
-    return this.http.post<JwtResponse>(this.loginUrl, credentials, httpOptions);
+    return this.http.post<JwtResponse>(`${this.authUrl}` + `/signin`, credentials, httpOptions);
+  }
+
+  createUser(customer: object): Observable<object> {
+    return this.http.post(`${this.authUrl}` + `/signup`, customer);
   }
 }

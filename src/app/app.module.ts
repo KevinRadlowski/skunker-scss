@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatPaginatorIntl } from '@angular/material';
 import { getFrenchPaginatorIntl } from './shared/french-paginator-intl';
@@ -16,9 +17,18 @@ import { FooterComponent } from './footer/footer.component';
 
 import { AccueilModule } from './accueil/accueil.module';
 import { PaneladminModule } from './paneladmin/paneladmin.module';
+import { PanelmembreModule } from './panelmembre/panelmembre.module';
 import { RostersModule } from './rosters/roster/rosters.module';
+
 import { SharedModule } from './shared/shared.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GlobalEventsManager } from './shared/global-events-manager';
+import { HttpClient } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -33,12 +43,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       provide: DateAdapter,
       useFactory: adapterFactory
     }),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient],
+      },
+    }),
     AccueilModule,
     RostersModule,
     SharedModule,
     PaneladminModule,
+    PanelmembreModule,
   ],
   providers: [
+    GlobalEventsManager,
     { provide: LOCALE_ID, useValue: 'fr-FR' },
     { provide: MatPaginatorIntl, useValue: getFrenchPaginatorIntl() }
   ],

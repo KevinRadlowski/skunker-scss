@@ -1,0 +1,25 @@
+h1 {
+  text-align: center;
+  color: white;
+}
+
+.container {
+  display: flex;
+  height: 200px;
+  img {
+    width: 200px;
+    object-fit: cover;
+    margin: 0px 15px 15px 0px;
+    border: 1px solid black;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.bodyGallery {
+  background-color: rgba(0, 0, 0, 0.801);
+  padding: 30px;
+  border-radius: 13px;
+}

@@ -1,7 +1,10 @@
-      // tslint:disable: quotemark
+// tslint:disable: quotemark
 import { Component, OnInit, DoCheck } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { TokenStorageService } from '../core/auth/token-storage.service';
+import { Router } from '@angular/router';
+import { take, tap } from 'rxjs/operators';
+import { PanelAdminService } from '../paneladmin/services/paneladmin.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,13 +15,17 @@ export class NavbarComponent implements OnInit, DoCheck {
 
   info: any;
   isInfo = false;
+  isLogged = false;
   isAdmin = false;
   isMembre = false;
   isOfficier = false;
+  discordLink: any;
 
   constructor(
     public dialog: MatDialog,
-    private token: TokenStorageService
+    private token: TokenStorageService,
+    private router: Router,
+    private panelAdminService: PanelAdminService,
   ) { }
 
   logout() {
@@ -34,22 +41,31 @@ export class NavbarComponent implements OnInit, DoCheck {
       if (this.info.username !== '' && this.info.username != null) { this.isInfo = true; }
       else { this.isInfo = false; }
 
-      if (this.info.authorities[0] === "ROLE_MEMBRE") { this.isMembre = true; }
-      else { this.isMembre = false; }
-
-      if (this.info.authorities[0] === "ROLE_OFFICIER") { this.isOfficier = true; }
-      else { this.isOfficier = false; }
-
-      if (this.info.authorities[0] === "ROLE_ADMIN") { this.isAdmin = true; }
-      else { this.isAdmin = false; }
+      if (this.info.authorities[0] !== undefined) { this.isLogged = true; }
+      else { this.isLogged = false; }
     }, 100);
   }
 
   ngOnInit() {
     this.login();
+
+    this.panelAdminService.getDiscordLink(1).pipe(
+      tap(data => {
+        this.discordLink = data;
+      }),
+      take(1),
+    ).subscribe();
   }
 
   ngDoCheck() {
     this.login();
+  }
+
+  redirectToPanelAdmin() {
+    this.router.navigate(['/paneladmin'])
+  }
+
+  redirectToPanelMembre() {
+    this.router.navigate(['/membre'])
   }
 }

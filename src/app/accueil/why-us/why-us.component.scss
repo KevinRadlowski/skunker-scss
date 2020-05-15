@@ -1,4 +1,4 @@
-.imageAbout img {
+.imageAbout {
     width: 300px;
     max-width: 80%;
 }
@@ -6,10 +6,14 @@
 .bodyAbout {
     color: white;
     background-color: rgba(0, 0, 0, 0.801);
-    padding: 30px;
     border-radius: 13px;
 }
 
-.textAbout {
-    margin-left: 3%;
+.row {
+    padding: 0;
+    margin: 0;
+}
+
+.imageAboutSm img {
+    width: 150px;
 }

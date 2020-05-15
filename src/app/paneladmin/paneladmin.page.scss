@@ -1,0 +1,36 @@
+button {
+  z-index: 1;
+  position: absolute;
+background-color: red;
+  margin-top: 100px;
+  top: 0;
+  left: 0;
+}
+
+.sidenav {
+  z-index: 0;
+  background-image: url('../../assets/img/dark-back.jpg');
+  border-radius: 0;
+  width: 150px;
+
+  .mat-list-item {
+    color: white;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+  }
+
+}
+
+.material-icons {
+  color: black;
+  font-size: 26px;
+}
+
+.sidenav-container {
+  flex: 1;
+  min-height: 65vh;
+}
+
+.is-mobile .sidenav-container {
+  flex: 1 0 auto;
+}

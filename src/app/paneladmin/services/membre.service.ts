@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpEvent, HttpRequest } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -7,32 +7,30 @@ import { Observable } from 'rxjs';
 })
 export class MembreService {
 
-  private baseUrl = 'http://localhost:8080/api/membre';
+  private baseUrl = 'http://localhost:8080/api/auth';
 
   constructor(private http: HttpClient) { }
 
-  getMembre(username: String): Observable<Object> {
+  getMembre(username: String): Observable<object> {
     return this.http.get(`${this.baseUrl}/getone/${username}`);
   }
 
-  getAdminMembre(id: number): Observable<Object> {
+  getAdminMembre(id: number): Observable<object> {
     return this.http.get(`${this.baseUrl}/adminget/${id}`);
   }
-  createMembre(customer: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}` + `/creer`, customer);
-  }
 
-  updateMembre(id: number, value: any): Observable<Object> {
+  updateMembre(id: number, value: any): Observable<object> {
     return this.http.put(`${this.baseUrl}/${id}`, value);
   }
 
-  updateMembrePassword(id: number, value: any): Observable<Object> {
+  updateMembrePassword(id: number, value: any): Observable<object> {
     return this.http.put(`${this.baseUrl}/password/${id}`, value);
   }
 
   getMembreList(): Observable<any> {
     return this.http.get(`${this.baseUrl}`);
   }
+
   deleteUser(username: String): Observable<any> {
     return this.http.delete(`${this.baseUrl}/deleteuser/${username}`);
   }

@@ -11,12 +11,18 @@
       <!-- <a class="navlink" routerLink="/blog" routerLinkActive="router-link-active">Articles</a> -->
       <a class="navlink" routerLink="/rosters">Rosters</a>
       <a class="navlink" routerLink="/en-construction">Guides</a>
-      <a class="navlink btnDiscord" href="https://discord.gg/sH4g59C" target="_blank"><img src="../../assets/img/Discord-Logo.png" alt="Discord"></a>
+      <a *ngIf="discordLink" class="navlink btnDiscord" href="{{discordLink.discord}}" target="_blank"><img src="../../assets/img/Discord-Logo.png" alt="Discord"></a>
 
     </div>
     <div fxLayoutAlign="none center">
+      <p *ngIf="isLogged==true">Bonjour {{info.username}} !</p>
+      <button *ngIf="isInfo==false" class="registerButton" routerLink="/register">S'enregistrer</button>
       <button *ngIf="isInfo==false" class="loginButton" routerLink="/login">Connexion</button>
-      <button *ngIf="isMembre==true || isOfficier==true || isAdmin==true" class="loginButton" (click)="logout()"
+      <button *ngIf="isLogged==true" class="panelAdminButton" (click)="redirectToPanelAdmin()"
+      routerLink="/index">Panel Admin</button>
+      <button *ngIf="isLogged==true" class="panelMembreButton" (click)="redirectToPanelMembre()"
+      routerLink="/index">Panel Membre</button>
+      <button *ngIf="isLogged==true" class="loginButton" (click)="logout()"
         routerLink="/index">Déconnexion</button>
 
     </div>
@@ -35,7 +41,7 @@
       </div>
       <a routerLink="/" class="homeLogo" (click)="snav.close();" fxLayoutAlign="none center">
         <img class="logo-navbar" src="../assets/img/navbar-logo1.png" alt="Logo">
-        SKUNKER
+        NGTH
       </a>
       <span class="toolbar-spacer"></span>
     </div>

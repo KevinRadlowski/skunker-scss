@@ -1,3 +1,4 @@
+@import "./variables";
 /* ANGULAR CALENDAR */
 
 @import "../node_modules/angular-calendar/css/angular-calendar.css";
@@ -53,7 +54,10 @@ body {
 
 body {
   font-family: Helvetica, Arial, sans-serif;
-
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
   p {
       margin: auto;
   }
@@ -76,5 +80,118 @@ body {
     font-size: 1em;
     font-weight: bold;
     line-height: 18px;
+  }
+}
+
+%box-shadow {
+  @include box-shadow(3px 3px 6px black);
+}
+
+.bodyProgress {
+  background-color: rgba(0, 0, 0, 0.801);
+  padding: 30px;
+  margin: 60px;
+  border-radius: 13px;
+
+  img {
+    margin: 10px 10px 5px 10px;
+    width: 65px;
+  }
+  
+  h1 {
+    margin-left: 15px;
+    color: white;
+  }
+  
+  .raid-name {
+    width: 80px;
+    margin-right: 15px;
+  }
+  
+  h3 {
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.801);
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .raid {
+    padding: 15px;
+    margin: 15px;
+    color: white;
+    background-size: cover;
+    font-size: 12px;
+    border-radius: 5px;
+  }
+  
+  .boss {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.651);
+    color: red;
+  
+    img {
+      border: 1px solid;
+      @extend %box-shadow;
+    }
+  }
+  
+  .molten-core {
+    background-image: url('https://img.cinemablend.com/filter:scale/cb/6/c/1/2/4/1/6c1241421df3b65a6277306877814bebe071ee4af5b4eaf0fd419fd56baeb59a.jpg?mw=600');
+    background-position-y: 20%;
+  }
+  
+  .onyxia {
+    background-image: url('https://shadowburn.net/raids/images/onyxia.jpg');
+    background-position-y: 60%;
+  }
+  
+  .bwl {
+    background-image: url('https://wow.zamimg.com/uploads/screenshots/normal/171047-morts-de-nefarian-repaire-de-laile-noire.jpg');
+    background-position-y: 25%;
+  }
+  
+  .zg {
+    background-image: url(/assets/img/raids-classic/zul-gurub.jpg);
+    background-position-y: 25%;
+  }
+
+  .raq {
+    background-image: url(/assets/img/raids-classic/ahnqiraj.jpg);
+    background-position-y: 25%;
+    filter: grayscale(1) opacity(0.7);
+    .boss {
+      color: white;
+    }
+  }
+
+  .aq {
+    background-image: url(/assets/img/raids-classic/ahnqiraj2.jpg);
+    background-position-y: 25%;
+    filter: grayscale(1) opacity(0.7);
+    .boss {
+      color: white;
+    }
+  }
+
+  .naxx {
+    background-image: url(/assets/img/raids-classic/naxxramas.jpg);
+    background-position-y: 25%;
+    filter: grayscale(1) opacity(0.7);
+    .boss {
+      color: white;
+    }
+  }
+
+  
+  .killed {
+    color: rgb(2, 168, 2);
+  }
+
+}
+
+@media (max-width: 575.98px) {
+  .bodyProgress {
+    margin: 15px 0px 15px 0px;
+    padding: 15px 0px 15px 0px;
   }
 }

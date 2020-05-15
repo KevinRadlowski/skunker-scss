@@ -1,0 +1,104 @@
+<form [formGroup]="recrutementForm" (ngSubmit)="onSubmit()">
+
+  <div ngClass.gt-sm="recrutementTable col-4" class="recrutementTable d-flex justify-content-center">
+    <table class="recrutement table-striped">
+      <thead>
+        <tr>
+          <th>
+            RECRUTEMENT
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="test">
+          <th scope="row" class="chaman">
+            <img class="logoClass" src="../../../assets/img/class/chaman.jpg" alt="Chaman">
+            Chaman
+          </th>
+          <mat-button-toggle-group formControlName="chaman" name="fontStyle" aria-label="Font Style">
+            <mat-button-toggle value="open">Ouvert</mat-button-toggle>
+            <mat-button-toggle class="closed" value="closed">Fermé</mat-button-toggle>
+          </mat-button-toggle-group>
+        </tr>
+        <tr class="test">
+          <th scope="row" class="chasseur">
+            <img class="logoClass" src="../../../assets/img/class/hunt.jpg" alt="Chasseur">
+            Chasseur
+          </th>
+          <mat-button-toggle-group formControlName="chasseur" name="fontStyle" aria-label="Font Style">
+            <mat-button-toggle class="open" value="open">Ouvert</mat-button-toggle>
+            <mat-button-toggle class="closed" value="closed">Fermé</mat-button-toggle>
+          </mat-button-toggle-group>
+        </tr>
+        <tr class="test">
+          <th scope="row" class="demo">
+            <img class="logoClass" src="../../../assets/img/class/demoniste.jpg" alt="Démoniste">
+            Démoniste
+          </th>
+          <mat-button-toggle-group formControlName="demoniste" name="fontStyle" aria-label="Font Style">
+            <mat-button-toggle class="open" value="open">Ouvert</mat-button-toggle>
+            <mat-button-toggle class="closed" value="closed">Fermé</mat-button-toggle>
+          </mat-button-toggle-group>
+        </tr>
+        <tr class="test">
+          <th scope="row" class="druide">
+            <img class="logoClass" src="../../../assets/img/class/druid.jpg" alt="Druide">
+            Druide
+          </th>
+          <mat-button-toggle-group formControlName="druide" name="fontStyle" aria-label="Font Style">
+            <mat-button-toggle class="open" value="open">Ouvert</mat-button-toggle>
+            <mat-button-toggle class="closed" value="closed">Fermé</mat-button-toggle>
+          </mat-button-toggle-group>
+        </tr>
+        <tr class="test">
+          <th scope="row" class="guerrier">
+            <img class="logoClass" src="../../../assets/img/class/warrior.jpg" alt="Guerrier">
+            Guerrier
+          </th>
+          <mat-button-toggle-group formControlName="guerrier" name="fontStyle" aria-label="Font Style">
+            <mat-button-toggle class="open" value="open">Ouvert</mat-button-toggle>
+            <mat-button-toggle class="closed" value="closed">Fermé</mat-button-toggle>
+          </mat-button-toggle-group>
+        </tr>
+        <tr class="test">
+          <th scope="row" class="mage">
+            <img class="logoClass" src="../../../assets/img/class/mage.jpg" alt="Mage">
+            Mage
+          </th>
+          <mat-button-toggle-group formControlName="mage" name="fontStyle" aria-label="Font Style">
+            <mat-button-toggle class="open" value="open">Ouvert</mat-button-toggle>
+            <mat-button-toggle class="closed" value="closed">Fermé</mat-button-toggle>
+          </mat-button-toggle-group>
+        </tr>
+        <tr class="test">
+          <th scope="row" class="pretre">
+            <img class="logoClass" src="../../../assets/img/class/priest.jpg" alt="Prêtre">
+            Prêtre
+          </th>
+          <mat-button-toggle-group formControlName="pretre" name="fontStyle" aria-label="Font Style">
+            <mat-button-toggle class="open" value="open">Ouvert</mat-button-toggle>
+            <mat-button-toggle class="closed" value="closed">Fermé</mat-button-toggle>
+          </mat-button-toggle-group>
+        </tr>
+        <tr class="test lastrow">
+          <th scope="row" class="voleur">
+            <img class="logoClass" src="../../../assets/img/class/rogue.jpg" alt="Voleur">
+            Voleur
+          </th>
+          <mat-button-toggle-group formControlName="voleur" name="fontStyle" aria-label="Font Style">
+            <mat-button-toggle class="open" value="open">Ouvert</mat-button-toggle>
+            <mat-button-toggle class="closed" value="closed">Fermé</mat-button-toggle>
+          </mat-button-toggle-group>
+        </tr>
+        <div class="form-group">
+          <button [disabled]="loading" class="btn btn-primary">Enregistrer</button>
+          <img *ngIf="loading"
+            src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+          <!-- <a [routerLink]="['/register']" class="btn btn-link">Inscription</a> -->
+        </div>
+      </tbody>
+    </table>
+
+  </div>
+
+</form>

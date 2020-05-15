@@ -1,9 +1,9 @@
 @import '../../../variables';
 
 a {
-    color: $primary;
+    color: white;
     border: 1px solid;
-    padding: 2px;
+    padding: 5px;
     border-radius: 5px;
 
     &:hover {
@@ -14,3 +14,20 @@ a {
         text-decoration: none;
     }
 }
+
+.pageInscription {
+    background-image: url('../../../assets/img/portailbuild.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position-x: -18em;
+}
+
+.contentSignUp {
+    background-color: rgba(0, 0, 0, 0.336);
+    margin: 30px 0 30px 0;
+    color: white;
+}
+
+.mat-divider {
+    border-top-color: $primary;
+  }

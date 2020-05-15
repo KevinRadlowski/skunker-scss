@@ -13,41 +13,41 @@ export class Tank {
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {
-    position: 1,
-    guerrier: { nom: 'Iktae', url: '', grade: '' },
-    druide: { nom: 'Emboucane', url: '', grade: '' }
-  },
-  {
-    position: 2,
-    guerrier: { nom: 'Lekitch', url: '', grade: '' },
-    druide: { nom: '', url: '', grade: '' }
-  },
-  {
-    position: 3,
-    guerrier: { nom: 'Morcheeba', url: '', grade: 'assets/img/skunk-green.png' },
-    druide: { nom: '', url: '', grade: '' }
-  },
-  {
-    position: 4,
-    guerrier: { nom: 'Redburne', url: '', grade: '' },
-    druide: { nom: '', url: '', grade: '' }
-  },
-  {
-    position: 5,
-    guerrier: { nom: 'Rushzen', url: '', grade: '' },
-    druide: { nom: '', url: '', grade: '' }
-  },
-  {
-    position: 6,
-    guerrier: { nom: 'Tombert', url: '', grade: '' },
-    druide: { nom: '', url: '', grade: '' }
-  },
-  {
-    position: 7,
-    guerrier: { nom: 'Zyphounet', url: '', grade: '' },
-    druide: { nom: '', url: '', grade: '' }
-  }
+  // {
+  //   position: 1,
+  //   guerrier: { nom: 'Iktae', url: '', grade: '' },
+  //   druide: { nom: 'Emboucane', url: '', grade: '' }
+  // },
+  // {
+  //   position: 2,
+  //   guerrier: { nom: 'Lekitch', url: '', grade: '' },
+  //   druide: { nom: '', url: '', grade: '' }
+  // },
+  // {
+  //   position: 3,
+  //   guerrier: { nom: 'Morcheeba', url: '', grade: 'assets/img/skunk-green.png' },
+  //   druide: { nom: '', url: '', grade: '' }
+  // },
+  // {
+  //   position: 4,
+  //   guerrier: { nom: 'Redburne', url: '', grade: '' },
+  //   druide: { nom: '', url: '', grade: '' }
+  // },
+  // {
+  //   position: 5,
+  //   guerrier: { nom: 'Rushzen', url: '', grade: '' },
+  //   druide: { nom: '', url: '', grade: '' }
+  // },
+  // {
+  //   position: 6,
+  //   guerrier: { nom: 'Tombert', url: '', grade: '' },
+  //   druide: { nom: '', url: '', grade: '' }
+  // },
+  // {
+  //   position: 7,
+  //   guerrier: { nom: 'Zyphounet', url: '', grade: '' },
+  //   druide: { nom: '', url: '', grade: '' }
+  // }
 ];
 
 @Component({

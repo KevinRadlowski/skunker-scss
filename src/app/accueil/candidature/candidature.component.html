@@ -1,14 +1,14 @@
 <div class="row bodyCandidature justify-content-around align-items-center">
-  <img class="bodyImg" src="../../../assets/img/onyxiaPngRevert.png" alt="Onyxia">
+  <img ngClass.gt-sm="bodyImg" ngClass.lt-md="bodyImgSm" src="../../../assets/img/onyxiaPngRevert.png" alt="Onyxia">
   <div class="textCenter">
     <h1>RECRUTEMENT</h1>
-    <p>Notre guilde étant polyvalente, nous recrutons autant des joueurs jouant seulement en PVP ou en PVE !<br>
-      Tu souhaites nous rejoindre ?</p>
+    <p>Notre guilde étant polyvalente, que tu sois un joueur PVP ou PVE, tu as ta place parmi nous !<br>
+      Tu souhaites tenter l'expérience NGTH ?</p>
     <br>
     <p>N'hésite pas à nous rejoindre sur Discord!<br>
       Nous restons aussi disponible en jeu pour répondre à tes questions.</p>
 
-    <a class="btnDiscord" href="https://discord.gg/sH4g59C" target="_blank"><img src="../../assets/img/Discord-Logo.png"
+    <a *ngIf="discordLink" class="btnDiscord" href="{{ discordLink.discord }}" target="_blank"><img src="../../assets/img/Discord-Logo.png"
         alt="Discord"></a>
   </div>
 </div>

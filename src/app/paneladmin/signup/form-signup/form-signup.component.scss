@@ -8,7 +8,7 @@
     border-radius: 10px;
     border: 3px solid rgba(218, 165, 32, 0);
     opacity: 0.666;
-    width: 60px;
+    height: 60px;
   }
 
   .imgClasseDisabled {
@@ -21,7 +21,7 @@
     }
 
     .imgClasse {
-        opacity: 1;
+      opacity: 1;
     }
   }
 
@@ -30,18 +30,18 @@
       border: 3px solid goldenrod;
       opacity: 1;
     }
+
     font-weight: bolder;
   }
 }
 
-
-
 .is-invalid {
-  border-left: solid 6px red;
+  border-left: solid 6px rgb(168, 0, 0);
+  ;
 }
 
 .passconfirm {
-  color: grey;
+  color: rgb(168, 0, 0);
 }
 
 .material-icons {
@@ -50,12 +50,10 @@
 }
 
 .bodyFormulaire {
-  background-color: white;
-  margin-top: 30px;
+  background-color: rgba(255, 255, 255, 0.719);
 }
 
 form {
-  // color: #26a69a;
   color: $primary;
   margin: 0 auto;
   padding-top: 1vw;
@@ -85,7 +83,7 @@ select {
 }
 
 .btnValider {
-  background-color: #26a69a;
+  background-color: $primary;
   color: white;
   font-weight: bold;
   font-size: 1.25rem;
@@ -94,7 +92,7 @@ select {
 }
 
 .btnValider:hover {
-  background-color: #2ed1bb;
+  background-color: $secondary;
 }
 
 .btnRetour {
@@ -116,22 +114,12 @@ select {
   opacity: 1;
 }
 
-.modeEmploi {
-  padding-bottom: 1vh;
+.niveauDisabled {
+  background-color: rgb(221, 221, 221);
+  border: 1px solid #ebebeb;
 }
 
-.cguButton {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: rgb(0, 119, 255);
-}
 
-.cguButton:hover {
-  text-decoration: underline;
-}
-
-#lienFaq {
-  text-transform: uppercase;
-
+.mat-divider {
+  border-top-color: #771b1b49;
 }

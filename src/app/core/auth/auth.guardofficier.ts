@@ -19,7 +19,7 @@ export class AuthGuardOfficier implements CanActivate {
             authorities: this.token.getAuthorities()
         };
 
-        if (this.info.authorities === 'ROLE_OFFICIER') { return true; }
+        if (this.info.authorities === 'ROLE_OFFICER') { return true; }
         else { return false; }
 
 
