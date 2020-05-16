@@ -10,7 +10,7 @@
   <ng-container matColumnDef="guerrier">
     <th mat-header-cell *matHeaderCellDef> Guerrier </th>
     <td mat-cell *matCellDef="let element">
-      <img *ngIf="element.guerrier.nom" class="logoClass" src="../../../assets/img/class/warprot.png" alt="Guerrier Prot">
+      <img *ngIf="element.guerrier.nom" class="logoClass" src="/assets/img/class/warprot.png" alt="Guerrier Prot">
       <a *ngIf="element.guerrier.url; else pseudo" href="{{ element.guerrier.url }}" target=”_blank”>{{element.guerrier.nom}}</a>
       <ng-template #pseudo>{{element.guerrier.nom}}</ng-template>
       <img *ngIf='element.guerrier.grade' src="{{ element.guerrier.grade }}" alt="Officier">
@@ -20,7 +20,7 @@
   <ng-container matColumnDef="druide">
     <th mat-header-cell *matHeaderCellDef> Druide </th>
     <td mat-cell *matCellDef="let element">
-      <img *ngIf="element.druide.nom" class="logoClass" src="../../../assets/img/class/druidferal.png" alt="Druide Féral">
+      <img *ngIf="element.druide.nom" class="logoClass" src="/assets/img/class/druidferal.png" alt="Druide Féral">
       <a *ngIf="element.druide.url; else pseudo" href="{{ element.druide.url }}" target=”_blank”>{{element.druide.nom}}</a>
       <ng-template #pseudo>{{element.druide.nom}}</ng-template>
       <img *ngIf='element.druide.grade' src="{{ element.druide.grade }}" alt="Officier">

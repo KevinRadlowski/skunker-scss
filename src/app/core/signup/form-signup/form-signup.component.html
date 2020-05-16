@@ -76,7 +76,7 @@
         <label class="checkcontainer">
           <input type="radio" class="d-none" id="selected" (click)="selectHomme()" name="genre" value="Homme" checked>
           <div class="select" for="selected">
-            <img class="imgRace" src="../../../../assets/img/male.jpg" alt="Male">
+            <img class="imgRace" src="/assets/img/male.jpg" alt="Male">
             <p>Homme</p>
           </div>
         </label>
@@ -85,7 +85,7 @@
         <label class="checkcontainer">
           <input type="radio" class="d-none" id="selected" (click)="selectFemme()" name="genre" value="Femme">
           <div class="select" for="selected">
-            <img class="imgRace" src="../../../../assets/img/femelle.jpg" alt="Femelle">
+            <img class="imgRace" src="/assets/img/femelle.jpg" alt="Femelle">
             <p>Femme</p>
           </div>
         </label>
@@ -102,7 +102,7 @@
         <label class="checkcontainer">
           <input type="radio" class="d-none" id="selected" formControlName="race" value="Orc" (click)="clickOrc()">
           <div class="select" for="selected">
-            <img class="imgRace" src="../../../../assets/img/races/orc-m.png" alt="Orc Homme">
+            <img class="imgRace" src="/assets/img/races/orc-m.png" alt="Orc Homme">
             <p>Orc</p>
           </div>
         </label>
@@ -111,7 +111,7 @@
         <label class="checkcontainer">
           <input type="radio" class="d-none" id="selected" formControlName="race" value="Troll" (click)="clickTroll()">
           <div class="select" for="selected">
-            <img class="imgRace" src="../../../../assets/img/races/troll-m.png" alt="Troll Homme">
+            <img class="imgRace" src="/assets/img/races/troll-m.png" alt="Troll Homme">
             <p>Troll</p>
           </div>
         </label>
@@ -121,7 +121,7 @@
           <input type="radio" class="d-none" id="selected" formControlName="race" value="Tauren"
             (click)="clickTauren()">
           <div class="select" for="selected">
-            <img class="imgRace" src="../../../../assets/img/races/tauren-m.png" alt="Tauren Homme">
+            <img class="imgRace" src="/assets/img/races/tauren-m.png" alt="Tauren Homme">
             <p>Tauren</p>
           </div>
         </label>
@@ -131,7 +131,7 @@
           <input type="radio" class="d-none" id="selected" formControlName="race" value="Mort-vivant"
             (click)="clickMortVivant()">
           <div class="select" for="selected">
-            <img class="imgRace" src="../../../../assets/img/races/mortvivant-m.png" alt="Mort-vivant Homme">
+            <img class="imgRace" src="/assets/img/races/mortvivant-m.png" alt="Mort-vivant Homme">
             <p>Mort-vivant</p>
           </div>
         </label>
@@ -142,7 +142,7 @@
         <label class="checkcontainer">
           <input type="radio" class="d-none" id="selected" formControlName="race" value="Orc" (click)="clickOrc()">
           <div class="select" for="selected">
-            <img class="imgRace" src="../../../../assets/img/races/orc-f.png" alt="Orc Femme">
+            <img class="imgRace" src="/assets/img/races/orc-f.png" alt="Orc Femme">
             <p>Orc</p>
           </div>
         </label>
@@ -151,7 +151,7 @@
         <label class="checkcontainer">
           <input type="radio" class="d-none" id="selected" formControlName="race" value="Troll" (click)="clickTroll()">
           <div class="select" for="selected">
-            <img class="imgRace" src="../../../../assets/img/races/troll-f.png" alt="Troll Femme">
+            <img class="imgRace" src="/assets/img/races/troll-f.png" alt="Troll Femme">
             <p>Troll</p>
           </div>
         </label>
@@ -161,7 +161,7 @@
           <input type="radio" class="d-none" id="selected" formControlName="race" value="Tauren"
             (click)="clickTauren()">
           <div class="select" for="selected">
-            <img class="imgRace" src="../../../../assets/img/races/tauren-f.png" alt="Tauren Femme">
+            <img class="imgRace" src="/assets/img/races/tauren-f.png" alt="Tauren Femme">
             <p>Tauren</p>
           </div>
         </label>
@@ -171,7 +171,7 @@
           <input type="radio" class="d-none" id="selected" formControlName="race" value="Mort-vivant"
             (click)="clickMortVivant()">
           <div class="select" for="selected">
-            <img class="imgRace" src="../../../../assets/img/races/mortvivant-f.png" alt="Mort-vivant Femme">
+            <img class="imgRace" src="/assets/img/races/mortvivant-f.png" alt="Mort-vivant Femme">
             <p>Mort-vivant</p>
           </div>
         </label>
@@ -189,14 +189,14 @@
           <div *ngIf='disableGuerrier == true'>
             <input type="radio" class="d-none" formControlName="classe" value="Guerrier" disabled>
             <div class="select">
-              <img class="imgClasseDisabled" src="../../../../assets/img/classes/guerrier.png" alt="Guerrier">
+              <img class="imgClasseDisabled" src="/assets/img/classes/guerrier.png" alt="Guerrier">
               <p>Guerrier</p>
             </div>
           </div>
           <div *ngIf='!disableGuerrier == true'>
             <input type="radio" class="d-none" id="selected" formControlName="classe" value="Guerrier">
             <div class="select" for="selected">
-              <img class="imgClasse" src="../../../../assets/img/classes/guerrier.png" alt="Guerrier">
+              <img class="imgClasse" src="/assets/img/classes/guerrier.png" alt="Guerrier">
               <p>Guerrier</p>
             </div>
           </div>
@@ -207,14 +207,14 @@
           <div *ngIf='disableVoleur == true'>
             <input type="radio" class="d-none" formControlName="classe" value="Voleur" disabled>
             <div class="select">
-              <img class="imgClasseDisabled" src="../../../../assets/img/classes/voleur.png" alt="Voleur">
+              <img class="imgClasseDisabled" src="/assets/img/classes/voleur.png" alt="Voleur">
               <p>Voleur</p>
             </div>
           </div>
           <div *ngIf='!disableVoleur == true'>
             <input type="radio" class="d-none" id="selected" formControlName="classe" value="Voleur">
             <div class="select" for="selected">
-              <img class="imgClasse" src="../../../../assets/img/classes/voleur.png" alt="Voleur">
+              <img class="imgClasse" src="/assets/img/classes/voleur.png" alt="Voleur">
               <p>Voleur</p>
             </div>
           </div>
@@ -225,14 +225,14 @@
           <div *ngIf='disableChasseur == true'>
             <input type="radio" class="d-none" formControlName="classe" value="Chasseur" disabled>
             <div class="select">
-              <img class="imgClasseDisabled" src="../../../../assets/img/classes/chasseur.png" alt="Chasseur">
+              <img class="imgClasseDisabled" src="/assets/img/classes/chasseur.png" alt="Chasseur">
               <p>Chasseur</p>
             </div>
           </div>
           <div *ngIf='!disableChasseur == true'>
             <input type="radio" class="d-none" id="selected" formControlName="classe" value="Chasseur">
             <div class="select" for="selected">
-              <img class="imgClasse" src="../../../../assets/img/classes/chasseur.png" alt="Chasseur">
+              <img class="imgClasse" src="/assets/img/classes/chasseur.png" alt="Chasseur">
               <p>Chasseur</p>
             </div>
           </div>
@@ -243,14 +243,14 @@
           <div *ngIf='disableDemoniste == true'>
             <input type="radio" class="d-none" formControlName="classe" value="Démoniste" disabled>
             <div class="select">
-              <img class="imgClasseDisabled" src="../../../../assets/img/classes/demoniste.jpg" alt="Démoniste">
+              <img class="imgClasseDisabled" src="/assets/img/classes/demoniste.jpg" alt="Démoniste">
               <p>Démoniste</p>
             </div>
           </div>
           <div *ngIf='!disableDemoniste == true'>
             <input type="radio" class="d-none" id="selected" formControlName="classe" value="Démoniste">
             <div class="select" for="selected">
-              <img class="imgClasse" src="../../../../assets/img/classes/demoniste.jpg" alt="Démoniste">
+              <img class="imgClasse" src="/assets/img/classes/demoniste.jpg" alt="Démoniste">
               <p>Démoniste</p>
             </div>
           </div>
@@ -261,14 +261,14 @@
           <div *ngIf='disableMage == true'>
             <input type="radio" class="d-none" formControlName="classe" value="Mage" disabled>
             <div class="select">
-              <img class="imgClasseDisabled" src="../../../../assets/img/classes/mage.png" alt="Mage">
+              <img class="imgClasseDisabled" src="/assets/img/classes/mage.png" alt="Mage">
               <p>Mage</p>
             </div>
           </div>
           <div *ngIf='!disableMage == true'>
             <input type="radio" class="d-none" id="selected" formControlName="classe" value="Mage">
             <div class="select" for="selected">
-              <img class="imgClasse" src="../../../../assets/img/classes/mage.png" alt="Mage">
+              <img class="imgClasse" src="/assets/img/classes/mage.png" alt="Mage">
               <p>Mage</p>
             </div>
           </div>
@@ -279,14 +279,14 @@
           <div *ngIf='disablePretre == true'>
             <input type="radio" class="d-none" formControlName="classe" value="Prêtre" disabled>
             <div class="select">
-              <img class="imgClasseDisabled" src="../../../../assets/img/classes/pretre.png" alt="Prêtre">
+              <img class="imgClasseDisabled" src="/assets/img/classes/pretre.png" alt="Prêtre">
               <p>Prêtre</p>
             </div>
           </div>
           <div *ngIf='!disablePretre == true'>
             <input type="radio" class="d-none" id="selected" formControlName="classe" value="Prêtre">
             <div class="select" for="selected">
-              <img class="imgClasse" src="../../../../assets/img/classes/pretre.png" alt="Prêtre">
+              <img class="imgClasse" src="/assets/img/classes/pretre.png" alt="Prêtre">
               <p>Prêtre</p>
             </div>
           </div>
@@ -297,14 +297,14 @@
           <div *ngIf='disableDruide == true'>
             <input type="radio" class="d-none" formControlName="classe" value="Druide" disabled>
             <div class="select">
-              <img class="imgClasseDisabled" src="../../../../assets/img/classes/druide.png" alt="Druide">
+              <img class="imgClasseDisabled" src="/assets/img/classes/druide.png" alt="Druide">
               <p>Druide</p>
             </div>
           </div>
           <div *ngIf='!disableDruide == true'>
             <input type="radio" class="d-none" id="selected" formControlName="classe" value="Druide">
             <div class="select" for="selected">
-              <img class="imgClasse" src="../../../../assets/img/classes/druide.png" alt="Druide">
+              <img class="imgClasse" src="/assets/img/classes/druide.png" alt="Druide">
               <p>Druide</p>
             </div>
           </div>
@@ -315,16 +315,51 @@
           <div *ngIf='disableChaman == true'>
             <input type="radio" class="d-none" formControlName="classe" value="Chaman" disabled>
             <div class="select">
-              <img class="imgClasseDisabled" src="../../../../assets/img/classes/chaman.png" alt="Chaman">
+              <img class="imgClasseDisabled" src="/assets/img/classes/chaman.png" alt="Chaman">
               <p>Chaman</p>
             </div>
           </div>
           <div *ngIf='!disableChaman == true'>
             <input type="radio" class="d-none" id="selected" formControlName="classe" value="Chaman">
             <div class="select" for="selected">
-              <img class="imgClasse" src="../../../../assets/img/classes/chaman.png" alt="Chaman">
+              <img class="imgClasse" src="/assets/img/classes/chaman.png" alt="Chaman">
               <p>Chaman</p>
             </div>
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <mat-divider class="mb-3"></mat-divider>
+
+    <div class="col-sm-12 titres">
+      <h2>Rôle*</h2>
+    </div>
+    <div class="form-row formRole d-flex justify-content-center">
+      <div class="form-group col-md-2 d-flex justify-content-center">
+        <label class="checkcontainer">
+          <input type="radio" class="d-none" id="selected" formControlName="specialisation" value="Tank">
+          <div class="select" for="selected">
+            <img class="imgClasse" src="/assets/img/classes/tank.png" alt="Tank">
+            <p>Tank</p>
+          </div>
+        </label>
+      </div>
+      <div class="form-group col-md-2 d-flex justify-content-center">
+        <label class="checkcontainer">
+          <input type="radio" class="d-none" id="selected" formControlName="specialisation" value="DPS">
+          <div class="select" for="selected">
+            <img class="imgClasse" src="/assets/img/classes/dps.png" alt="DPS">
+            <p>DPS</p>
+          </div>
+        </label>
+      </div>
+      <div class="form-group col-md-2 d-flex justify-content-center">
+        <label class="checkcontainer">
+          <input type="radio" class="d-none" id="selected" formControlName="specialisation" value="Heal">
+          <div class="select" for="selected">
+            <img class="imgClasse" src="/assets/img/classes/healer.png" alt="Heal">
+            <p>Tank</p>
           </div>
         </label>
       </div>
@@ -360,7 +395,7 @@
               <div *ngIf='disableDepecageUn == true'>
                 <input type="radio" class="d-none" formControlName="premierMetier" value="Dépeçage" disabled>
                 <div class="select">
-                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/depecage.jpg" alt="Dépeçage">
+                  <img class="imgClasseDisabled" src="/assets/img/metiers/depecage.jpg" alt="Dépeçage">
                   <p>Dépeçage</p>
                 </div>
               </div>
@@ -368,7 +403,7 @@
                 <input type="radio" class="d-none" id="selected" formControlName="premierMetier" value="Dépeçage"
                   (click)="choiceDepecageUn()">
                 <div class="select" for="selected">
-                  <img class="imgClasse" src="../../../../assets/img/metiers/depecage.jpg" alt="Dépeçage">
+                  <img class="imgClasse" src="/assets/img/metiers/depecage.jpg" alt="Dépeçage">
                   <p>Dépeçage</p>
                 </div>
               </div>
@@ -379,7 +414,7 @@
               <div *ngIf='disableHerboristeUn == true'>
                 <input type="radio" class="d-none" formControlName="premierMetier" value="Herboriste" disabled>
                 <div class="select">
-                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/herboriste.jpg" alt="Herboriste">
+                  <img class="imgClasseDisabled" src="/assets/img/metiers/herboriste.jpg" alt="Herboriste">
                   <p>Herboriste</p>
                 </div>
               </div>
@@ -387,7 +422,7 @@
                 <input type="radio" class="d-none" id="selected" formControlName="premierMetier" value="Herboriste"
                   (click)="choiceHerboUn()">
                 <div class="select" for="selected">
-                  <img class="imgClasse" src="../../../../assets/img/metiers/herboriste.jpg" alt="Herboriste">
+                  <img class="imgClasse" src="/assets/img/metiers/herboriste.jpg" alt="Herboriste">
                   <p>Herboriste</p>
                 </div>
               </div>
@@ -398,7 +433,7 @@
               <div *ngIf='disableMineurUn == true'>
                 <input type="radio" class="d-none" formControlName="premierMetier" value="Mineur" disabled>
                 <div class="select">
-                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/mineur.jpg" alt="Mineur">
+                  <img class="imgClasseDisabled" src="/assets/img/metiers/mineur.jpg" alt="Mineur">
                   <p>Mineur</p>
                 </div>
               </div>
@@ -406,7 +441,7 @@
                 <input type="radio" class="d-none" id="selected" formControlName="premierMetier" value="Mineur"
                   (click)="choiceMineurUn()">
                 <div class="select" for="selected">
-                  <img class="imgClasse" src="../../../../assets/img/metiers/mineur.jpg" alt="Mineur">
+                  <img class="imgClasse" src="/assets/img/metiers/mineur.jpg" alt="Mineur">
                   <p>Mineur</p>
                 </div>
               </div>
@@ -419,7 +454,7 @@
               <div *ngIf='disableTdcUn == true'>
                 <input type="radio" class="d-none" formControlName="premierMetier" value="Travail du cuir" disabled>
                 <div class="select">
-                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/travailducuir.jpg"
+                  <img class="imgClasseDisabled" src="/assets/img/metiers/travailducuir.jpg"
                     alt="Travail du cuir">
                   <p>Travail du cuir</p>
                 </div>
@@ -428,7 +463,7 @@
                 <input type="radio" class="d-none" id="selected" formControlName="premierMetier" value="Travail du cuir"
                   (click)="choiceTdcUn()">
                 <div class="select" for="selected">
-                  <img class="imgClasse" src="../../../../assets/img/metiers/travailducuir.jpg" alt="Travail du cuir">
+                  <img class="imgClasse" src="/assets/img/metiers/travailducuir.jpg" alt="Travail du cuir">
                   <p>Travail du cuir</p>
                 </div>
               </div>
@@ -439,7 +474,7 @@
               <div *ngIf='disableCouturierUn == true'>
                 <input type="radio" class="d-none" formControlName="premierMetier" value="Couturier" disabled>
                 <div class="select">
-                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/couturier.jpg" alt="Couturier">
+                  <img class="imgClasseDisabled" src="/assets/img/metiers/couturier.jpg" alt="Couturier">
                   <p>Couturier</p>
                 </div>
               </div>
@@ -447,7 +482,7 @@
                 <input type="radio" class="d-none" id="selected" formControlName="premierMetier" value="Couturier"
                   (click)="choiceCouturierUn()">
                 <div class="select" for="selected">
-                  <img class="imgClasse" src="../../../../assets/img/metiers/couturier.jpg" alt="Couturier">
+                  <img class="imgClasse" src="/assets/img/metiers/couturier.jpg" alt="Couturier">
                   <p>Couturier</p>
                 </div>
               </div>
@@ -458,7 +493,7 @@
               <div *ngIf='disableEnchanteurUn == true'>
                 <input type="radio" class="d-none" formControlName="premierMetier" value="Enchanteur" disabled>
                 <div class="select">
-                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/enchanteur.jpg" alt="Enchanteur">
+                  <img class="imgClasseDisabled" src="/assets/img/metiers/enchanteur.jpg" alt="Enchanteur">
                   <p>Enchanteur</p>
                 </div>
               </div>
@@ -466,7 +501,7 @@
                 <input type="radio" class="d-none" id="selected" formControlName="premierMetier" value="Enchanteur"
                   (click)="choiceEnchantUn()">
                 <div class="select" for="selected">
-                  <img class="imgClasse" src="../../../../assets/img/metiers/enchanteur.jpg" alt="Enchanteur">
+                  <img class="imgClasse" src="/assets/img/metiers/enchanteur.jpg" alt="Enchanteur">
                   <p>Enchanteur</p>
                 </div>
               </div>
@@ -479,7 +514,7 @@
               <div *ngIf='disableAlchiUn == true'>
                 <input type="radio" class="d-none" formControlName="premierMetier" value="Alchimiste" disabled>
                 <div class="select">
-                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/alchimiste.png" alt="Alchimiste">
+                  <img class="imgClasseDisabled" src="/assets/img/metiers/alchimiste.png" alt="Alchimiste">
                   <p>Alchimiste</p>
                 </div>
               </div>
@@ -487,7 +522,7 @@
                 <input type="radio" class="d-none" id="selected" formControlName="premierMetier" value="Alchimiste"
                   (click)="choiceAlchiUn()">
                 <div class="select" for="selected">
-                  <img class="imgClasse" src="../../../../assets/img/metiers/alchimiste.png" alt="Alchimiste">
+                  <img class="imgClasse" src="/assets/img/metiers/alchimiste.png" alt="Alchimiste">
                   <p>Alchimiste</p>
                 </div>
               </div>
@@ -498,7 +533,7 @@
               <div *ngIf='disableForgeUn == true'>
                 <input type="radio" class="d-none" formControlName="premierMetier" value="Forgeron" disabled>
                 <div class="select">
-                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/forgeron.jpg" alt="Forgeron">
+                  <img class="imgClasseDisabled" src="/assets/img/metiers/forgeron.jpg" alt="Forgeron">
                   <p>Forgeron</p>
                 </div>
               </div>
@@ -506,7 +541,7 @@
                 <input type="radio" class="d-none" id="selected" formControlName="premierMetier" value="Forgeron"
                   (click)="choiceForgeUn()">
                 <div class="select" for="selected">
-                  <img class="imgClasse" src="../../../../assets/img/metiers/forgeron.jpg" alt="Forgeron">
+                  <img class="imgClasse" src="/assets/img/metiers/forgeron.jpg" alt="Forgeron">
                   <p>Forgeron</p>
                 </div>
               </div>
@@ -517,7 +552,7 @@
               <div *ngIf='disableIngeUn == true'>
                 <input type="radio" class="d-none" formControlName="premierMetier" value="Ingénieur" disabled>
                 <div class="select">
-                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/ingénieur.jpg" alt="Ingénieur">
+                  <img class="imgClasseDisabled" src="/assets/img/metiers/ingénieur.jpg" alt="Ingénieur">
                   <p>Ingénieur</p>
                 </div>
               </div>
@@ -525,7 +560,7 @@
                 <input type="radio" class="d-none" id="selected" formControlName="premierMetier" value="Ingénieur"
                   (click)="choiceIngeUn()">
                 <div class="select" for="selected">
-                  <img class="imgClasse" src="../../../../assets/img/metiers/ingénieur.jpg" alt="Ingénieur">
+                  <img class="imgClasse" src="/assets/img/metiers/ingénieur.jpg" alt="Ingénieur">
                   <p>Ingénieur</p>
                 </div>
               </div>
@@ -553,7 +588,7 @@
               <input type="radio" class="d-none" id="selected" formControlName="premierMetier" value="Aucun"
                 (click)="choiceAucunUn()">
               <div class="select" for="selected">
-                <img class="imgClasse" src="../../../../assets/img/croix.png" alt="Aucun">
+                <img class="imgClasse" src="/assets/img/croix.png" alt="Aucun">
                 <p>Aucun</p>
               </div>
             </label>
@@ -572,7 +607,7 @@
               <div *ngIf='disableDepecageDeux == true'>
                 <input type="radio" class="d-none" formControlName="secondMetier" value="Dépeçage" disabled>
                 <div class="select">
-                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/depecage.jpg" alt="Dépeçage">
+                  <img class="imgClasseDisabled" src="/assets/img/metiers/depecage.jpg" alt="Dépeçage">
                   <p>Dépeçage</p>
                 </div>
               </div>
@@ -580,7 +615,7 @@
                 <input type="radio" class="d-none" id="selected" formControlName="secondMetier" value="Dépeçage"
                   (click)="choiceDepecageDeux()">
                 <div class="select" for="selected">
-                  <img class="imgClasse" src="../../../../assets/img/metiers/depecage.jpg" alt="Dépeçage">
+                  <img class="imgClasse" src="/assets/img/metiers/depecage.jpg" alt="Dépeçage">
                   <p>Dépeçage</p>
                 </div>
               </div>
@@ -591,7 +626,7 @@
               <div *ngIf='disableHerboristeDeux == true'>
                 <input type="radio" class="d-none" formControlName="secondMetier" value="Herboriste" disabled>
                 <div class="select">
-                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/herboriste.jpg" alt="Herboriste">
+                  <img class="imgClasseDisabled" src="/assets/img/metiers/herboriste.jpg" alt="Herboriste">
                   <p>Herboriste</p>
                 </div>
               </div>
@@ -599,7 +634,7 @@
                 <input type="radio" class="d-none" id="selected" formControlName="secondMetier" value="Herboriste"
                   (click)="choiceHerboDeux()">
                 <div class="select" for="selected">
-                  <img class="imgClasse" src="../../../../assets/img/metiers/herboriste.jpg" alt="Herboriste">
+                  <img class="imgClasse" src="/assets/img/metiers/herboriste.jpg" alt="Herboriste">
                   <p>Herboriste</p>
                 </div>
               </div>
@@ -611,7 +646,7 @@
               <div *ngIf='disableMineurDeux == true'>
                 <input type="radio" class="d-none" formControlName="secondMetier" value="Mineur" disabled>
                 <div class="select">
-                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/mineur.jpg" alt="Mineur">
+                  <img class="imgClasseDisabled" src="/assets/img/metiers/mineur.jpg" alt="Mineur">
                   <p>Mineur</p>
                 </div>
               </div>
@@ -619,7 +654,7 @@
                 <input type="radio" class="d-none" id="selected" formControlName="secondMetier" value="Mineur"
                   (click)="choiceMineurDeux()">
                 <div class="select" for="selected">
-                  <img class="imgClasse" src="../../../../assets/img/metiers/mineur.jpg" alt="Mineur">
+                  <img class="imgClasse" src="/assets/img/metiers/mineur.jpg" alt="Mineur">
                   <p>Mineur</p>
                 </div>
               </div>
@@ -632,7 +667,7 @@
               <div *ngIf='disableTdcDeux == true'>
                 <input type="radio" class="d-none" formControlName="secondMetier" value="Travail du cuir" disabled>
                 <div class="select">
-                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/travailducuir.jpg"
+                  <img class="imgClasseDisabled" src="/assets/img/metiers/travailducuir.jpg"
                     alt="Travail du cuir">
                   <p>Travail du cuir</p>
                 </div>
@@ -641,7 +676,7 @@
                 <input type="radio" class="d-none" id="selected" formControlName="secondMetier" value="Travail du cuir"
                   (click)="choiceTdcDeux()">
                 <div class="select" for="selected">
-                  <img class="imgClasse" src="../../../../assets/img/metiers/travailducuir.jpg" alt="Travail du cuir">
+                  <img class="imgClasse" src="/assets/img/metiers/travailducuir.jpg" alt="Travail du cuir">
                   <p>Travail du cuir</p>
                 </div>
               </div>
@@ -653,7 +688,7 @@
               <div *ngIf='disableCouturierDeux == true'>
                 <input type="radio" class="d-none" formControlName="secondMetier" value="Couturier" disabled>
                 <div class="select">
-                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/couturier.jpg" alt="Couturier">
+                  <img class="imgClasseDisabled" src="/assets/img/metiers/couturier.jpg" alt="Couturier">
                   <p>Couturier</p>
                 </div>
               </div>
@@ -661,7 +696,7 @@
                 <input type="radio" class="d-none" id="selected" formControlName="secondMetier" value="Couturier"
                   (click)="choiceCouturierDeux()">
                 <div class="select" for="selected">
-                  <img class="imgClasse" src="../../../../assets/img/metiers/couturier.jpg" alt="Couturier">
+                  <img class="imgClasse" src="/assets/img/metiers/couturier.jpg" alt="Couturier">
                   <p>Couturier</p>
                 </div>
               </div>
@@ -672,7 +707,7 @@
               <div *ngIf='disableEnchanteurDeux == true'>
                 <input type="radio" class="d-none" formControlName="secondMetier" value="Enchanteur" disabled>
                 <div class="select">
-                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/enchanteur.jpg" alt="Enchanteur">
+                  <img class="imgClasseDisabled" src="/assets/img/metiers/enchanteur.jpg" alt="Enchanteur">
                   <p>Enchanteur</p>
                 </div>
               </div>
@@ -680,7 +715,7 @@
                 <input type="radio" class="d-none" id="selected" formControlName="secondMetier" value="Enchanteur"
                   (click)="choiceEnchantDeux()">
                 <div class="select" for="selected">
-                  <img class="imgClasse" src="../../../../assets/img/metiers/enchanteur.jpg" alt="Enchanteur">
+                  <img class="imgClasse" src="/assets/img/metiers/enchanteur.jpg" alt="Enchanteur">
                   <p>Enchanteur</p>
                 </div>
               </div>
@@ -693,7 +728,7 @@
               <div *ngIf='disableAlchiDeux == true'>
                 <input type="radio" class="d-none" formControlName="secondMetier" value="Alchimiste" disabled>
                 <div class="select">
-                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/alchimiste.png" alt="Alchimiste">
+                  <img class="imgClasseDisabled" src="/assets/img/metiers/alchimiste.png" alt="Alchimiste">
                   <p>Alchimiste</p>
                 </div>
               </div>
@@ -701,7 +736,7 @@
                 <input type="radio" class="d-none" id="selected" formControlName="secondMetier" value="Alchimiste"
                   (click)="choiceAlchiDeux()">
                 <div class="select" for="selected">
-                  <img class="imgClasse" src="../../../../assets/img/metiers/alchimiste.png" alt="Alchimiste">
+                  <img class="imgClasse" src="/assets/img/metiers/alchimiste.png" alt="Alchimiste">
                   <p>Alchimiste</p>
                 </div>
               </div>
@@ -712,7 +747,7 @@
               <div *ngIf='disableForgeDeux == true'>
                 <input type="radio" class="d-none" formControlName="secondMetier" value="Forgeron" disabled>
                 <div class="select">
-                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/forgeron.jpg" alt="Forgeron">
+                  <img class="imgClasseDisabled" src="/assets/img/metiers/forgeron.jpg" alt="Forgeron">
                   <p>Forgeron</p>
                 </div>
               </div>
@@ -720,7 +755,7 @@
                 <input type="radio" class="d-none" id="selected" formControlName="secondMetier" value="Forgeron"
                   (click)="choiceForgeDeux()">
                 <div class="select" for="selected">
-                  <img class="imgClasse" src="../../../../assets/img/metiers/forgeron.jpg" alt="Forgeron">
+                  <img class="imgClasse" src="/assets/img/metiers/forgeron.jpg" alt="Forgeron">
                   <p>Forgeron</p>
                 </div>
               </div>
@@ -731,7 +766,7 @@
               <div *ngIf='disableIngeDeux == true'>
                 <input type="radio" class="d-none" formControlName="secondMetier" value="Ingénieur" disabled>
                 <div class="select">
-                  <img class="imgClasseDisabled" src="../../../../assets/img/metiers/ingénieur.jpg" alt="Ingénieur">
+                  <img class="imgClasseDisabled" src="/assets/img/metiers/ingénieur.jpg" alt="Ingénieur">
                   <p>Ingénieur</p>
                 </div>
               </div>
@@ -739,7 +774,7 @@
                 <input type="radio" class="d-none" id="selected" formControlName="secondMetier" value="Ingénieur"
                   (click)="choiceIngeDeux()">
                 <div class="select" for="selected">
-                  <img class="imgClasse" src="../../../../assets/img/metiers/ingénieur.jpg" alt="Ingénieur">
+                  <img class="imgClasse" src="/assets/img/metiers/ingénieur.jpg" alt="Ingénieur">
                   <p>Ingénieur</p>
                 </div>
               </div>
@@ -768,7 +803,7 @@
               <input type="radio" class="d-none" id="selected" formControlName="secondMetier" value="Aucun"
                 (click)="choiceAucunDeux()">
               <div class="select" for="selected">
-                <img class="imgClasse" src="../../../../assets/img/croix.png" alt="Aucun">
+                <img class="imgClasse" src="/assets/img/croix.png" alt="Aucun">
                 <p>Aucun</p>
               </div>
             </label>

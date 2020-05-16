@@ -5,13 +5,13 @@
   <div fxLayout.md="row" ngClass.gt-md="toolbarWidth" ngClass.md="toolbarWidthMd" fxLayoutAlign="space-between center">
     <div fxLayoutAlign="none center">
       <a routerLink="/" class="homeLogo" fxLayoutAlign="none center">
-        <img class="logo-navbar" src="../assets/img/navbar-logo1.png" alt="Logo">
+        <img class="logo-navbar" src="/assets/img/navbar-logo1.png" alt="Logo">
       </a>
       <a class="navlink" routerLink="/index" routerLinkActive="router-link-active">Accueil</a>
       <!-- <a class="navlink" routerLink="/blog" routerLinkActive="router-link-active">Articles</a> -->
       <a class="navlink" routerLink="/rosters">Rosters</a>
       <a class="navlink" routerLink="/en-construction">Guides</a>
-      <a *ngIf="discordLink" class="navlink btnDiscord" href="{{discordLink.discord}}" target="_blank"><img src="../../assets/img/Discord-Logo.png" alt="Discord"></a>
+      <a *ngIf="discordLink" class="navlink btnDiscord" href="{{discordLink.discord}}" target="_blank"><img src="/assets/img/Discord-Logo.png" alt="Discord"></a>
 
     </div>
     <div fxLayoutAlign="none center">
@@ -40,7 +40,7 @@
         </button>
       </div>
       <a routerLink="/" class="homeLogo" (click)="snav.close();" fxLayoutAlign="none center">
-        <img class="logo-navbar" src="../assets/img/navbar-logo1.png" alt="Logo">
+        <img class="logo-navbar" src="/assets/img/navbar-logo1.png" alt="Logo">
         NGTH
       </a>
       <span class="toolbar-spacer"></span>
@@ -54,7 +54,7 @@
         <a mat-list-item class="navlink" (click)="snav.close();" routerLink="/rosters">Rosters</a>
         <a mat-list-item class="navlink" (click)="snav.close();" routerLink="/en-construction">Guides</a>
         <div class="ButtonDiscordRowXs" fxLayoutAlign="center center">
-          <a class="btnDiscord" href="https://discord.gg/sH4g59C" target="_blank"><img src="../../assets/img/Discord-Logo.png" alt="Discord"></a>
+          <a class="btnDiscord" href="https://discord.gg/sH4g59C" target="_blank"><img src="/assets/img/Discord-Logo.png" alt="Discord"></a>
           </div>
       </mat-nav-list>
     </mat-sidenav>

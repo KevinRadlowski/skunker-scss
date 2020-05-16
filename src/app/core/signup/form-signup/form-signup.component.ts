@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { CustomValidators } from '../../services/custom-validators';
+import { CustomValidators } from '../../../paneladmin/services/custom-validators';
 import { Membre } from 'src/app/core/modeles/membre';
 import { TokenStorageService } from 'src/app/core/auth/token-storage.service';
 import { Location } from '@angular/common';
@@ -93,6 +93,10 @@ export class FormSignupComponent implements OnInit {
           Validators.compose([Validators.required])
         ],
         race: [
+          null,
+          Validators.compose([Validators.required])
+        ],
+        specialisation: [
           null,
           Validators.compose([Validators.required])
         ],

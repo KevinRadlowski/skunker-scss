@@ -4,20 +4,20 @@ import { Lightbox } from '@ngx-gallery/lightbox';
 
 const data = [
   {
-    srcUrl: '../../../assets/img/Gallery/img1.jpg',
-    previewUrl: '../../../assets/img/Gallery/img1.jpg'
+    srcUrl: '/assets/img/Gallery/img1.jpg',
+    previewUrl: '/assets/img/Gallery/img1.jpg'
   },
   {
-    srcUrl: '../../../assets/img/Gallery/img2.jpg',
-    previewUrl: '../../../assets/img/Gallery/img2.jpg'
+    srcUrl: '/assets/img/Gallery/img2.jpg',
+    previewUrl: '/assets/img/Gallery/img2.jpg'
   },
   {
-    srcUrl: '../../../assets/img/Gallery/img3.jpg',
-    previewUrl: '../../../assets/img/Gallery/img3.jpg'
+    srcUrl: '/assets/img/Gallery/img3.jpg',
+    previewUrl: '/assets/img/Gallery/img3.jpg'
   },
   {
-    srcUrl: '../../../assets/img/Gallery/img4.jpg',
-    previewUrl: '../../../assets/img/Gallery/img4.jpg'
+    srcUrl: '/assets/img/Gallery/img4.jpg',
+    previewUrl: '/assets/img/Gallery/img4.jpg'
   },
 ];
 
