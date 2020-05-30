@@ -18,11 +18,9 @@ export class AuthGuard implements CanActivate {
             username: this.token.getUsername(),
             authorities: this.token.getAuthorities()
         };
-
-        if (this.info.authorities === 'ROLE_USER') { return true; }
-        else if (this.info.authorities === 'ROLE_MEMBRE') { return true; }
-        else if (this.info.authorities === 'ROLE_OFFICER') { return true; }
-        else if (this.info.authorities === 'ROLE_ADMIN') { return true; }
+        if (this.info.authorities == 'ROLE_MEMBRE') { return true; }
+        else if (this.info.authorities == 'ROLE_OFFICER') { return true; }
+        else if (this.info.authorities == 'ROLE_ADMIN') { return true; }
         else { return false; }
 
 

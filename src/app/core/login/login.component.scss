@@ -1,13 +1,74 @@
 @import '../../../variables';
 
+.labelForm {
+  font-size: 20px;
+  font-family: Helvetica, sans-serif;
+  color: rgb(212, 136, 22);
+  font-weight: bolder;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+.test {
+  padding: 0;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  background-image: url("/assets/img/background/dark-back.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 76vh;
+}
+
+.form-control,
+.form-control:valid,
+.form-control:default,
+.form-control::after,
+.form-control:active,
+.form-control:focus,
+.form-control:focus:active {
+  background: rgba(0, 0, 0, 0.664) !important;
+  border: 2px solid;
+  border-color: rgb(73, 73, 73);
+  color: white;
+  box-shadow: 1px 1px 5px black, -1px -1px 5px black;
+}
+
+input:not(:placeholder-shown) {
+  background-color:  rgba(0, 0, 0, 0.664) !important;
+}
+
+
+input:placeholder-shown {
+  background-color:  rgba(0, 0, 0, 0.664) !important;
+}
+
 button {
-  background-color: $primary;
-  border: 1px solid $secondary;
+  margin-top: 10px;
+  width: 100%;
+  background-color: rgb(151, 0, 0);
+  font-size: 20px;
+  color: rgb(212, 151, 58);
+  font-weight: bolder;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  line-height: 20px;
+  border: 2px solid;
+  border-color: rgb(73, 73, 73);
+  box-shadow: 1px 1px 5px black, -1px -1px 5px black;
 
   &:hover {
     background-color: $secondary;
-    border: 1px solid $secondary;
+    border: 2px solid;
+    border-color: rgb(73, 73, 73);
   }
+}
+
+.btn-loading {
+  width: 80%;
+}
+
+.hidden {
+  display: none;
 }
 
 .row {
@@ -21,4 +82,56 @@ h2 {
 
 #loginFailed {
   color: red;
+}
+
+@media (max-width: 960px) {
+  .dark-portal {
+    display: none;
+  }
+
+  .loginBody {
+    padding-top: 15%;
+  }
+}
+
+@media (min-width: 961px) and (max-width: 1599px) {
+  .dark-portal {
+    display: none;
+  }
+
+  .test {
+    background-image: url("/assets/img/background/the-dark-portal-wallpaper.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position-x: center;
+  }
+
+  .loginBody {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .loginFormBody {
+    margin-left: 100px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .dark-portal {
+    width: 80%;
+    min-height: 100%;
+  }
+
+  .loginBody {
+    position: absolute;
+    top: 68%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .loginFormBody {
+    margin-left: 100px;
+  }
 }

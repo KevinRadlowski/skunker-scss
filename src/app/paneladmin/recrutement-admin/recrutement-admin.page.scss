@@ -1,26 +1,22 @@
 @import '../../../variables';
 
-$primary: rgb(0, 179, 0);
-$secondary: rgb(255, 0, 0);
-$accent: rgb(255, 136, 0);
-
 .mat-button-toggle {
   background-color: $white;
 }
 
 .mat-button-toggle-checked.opened {
-  background-color: $primary;
-  $color: white;
+  background-color: $valid;
+  color: $white;
 }
 
 .mat-button-toggle-checked.closed {
-  background-color: $secondary;
-  $color: white;
+  background-color: $invalid;
+  color: $white;
 }
 
 .mat-button-toggle-checked.limited {
   background-color: $accent;
-  $color: white;
+  color: $white;
 }
 
 
@@ -34,6 +30,19 @@ form {
 }
 
 ::ng-deep thead th {
-  // margin: 20px;
-  // padding: 20px;
+  padding: 10px;
+}
+
+.form-group {
+  padding: 10px;
+  
+  button {
+    background-color: $primary;
+    border: none;
+
+    &:hover{
+        background-color: $secondary;
+    }
+
+}
 }

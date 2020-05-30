@@ -10,6 +10,7 @@ export class AuthGuardOfficier implements CanActivate {
     info: any;
     isMembre = false;
     isOfficier = false;
+    isAdmin = false;
 
     constructor(private router: Router, private token: TokenStorageService) { }
 
@@ -19,7 +20,11 @@ export class AuthGuardOfficier implements CanActivate {
             authorities: this.token.getAuthorities()
         };
 
-        if (this.info.authorities === 'ROLE_OFFICER') { return true; }
+        if (this.info.authorities == 'ROLE_OFFICER') {
+            this.isMembre = true;
+            this.isOfficier = true;
+            return true;
+        }
         else { return false; }
 
 

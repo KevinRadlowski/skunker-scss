@@ -18,6 +18,7 @@ import { LightboxModule } from '@ngx-gallery/lightbox';
 import { GallerizeModule } from '@ngx-gallery/gallerize';
 import { ConfirmationDialogService } from './confirmation-dialog.service';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
+import { PageNonConnecte } from './page-non-connecte/page-non-connecte.page';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-
     EnConstructionComponent,
     BypassHtmlSecurity,
     ConfirmationDialogComponent,
+    PageNonConnecte,
   ],
   imports: [
     BrowserModule,
@@ -58,7 +60,8 @@ import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-
     BypassHtmlSecurity,
     GalleryModule,
     LightboxModule,
-    GallerizeModule
+    GallerizeModule,
+    PageNonConnecte,
   ],
   providers: [
     ConfirmationDialogService

@@ -26,7 +26,8 @@ export class LoginComponent implements OnInit {
     private authService: AuthService,
     private tokenStorage: TokenStorageService,
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private alertService: AlertService,
   ) { }
 
   get f() { return this.loginForm.controls; }

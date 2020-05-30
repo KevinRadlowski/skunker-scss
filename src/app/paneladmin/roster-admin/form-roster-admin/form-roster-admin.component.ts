@@ -98,6 +98,7 @@ export class FormRosterAdminComponent implements OnInit, OnDestroy {
         this.memberAdded.emit('Membre ajouté à la liste!');
         this.loading = true;
         this.alertService.success('Le membre a été ajouté à la liste du roster.', true);
+        window.scroll(0,0);
       }, error => console.log(error));
 
     this.resetForm();
@@ -118,6 +119,7 @@ export class FormRosterAdminComponent implements OnInit, OnDestroy {
         this.memberAdded.emit('Membre édité avec succès!');
         this.loading = true;
         this.alertService.success('Le membre a bien été modifié.', true);
+        window.scroll(0,0);
       }, error => console.log(error));
 
     this.membreId = null;

@@ -26,6 +26,12 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { CoreModule } from './core/core.module';
+import { httpInterceptorProviders } from './core/auth/auth-interceptor';
+import { AuthGuard } from './core/auth/auth.guard';
+import { AuthGuardUser } from './core/auth/auth.guarduser';
+import { AuthGuardMembre } from './core/auth/auth.guardmembre';
+import { AuthGuardAdmin } from './core/auth/auth.guardadmin';
+import { AuthGuardOfficier } from './core/auth/auth.guardofficier';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -59,6 +65,8 @@ export function createTranslateLoader(http: HttpClient) {
     CoreModule,
   ],
   providers: [
+    httpInterceptorProviders, AuthGuard, AuthGuardUser,
+    AuthGuardMembre, AuthGuardOfficier, AuthGuardAdmin,
     GlobalEventsManager,
     { provide: LOCALE_ID, useValue: 'fr-FR' },
     { provide: MatPaginatorIntl, useValue: getFrenchPaginatorIntl() }

@@ -19,7 +19,7 @@ export class AuthGuardUser implements CanActivate {
             authorities: this.token.getAuthorities()
         };
 
-        if (this.info.authorities === 'ROLE_USER') { return true; }
+        if (this.info.authorities == 'ROLE_USER') { return true; }
         else { return false; }
 
 

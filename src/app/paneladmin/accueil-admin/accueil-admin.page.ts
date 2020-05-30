@@ -11,6 +11,7 @@ import { tap, take } from 'rxjs/operators';
 export class AccueilAdminPage implements OnInit {
   public discordForm: FormGroup;
   public discordLink: any;
+  public loading = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -45,9 +46,16 @@ export class AccueilAdminPage implements OnInit {
 
   onSubmit() {
     console.log(this.discordForm.value)
-    this.panelAdminService.updateDiscordLink(this.discordForm.value).subscribe(data => {
-      console.log(data);
-    });
+    try {
+      this.loading = true;
+      this.panelAdminService.updateDiscordLink(this.discordForm.value).subscribe(data => {
+        console.log(data);
+
+      });
+    } catch {
+      this.loading = false;
+    }
+
   }
 
 }

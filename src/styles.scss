@@ -17,7 +17,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Dosis');
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+// @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
 
 
 .roboto {
@@ -40,8 +41,12 @@
   font-family: 'Source Sans Pro';
 }
 
-.noto-sans {
-  font-family: 'Noto Sans';
+// .noto-sans {
+//   font-family: 'Noto Sans';
+// }
+.noto-sans-bold {
+  font-family: 'Noto Sans', sans-serif;
+
 }
 
 /* STYLE DE LA PAGE */
@@ -138,7 +143,7 @@ button:focus {outline:0;}
   }
   
   .molten-core {
-    background-image: url(/assets/img/raids-classic/moltencore.jpg);
+    background-image: url(/assets/img/raids-classic/molten-core.jpg);
     background-position-y: 5%;
   }
   

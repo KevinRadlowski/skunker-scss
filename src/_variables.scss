@@ -4,6 +4,11 @@ $secondary: #5a1414;
 $white: #ffffff;
 $black: #000000;
 
+
+$valid: rgb(0, 179, 0);
+$invalid: rgb(255, 0, 0);
+$accent: rgb(255, 136, 0);
+
 /* Ombre de la navbar */
 @mixin box-shadow($params...) {
   -webkit-box-shadow: $params;

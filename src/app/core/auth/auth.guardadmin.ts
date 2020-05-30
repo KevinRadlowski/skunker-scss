@@ -20,7 +20,11 @@ export class AuthGuardAdmin implements CanActivate {
             authorities: this.token.getAuthorities()
         };
 
-        if (this.info.authorities === 'ROLE_ADMIN') { return true; }
+        if (this.info.authorities == 'ROLE_ADMIN') {
+            this.isMembre = true;
+            this.isOfficier = true;
+            this.isAdmin = true;
+            return true; }
         else { return false; }
 
 

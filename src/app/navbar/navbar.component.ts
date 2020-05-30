@@ -38,12 +38,28 @@ export class NavbarComponent implements OnInit, DoCheck {
         username: this.token.getUsername(),
         authorities: this.token.getAuthorities()
       };
-      if (this.info.username !== '' && this.info.username != null) { this.isInfo = true; }
-      else { this.isInfo = false; }
+      if (this.info.username !== '' && this.info.username != null) {
+        this.isInfo = true;
+      } else { this.isInfo = false; }
 
-      if (this.info.authorities[0] !== undefined) { this.isLogged = true; }
-      else { this.isLogged = false; }
+      if (this.info.authorities[0] !== undefined) {
+        this.isLogged = true;
+
+        if (this.info.authorities == "ROLE_ADMIN") {
+          this.isAdmin = true;
+        } else { this.isAdmin = false; }
+
+        if (this.info.authorities == "ROLE_OFFICIER") {
+          this.isOfficier = true;
+        } else { this.isOfficier = false; }
+        
+        if (this.info.authorities == "ROLE_MEMBRE") {
+          this.isMembre = true;
+        } else { this.isMembre = false;}
+      } else { this.isLogged = false; }
     }, 100);
+
+    // console.log(this.info)
   }
 
   ngOnInit() {
