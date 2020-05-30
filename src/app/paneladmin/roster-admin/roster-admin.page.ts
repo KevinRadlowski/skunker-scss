@@ -1,3 +1,4 @@
+// tslint:disable: max-line-length
 import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { Subject } from 'rxjs';
 import { tap } from 'rxjs/operators';
@@ -14,8 +15,9 @@ export class SearchPipe implements PipeTransform {
     public transform(value, keys: string, term: string) {
 
         if (!term) return value;
-        return (value || []).filter(item => keys.split(',').some(key => item.hasOwnProperty(key) && new RegExp(term, 'gi').test(item[key])));
-
+        return (value || [])
+            .filter(item => keys.split(',')
+            .some(key => item.hasOwnProperty(key) && new RegExp(term, 'gi').test(item[key])));
     }
 }
 
@@ -39,23 +41,19 @@ export class RosterAdminPage implements OnInit {
     ) { }
 
     reloadData() {
-        setTimeout(() => {
-            this.panelAdminService.getRosterMemberList().pipe(
-                tap(
-                    (playerList: RosterMembre[]) => {
-                        // tslint:disable-next-line: max-line-length
-                        this.rosterMembreList = playerList.sort((a, b) => (a.pseudo < b.pseudo) ? -1 : (a.pseudo > b.pseudo) ? 1 : 0).sort((a, b) => (a.classe < b.classe) ? -1 : (a.classe > b.classe) ? 1 : 0);
-                        this.tankMembers = playerList.filter(player => player.role === 'tank');
-                        this.dpsMembers = playerList.sort().filter(player => player.role === 'dps');
-                        this.healMembers = playerList.sort().filter(player => player.role === 'heal');
-                    },
-                    (error: HttpErrorResponse) => {
-                        this.alertService.error('Impossible de récupérer les informations du roster.', true);
-                    }
-                )
-            ).subscribe();
-        }, 100);
-
+        this.panelAdminService.getRosterMemberList().pipe(
+            tap(
+                (playerList: RosterMembre[]) => {
+                    this.rosterMembreList = playerList.sort((a, b) => (a.pseudo < b.pseudo) ? -1 : (a.pseudo > b.pseudo) ? 1 : 0).sort((a, b) => (a.classe < b.classe) ? -1 : (a.classe > b.classe) ? 1 : 0);
+                    this.tankMembers = playerList.filter(player => player.role === 'tank');
+                    this.dpsMembers = playerList.sort().filter(player => player.role === 'dps');
+                    this.healMembers = playerList.sort().filter(player => player.role === 'heal');
+                },
+                (error: HttpErrorResponse) => {
+                    this.alertService.error('Impossible de récupérer les informations du roster.', true);
+                }
+            )
+        ).subscribe();
     }
 
     ngOnInit() {
@@ -71,21 +69,20 @@ export class RosterAdminPage implements OnInit {
             .then((confirmed) => {
                 if (confirmed) {
                     this.deleteRosterMembre(i);
+                    this.alertService.success('Le membre a bien été supprimé.', true);
+                    this.reloadData();
                 }
             })
             .catch((error: HttpErrorResponse) => this.alertService.error('Le membre n\'a pas pu être supprimé.'));
     }
 
     updateMember(event: number) {
-        console.log(event)
         this.sendMemberId.next(event);
     }
 
     deleteRosterMembre(i) {
         this.panelAdminService.deleteRosterMember(i)
             .subscribe((data) => {
-                this.alertService.success('Le membre a bien été supprimé.', true);
-                this.reloadData();
             });
     }
 }
