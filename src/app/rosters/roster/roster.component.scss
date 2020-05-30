@@ -1,11 +1,16 @@
 .bodyRoster {
-  background-image: url("/assets/img/nafarianbackground.jpg");
+  background-image: url("/assets/img/background/nafarianbackground.jpg");
   background-size: cover;
   background-attachment: fixed;
+  min-height: 76vh;
 }
 
 .row {
   overflow: auto;
   margin: 0;
+  padding: 0;
+}
+
+app-tank, app-heal, app-dps{
   padding: 0;
 }

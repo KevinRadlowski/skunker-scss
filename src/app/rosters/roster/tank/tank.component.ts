@@ -1,54 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
-export interface PeriodicElement {
-  guerrier: Tank;
-  druide: Tank;
-  position: number;
-}
-
-export class Tank {
-  nom: string;
-  url: string;
-  grade: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  // {
-  //   position: 1,
-  //   guerrier: { nom: 'Iktae', url: '', grade: '' },
-  //   druide: { nom: 'Emboucane', url: '', grade: '' }
-  // },
-  // {
-  //   position: 2,
-  //   guerrier: { nom: 'Lekitch', url: '', grade: '' },
-  //   druide: { nom: '', url: '', grade: '' }
-  // },
-  // {
-  //   position: 3,
-  //   guerrier: { nom: 'Morcheeba', url: '', grade: 'assets/img/skunk-green.png' },
-  //   druide: { nom: '', url: '', grade: '' }
-  // },
-  // {
-  //   position: 4,
-  //   guerrier: { nom: 'Redburne', url: '', grade: '' },
-  //   druide: { nom: '', url: '', grade: '' }
-  // },
-  // {
-  //   position: 5,
-  //   guerrier: { nom: 'Rushzen', url: '', grade: '' },
-  //   druide: { nom: '', url: '', grade: '' }
-  // },
-  // {
-  //   position: 6,
-  //   guerrier: { nom: 'Tombert', url: '', grade: '' },
-  //   druide: { nom: '', url: '', grade: '' }
-  // },
-  // {
-  //   position: 7,
-  //   guerrier: { nom: 'Zyphounet', url: '', grade: '' },
-  //   druide: { nom: '', url: '', grade: '' }
-  // }
-];
+import { RosterMembre } from 'src/app/paneladmin/models/Roster.model';
+import { PanelAdminService } from 'src/app/paneladmin/services/paneladmin.service';
+import { take, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-tank',
@@ -56,11 +9,22 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./tank.component.scss']
 })
 export class TankComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'guerrier', 'druide'];
-  dataSource = ELEMENT_DATA;
-  constructor() { }
+  tankMemberList: RosterMembre[];
+  warMembers;
+  druidMembers;
+  constructor(
+    private panelAdminService: PanelAdminService,
+  ) { }
 
   ngOnInit() {
+    this.panelAdminService.getRosterMemberList().pipe(
+      tap((playerList: RosterMembre[]) => {
+        this.tankMemberList = playerList.filter(player => player.role === 'tank').sort((a, b) => (a.pseudo < b.pseudo) ? -1 : (a.pseudo > b.pseudo) ? 1 : 0);
+        this.warMembers = this.tankMemberList.filter(player => player.classe === 'guerrier');
+        this.druidMembers = this.tankMemberList.filter(player => player.classe === 'druide');
+      }),
+      take(1),
+    ).subscribe();
   }
 
 }

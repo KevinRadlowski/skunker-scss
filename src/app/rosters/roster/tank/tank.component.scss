@@ -4,39 +4,69 @@
   @include text-shadow(2px 2px 13px rgb(0, 76, 163), -2px -2px 13px rgb(0, 76, 163));
 }
 
+%box-shadow-tank {
+  @include box-shadow(2px 2px 7px rgb(0, 76, 163), -2px -2px 7px rgb(0, 76, 163))
+}
+
+.header {
+  img {
+    border-radius: 50%;
+    margin: 15px;
+    background-color: rgb(0, 76, 163);
+    opacity: 1;
+    width: 60px;
+    height: 60px;
+    @extend %box-shadow-tank;
+  }
+}
+
+.rosterTankList {
+  padding: 0;
+  margin: 0 0 10px 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  @extend %text-shadow-tank;
+  @extend %box-shadow-tank;
+  border-radius: 15px;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+
+  mat-list {
+    padding: 8px 0 0 0;
+
+    .mat-list-title {
+      padding-left: 30px;
+      font-size: 18px;
+      border-bottom: 1px solid white;
+    }
+
+    mat-list-item {
+      width: 100%;
+      font-size: medium;
+      color: white;
+      // border-bottom: 1px solid white;
+      padding: 0;
+
+      &:last-child {
+        border: none;
+      }
+    }
+
+    mat-list-item:hover {
+      background-color: rgb(34, 34, 34);
+    }
+  }
+}
+
 .titleTank {
   text-shadow: 10px 10px 25px rgb(0, 76, 163), -10px -10px 25px rgb(0, 76, 163), -10px 10px 25px rgb(0, 76, 163), 10px -10px 25px rgb(0, 76, 163);
   padding-top: 15px;
   color: rgb(255, 255, 255);
 }
 
-table {
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.215);
-  @extend %text-shadow-tank;
 
-  :hover {
-    background-color: rgb(34, 34, 34);
-  }
 
-  th {
-    font-size: large;
-  }
-
-  th,
-  td {
-    color: white;
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
-  }
-}
-
-.logoClass {
-  width: 25px;
-  margin-right: 5px;
-}
-
-img {
-  width: 25px;
-  margin-left: 5px;
-}
+// img {
+//   width: 35px;
+//   margin-left: 5px;
+// }

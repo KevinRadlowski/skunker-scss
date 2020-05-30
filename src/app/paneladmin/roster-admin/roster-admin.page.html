@@ -1,0 +1,94 @@
+<app-alert></app-alert>
+<div class="container-fluid">
+
+  <div class="row d-flex">
+
+    <div class="col-md-5 col-xl-4 p-0 m-0">
+      <mat-list class="p-3">
+        <mat-form-field appearance="outline" class="col-12">
+          <mat-label>Filtrer les résultats :</mat-label>
+          <input matInput [(ngModel)]="query" placeholder="Ex. Maìden">
+        </mat-form-field>
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Tank
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-divider></mat-divider>
+            <mat-list-item *ngFor="let player of tankMembers | search:'pseudo':query">
+              <div class="item-list">
+                <div class="row align-items-center left-content">
+                  <img [src]="player.img" mat-list-icon>
+                  <div>{{player.pseudo}}</div>
+                </div>
+                <div class="modifyButton">
+                  <button mat-icon-button (click)="updateMember(player.id)">
+                    <mat-icon>create</mat-icon>
+                  </button>
+                  <button mat-icon-button (click)="openDialog(player.id)">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </div>
+              </div>
+            </mat-list-item>
+          </mat-expansion-panel>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Heal
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-divider></mat-divider>
+            <mat-list-item *ngFor="let player of healMembers | search:'pseudo':query">
+              <div class="item-list">
+                <div class="row align-items-center left-content">
+                  <img [src]="player.img" mat-list-icon>
+                  <div mat-line>{{player.pseudo}}</div>
+                </div>
+                <div class="modifyButton">
+                  <button mat-icon-button (click)="updateMember(player.id)">
+                    <mat-icon>create</mat-icon>
+                  </button>
+                  <button mat-icon-button (click)="openDialog(player.id)">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </div>
+              </div>
+            </mat-list-item>
+          </mat-expansion-panel>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Dps
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-divider></mat-divider>
+            <mat-list-item *ngFor="let player of dpsMembers | search:'pseudo':query">
+              <div class="item-list">
+                <div class="row align-items-center left-content">
+                  <img [src]="player.img" mat-list-icon>
+                  <div mat-line>{{player.pseudo}}</div>
+                </div>
+                <div class="modifyButton">
+                  <button mat-icon-button (click)="updateMember(player.id)">
+                    <mat-icon>create</mat-icon>
+                  </button>
+                  <button mat-icon-button (click)="openDialog(player.id)">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </div>
+              </div>
+            </mat-list-item>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-list>
+    </div>
+
+    <div class="test col-md-5 col-xl-3 p-3">
+      <app-form-roster-admin [memberId]="sendMemberId.asObservable()" (memberAdded)="newMembreAdded($event)">
+      </app-form-roster-admin>
+    </div>
+  </div>
+</div>

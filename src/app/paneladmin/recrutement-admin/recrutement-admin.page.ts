@@ -4,13 +4,24 @@ import { PanelAdminService } from '../services/paneladmin.service';
 import { tap, take } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-recrutement',
-  templateUrl: './recrutement.page.html',
-  styleUrls: ['./recrutement.page.scss']
+  selector: 'app-recrutement-admin',
+  templateUrl: './recrutement-admin.page.html',
+  styleUrls: ['./recrutement-admin.page.scss']
 })
-export class RecrutementPage implements OnInit {
+export class RecrutementAdminPage implements OnInit {
   public recrutementForm: FormGroup;
   public recrutement: any;
+  public classes = [
+    { label: 'chaman', img: '/assets/img/class/chaman.jpg', name: 'Chaman' },
+    { label: 'chasseur', img: '/assets/img/class/hunt.jpg', name: 'Chasseur' },
+    { label: 'demoniste', img: '/assets/img/class/demoniste.jpg', name: 'Démoniste' },
+    { label: 'druide', img: '/assets/img/class/druid.jpg', name: 'Druide' },
+    { label: 'guerrier', img: '/assets/img/class/warrior.jpg', name: 'Guerrier' },
+    { label: 'mage', img: '/assets/img/class/mage.jpg', name: 'Mage' },
+    { label: 'pretre', img: '/assets/img/class/priest.jpg', name: 'Prêtre' },
+    { label: 'voleur', img: '/assets/img/class/rogue.jpg', name: 'Voleur' },
+  ]
+
 
   constructor(
     private formBuilder: FormBuilder,

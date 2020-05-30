@@ -9,19 +9,17 @@
       </a>
       <a class="navlink" routerLink="/index" routerLinkActive="router-link-active">Accueil</a>
       <!-- <a class="navlink" routerLink="/blog" routerLinkActive="router-link-active">Articles</a> -->
-      <a class="navlink" routerLink="/rosters">Rosters</a>
-      <a class="navlink" routerLink="/en-construction">Guides</a>
+      <a class="navlink" routerLink="/rosters" routerLinkActive="router-link-active">Rosters</a>
+      <a class="navlink" routerLink="/en-construction" routerLinkActive="router-link-active">Guides</a>
       <a *ngIf="discordLink" class="navlink btnDiscord" href="{{discordLink.discord}}" target="_blank"><img src="/assets/img/Discord-Logo.png" alt="Discord"></a>
 
     </div>
     <div fxLayoutAlign="none center">
-      <p *ngIf="isLogged==true">Bonjour {{info.username}} !</p>
+      <p *ngIf="isLogged==true">Bonjour <span class="playerName">{{info.username}}</span> !</p>
       <button *ngIf="isInfo==false" class="registerButton" routerLink="/register">S'enregistrer</button>
       <button *ngIf="isInfo==false" class="loginButton" routerLink="/login">Connexion</button>
-      <button *ngIf="isLogged==true" class="panelAdminButton" (click)="redirectToPanelAdmin()"
-      routerLink="/index">Panel Admin</button>
-      <button *ngIf="isLogged==true" class="panelMembreButton" (click)="redirectToPanelMembre()"
-      routerLink="/index">Panel Membre</button>
+      <button *ngIf="isLogged==true" class="panelAdminButton registerButton" routerLink="/paneladmin/accueil" routerLinkActive="button-link-active">Gestion GM</button>
+      <button *ngIf="isLogged==true" class="panelMembreButton registerButton" routerLink="/membre" routerLinkActive="button-link-active">Zone Membre</button>
       <button *ngIf="isLogged==true" class="loginButton" (click)="logout()"
         routerLink="/index">Déconnexion</button>
 

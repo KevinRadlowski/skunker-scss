@@ -1,0 +1,12 @@
+@import "../../../../variables";
+
+button {
+    width: 110px;
+    background-color: $primary;
+    border: none;
+
+    &:hover{
+        background-color: $secondary;
+    }
+
+}

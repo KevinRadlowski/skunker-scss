@@ -1,42 +1,35 @@
-<h1 class="titleHeal text-center">HEALS</h1>
+<div class="row header justify-content-center">
+  <img class="imgClasse" src="/assets/img/classes/healer.png" alt="Heal">
+</div>
 
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<div class="rosterHealList row col-12">
+  <mat-list class="col-4">
+    <div mat-subheader class="mat-list-title titleHeal">Prêtre</div>
+    <mat-list-item *ngFor="let player of priestMembers">
+      <img [src]="player.img" mat-list-icon>
+      <div mat-line>{{player.pseudo}}</div>
+      <div mat-line> {{player.grade}} </div>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
 
-  <ng-container matColumnDef="position">
-    <th mat-header-cell *matHeaderCellDef> # </th>
-    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-  </ng-container>
+  <mat-list class="col-4">
+    <div mat-subheader class="mat-list-title titleHeal">Chaman</div>
+    <mat-list-item *ngFor="let player of chamanMembers">
+      <img [src]="player.img" mat-list-icon>
+      <div mat-line>{{player.pseudo}}</div>
+      <div mat-line> {{player.grade}} </div>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
 
-  <ng-container matColumnDef="pretre">
-    <th mat-header-cell *matHeaderCellDef> Prêtre </th>
-    <td mat-cell *matCellDef="let element">
-      <img *ngIf="element.pretre.nom" class="logoClass" src="/assets/img/class/priest.jpg" alt="Prêtre heal">
-      <a *ngIf="element.pretre.url; else pseudo" href="{{ element.pretre.url }}" target=”_blank”>{{element.pretre.nom}}</a>
-      <ng-template #pseudo>{{element.pretre.nom}}</ng-template>
-      <img *ngIf='element.pretre.grade' src="{{ element.pretre.grade }}" alt="Officier">
-    </td>
-  </ng-container>
-
-  <ng-container matColumnDef="chaman">
-    <th mat-header-cell *matHeaderCellDef> Chaman </th>
-    <td mat-cell *matCellDef="let element">
-      <img *ngIf="element.chaman.nom" class="logoClass" src="/assets/img/class/chamheal.png" alt="Chaman heal">
-      <a *ngIf="element.chaman.url; else pseudo" href="{{ element.chaman.url }}" target=”_blank”>{{element.chaman.nom}}</a>
-      <ng-template #pseudo>{{element.chaman.nom}}</ng-template>
-      <img *ngIf='element.chaman.grade' src="{{ element.chaman.grade }}" alt="Officier">
-    </td>
-  </ng-container>
-
-  <ng-container matColumnDef="druide">
-    <th mat-header-cell *matHeaderCellDef> Druide </th>
-    <td mat-cell *matCellDef="let element">
-      <img *ngIf="element.druide.nom" class="logoClass" src="/assets/img/class/druidheal.png" alt="Druide heal">
-      <a *ngIf="element.druide.url; else pseudo" href="{{ element.druide.url }}" target=”_blank”>{{element.druide.nom}}</a>
-      <ng-template #pseudo>{{element.druide.nom}}</ng-template>
-      <img *ngIf='element.druide.grade' src="{{ element.druide.grade }}" alt="Officier">
-    </td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+  <mat-list class="col-4">
+    <div mat-subheader class="mat-list-title titleHeal">Druide</div>
+    <mat-list-item *ngFor="let player of druidMembers">
+      <img [src]="player.img" mat-list-icon>
+      <div mat-line>{{player.pseudo}}</div>
+      <div mat-line> {{player.grade}} </div>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
+</div>

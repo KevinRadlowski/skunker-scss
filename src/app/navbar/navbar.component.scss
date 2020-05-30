@@ -9,7 +9,7 @@
   @extend %box-shadow;
   position: fixed;
   z-index: 2;
-  background-image: url("/assets/img/dark-back.jpg");
+  background-image: url("/assets/img/background/dark-back.jpg");
 
   .toolbarWidth {
     width: 100%;
@@ -18,7 +18,7 @@
 }
 
 p {
-  color: white;
+  color: $white;
   font-weight: lighter;
   font-size: 16px;
   margin: 15px;
@@ -28,7 +28,7 @@ p {
 .toolbarXs {
   position: fixed;
   z-index: 2;
-  background-image: url("/assets/img/dark-back.jpg");
+  background-image: url("/assets/img/background/dark-back.jpg");
   @extend %box-shadow;
 }
 
@@ -69,6 +69,7 @@ p {
 .btnDiscord {
   border-radius: 10px;
   background-color: #7289DA;
+
   &:hover {
     background-color: $primary;
   }
@@ -79,29 +80,29 @@ p {
 }
 
 .loginButton {
-  color: white;
-  border-radius: 7px;
-  border: 1px solid white;
+  color: $white;
+  border-radius: 5px;
+  border: 1px solid $white;
   background: none;
 
   &:hover {
-    color: white;
+    color: $white;
     background-color: $primary;
-    border-color: white;
+    border-color: $white;
   }
 }
 
 .registerButton {
-  margin: 15px;
-  color: white;
-  border-radius: 7px;
-  border: 1px solid white;
+  margin: 15px 15px 15px 0px;
+  color: $white;
+  border-radius: 5px;
+  border: 1px solid $white;
   background: none;
 
   &:hover {
-    color: white;
+    color: $white;
     background-color: $primary;
-    border-color: white;
+    border-color: $white;
   }
 }
 
@@ -115,16 +116,27 @@ p {
   text-decoration: none;
   color: $white;
 
-    &:hover {
-      color: $primary;
-    }
+  &:hover {
+    color: $primary;
+  }
 }
 
 .navlink:hover,
 .router-link-active {
   color: $primary;
+
 }
+
+  .button-link-active {
+    border: 1px solid $white ;
+    background-color: $primary;
+    color: $white;
+  }
 
 .toolbar-icon {
   color: $white;
+}
+
+.playerName {
+  font-weight: bold;
 }

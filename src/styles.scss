@@ -53,7 +53,7 @@ body {
 }
 
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
   min-height: 100%;
   margin: 0;
   padding: 0;
@@ -82,6 +82,8 @@ body {
     line-height: 18px;
   }
 }
+
+button:focus {outline:0;}
 
 %box-shadow {
   @include box-shadow(3px 3px 6px black);
@@ -136,17 +138,17 @@ body {
   }
   
   .molten-core {
-    background-image: url('https://img.cinemablend.com/filter:scale/cb/6/c/1/2/4/1/6c1241421df3b65a6277306877814bebe071ee4af5b4eaf0fd419fd56baeb59a.jpg?mw=600');
-    background-position-y: 20%;
+    background-image: url(/assets/img/raids-classic/moltencore.jpg);
+    background-position-y: 5%;
   }
   
   .onyxia {
-    background-image: url('https://shadowburn.net/raids/images/onyxia.jpg');
+    background-image: url(/assets/img/raids-classic/onyxia.jpg);
     background-position-y: 60%;
   }
   
   .bwl {
-    background-image: url('https://wow.zamimg.com/uploads/screenshots/normal/171047-morts-de-nefarian-repaire-de-laile-noire.jpg');
+    background-image: url(/assets/img/raids-classic/blackwing-lair.jpg);
     background-position-y: 25%;
   }
   
@@ -158,24 +160,19 @@ body {
   .raq {
     background-image: url(/assets/img/raids-classic/ahnqiraj.jpg);
     background-position-y: 25%;
-    filter: grayscale(1) opacity(0.7);
-    .boss {
-      color: white;
-    }
   }
 
   .aq {
     background-image: url(/assets/img/raids-classic/ahnqiraj2.jpg);
     background-position-y: 25%;
-    filter: grayscale(1) opacity(0.7);
-    .boss {
-      color: white;
-    }
   }
 
   .naxx {
     background-image: url(/assets/img/raids-classic/naxxramas.jpg);
     background-position-y: 25%;
+  }
+
+  .notAvailable {
     filter: grayscale(1) opacity(0.7);
     .boss {
       color: white;

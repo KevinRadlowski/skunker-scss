@@ -1,7 +1,7 @@
 button {
   z-index: 1;
   position: absolute;
-background-color: red;
+  background-color: red;
   margin-top: 100px;
   top: 0;
   left: 0;
@@ -9,7 +9,7 @@ background-color: red;
 
 .sidenav {
   z-index: 0;
-  background-image: url('/assets/img/dark-back.jpg');
+  background-image: url('/assets/img/background/dark-back.jpg');
   border-radius: 0;
   width: 150px;
 
@@ -28,7 +28,10 @@ background-color: red;
 
 .sidenav-container {
   flex: 1;
-  min-height: 65vh;
+  min-height: 76vh;
+  background-image: url("/assets/img/background/sylvanas2.jpg");
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .is-mobile .sidenav-container {

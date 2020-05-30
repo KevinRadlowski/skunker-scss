@@ -1,0 +1,83 @@
+<mat-card class="example-card">
+  <form [formGroup]="rosterForm">
+    <mat-card-content>
+      <p>Ajouter un membre au roster</p>
+      <mat-form-field class="col-12" appearance="outline">
+        <mat-label>Pseudo</mat-label>
+        <input matInput formControlName="pseudo">
+      </mat-form-field>
+      <mat-form-field class="col-12" appearance="outline">
+        <mat-label>Grade</mat-label>
+        <mat-select formControlName="grade" required>
+          <mat-option value="membre">
+            Membre
+          </mat-option>
+          <mat-option value="officier">
+            Officier
+          </mat-option>
+          <mat-option value="cogm">
+            Co-GM
+          </mat-option>
+          <mat-option value="gm">
+            GM
+          </mat-option>
+        </mat-select>
+        <!-- <mat-error *ngIf="grade.hasError('required')">Please choose an animal</mat-error> -->
+      </mat-form-field>
+      <mat-form-field class="col-12" appearance="outline">
+        <mat-label>Classe</mat-label>
+        <mat-select formControlName="classe" required>
+          <mat-option value="chaman">
+            Chaman
+          </mat-option>
+          <mat-option value="chasseur">
+            Chasseur
+          </mat-option>
+          <mat-option value="demoniste">
+            Démoniste
+          </mat-option>
+          <mat-option value="druide">
+            Druide
+          </mat-option>
+          <mat-option value="guerrier">
+            Guerrier
+          </mat-option>
+          <mat-option value="mage">
+            Mage
+          </mat-option>
+          <mat-option value="pretre">
+            Prêtre
+          </mat-option>
+          <mat-option value="voleur">
+            Voleur
+          </mat-option>
+        </mat-select>
+        <!-- <mat-error *ngIf="classe.hasError('required')">Please choose an animal</mat-error> -->
+      </mat-form-field>
+      <mat-form-field class="col-12" appearance="outline">
+        <mat-label>Rôle</mat-label>
+        <mat-select formControlName="role" required>
+          <mat-option value="tank">
+            Tank
+          </mat-option>
+          <mat-option value="heal">
+            Heal
+          </mat-option>
+          <mat-option value="dps">
+            Dps
+          </mat-option>
+        </mat-select>
+        <!-- <mat-error *ngIf="classe.hasError('required')">Please choose an animal</mat-error> -->
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions class="d-flex justify-content-between">
+      <button (click)="onSubmit(rosterForm)" *ngIf="!membreId" [disabled]="loading"
+        class="btn btn-primary">Enregistrer</button>
+      <button (click)="editRosterMembreSubmit()" *ngIf="membreId" [disabled]="loading"
+        class="btn btn-primary">Modifier</button>
+      <button (click)="resetForm()" [disabled]="loading" class="btn btn-primary">Reset</button>
+      <img *ngIf="loading"
+        src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+    </mat-card-actions>
+  </form>
+</mat-card>

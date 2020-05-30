@@ -1,71 +1,67 @@
-<h1 class="titleDPS text-center">DPS</h1>
+<div class="row header justify-content-center">
+  <img class="imgClasse" src="/assets/img/classes/dps.png" alt="DPS">
+</div>
 
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<div class="rosterDpsList row col-12">
+  <mat-list class="col-2">
+    <div mat-subheader class="mat-list-title titleDps">Voleur</div>
+    <mat-list-item *ngFor="let player of rogueMembers">
+      <img [src]="player.img" mat-list-icon>
+      <div mat-line>{{player.pseudo}}</div>
+      <div mat-line> {{player.grade}} </div>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
 
-  <ng-container matColumnDef="position">
-    <th mat-header-cell *matHeaderCellDef sticky> # </th>
-    <td mat-cell *matCellDef="let element"> {{ element.position }} </td>
-  </ng-container>
+  <mat-list class="col-2">
+    <div mat-subheader class="mat-list-title titleDps">Démoniste</div>
+    <mat-list-item *ngFor="let player of demoMembers">
+      <img [src]="player.img" mat-list-icon>
+      <div mat-line>{{player.pseudo}}</div>
+      <div mat-line> {{player.grade}} </div>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
 
-  <ng-container matColumnDef="voleur">
-    <th mat-header-cell *matHeaderCellDef> Voleur </th>
-    <td mat-cell *matCellDef="let element">
-      <img *ngIf="element.voleur.nom" class="logoClass" src="/assets/img/class/rogue.jpg" alt="Voleur">
-      <a *ngIf="element.voleur.url; else pseudo" href="{{ element.voleur.url }}" target=”_blank”>{{element.voleur.nom}}</a>
-      <ng-template #pseudo>{{element.voleur.nom}}</ng-template>
-      <img *ngIf='element.voleur.grade' src="{{ element.voleur.grade }}" alt="Officier">
-    </td>
-  </ng-container>
+  <mat-list class="col-2">
+    <div mat-subheader class="mat-list-title titleDps">Chasseur</div>
+    <mat-list-item *ngFor="let player of huntMembers">
+      <img [src]="player.img" mat-list-icon>
+      <div mat-line>{{player.pseudo}}</div>
+      <div mat-line> {{player.grade}} </div>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
 
-  <ng-container matColumnDef="demoniste">
-    <th mat-header-cell *matHeaderCellDef> Démoniste </th>
-    <td mat-cell *matCellDef="let element">
-      <img *ngIf="element.demoniste.nom" class="logoClass" src="/assets/img/class/demoniste.jpg" alt="Démoniste">
-      <a *ngIf="element.demoniste.url; else pseudo" href="{{ element.demoniste.url }}" target=”_blank”>{{element.demoniste.nom }}</a>
-      <ng-template #pseudo>{{element.demoniste.nom}}</ng-template>
-      <img *ngIf='element.demoniste.grade' src="{{ element.demoniste.grade }}" alt="Officier">
-    </td>
-  </ng-container>
+  <mat-list class="col-2">
+    <div mat-subheader class="mat-list-title titleDps">Mage</div>
+    <mat-list-item *ngFor="let player of mageMembers">
+      <img [src]="player.img" mat-list-icon>
+      <div mat-line>{{player.pseudo}}</div>
+      <div mat-line> {{player.grade}} </div>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
 
-  <ng-container matColumnDef="chasseur">
-    <th mat-header-cell *matHeaderCellDef> Chasseur </th>
-    <td mat-cell *matCellDef="let element">
-      <img *ngIf="element.chasseur.nom" class="logoClass" src="/assets/img/class/hunt.jpg" alt="Chasseur">
-      <a *ngIf="element.chasseur.url; else pseudo" href="{{ element.chasseur.url}}" target=”_blank”>{{element.chasseur.nom}}</a>
-      <ng-template #pseudo>{{element.chasseur.nom}}</ng-template>
-      <img *ngIf='element.chasseur.grade' src="{{ element.chasseur.grade }}" alt="Officier">
-    </td>
-  </ng-container>
+  <mat-list class="col-2">
+    <div mat-subheader class="mat-list-title titleDps">Guerrier</div>
+    <mat-list-item *ngFor="let player of warMembers">
+      <img [src]="player.img" mat-list-icon>
+      <div mat-line>{{player.pseudo}}</div>
+      <div mat-line> {{player.grade}} </div>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
 
-  <ng-container matColumnDef="mage">
-    <th mat-header-cell *matHeaderCellDef> Mage </th>
-    <td mat-cell *matCellDef="let element">
-      <img *ngIf="element.mage.nom" class="logoClass" src="/assets/img/class/mage.jpg" alt="Mage">
-      <a *ngIf="element.mage.url; else pseudo" href="{{ element.mage.url }}" target=”_blank”>{{element.mage.nom }}</a>
-      <ng-template #pseudo>{{element.mage.nom}}</ng-template>
-      <img *ngIf='element.mage.grade' src="{{element.mage.grade }}" alt="Officier">
-    </td>
-  </ng-container>
+  <mat-list class="col-2">
+    <div mat-subheader class="mat-list-title titleDps">Chaman</div>
+    <mat-list-item *ngFor="let player of chamMembers">
+      <img [src]="player.img" mat-list-icon>
+      <div mat-line>{{player.pseudo}}</div>
+      <div mat-line> {{player.grade}} </div>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
 
-  <ng-container matColumnDef="guerrier">
-    <th mat-header-cell *matHeaderCellDef> Guerrier </th>
-    <td mat-cell *matCellDef="let element">
-      <img *ngIf="element.guerrier.nom" class="logoClass" src="/assets/img/class/warrior.jpg" alt="Guerrier">
-      <a *ngIf="element.guerrier.url; else pseudo" href="{{ element.guerrier.url }}" target=”_blank”>{{element.guerrier.nom }}</a>
-      <ng-template #pseudo>{{element.guerrier.nom}}</ng-template>
-      <img *ngIf='element.guerrier.grade' src="{{element.guerrier.grade }}" alt="Officier">
-    </td>
-  </ng-container>
-
-  <ng-container matColumnDef="chaman">
-    <th mat-header-cell *matHeaderCellDef> Chaman </th>
-    <td mat-cell *matCellDef="let element">
-      <img *ngIf="element.chaman.nom" class="logoClass" src="/assets/img/class/chamelio.png" alt="Chaman">
-      <a *ngIf="element.chaman.url; else pseudo" href="{{ element.chaman.url }}" target=”_blank”>{{element.chaman.nom }}</a>
-      <ng-template #pseudo>{{element.chaman.nom}}</ng-template>
-      <img *ngIf='element.chaman.grade' src="{{element.chaman.grade }}" alt="Officier">
-    </td>
-  </ng-container>
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+  
+</div>

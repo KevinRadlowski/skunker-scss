@@ -5,10 +5,10 @@ import { tap, take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-accueil-admin',
-  templateUrl: './accueil.page.html',
-  styleUrls: ['./accueil.page.scss']
+  templateUrl: './accueil-admin.page.html',
+  styleUrls: ['./accueil-admin.page.scss']
 })
-export class AccueilPage implements OnInit {
+export class AccueilAdminPage implements OnInit {
   public discordForm: FormGroup;
   public discordLink: any;
 

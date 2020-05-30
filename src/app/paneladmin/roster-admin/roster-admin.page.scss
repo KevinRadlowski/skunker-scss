@@ -1,0 +1,47 @@
+@import "../../../variables";
+
+mat-form-field {
+  height: auto;
+  background-color: white;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  background-color: #ebebeb;
+  border-radius: 5px;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-wrapper {
+  padding: 2px;
+}
+
+mat-list-item {
+  background-color: #ebebeb;
+  border-radius: 5px;
+  border: 1px solid white;
+}
+
+.item-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+mat-icon {
+  color: $primary;
+
+  &:hover {
+    color: $secondary;
+  }
+}
+
+.test {
+   width: 100%; 
+}
+
+app-form-roster-admin {
+    max-width: 600px;
+    position: fixed;
+    padding-right: 3%; 
+}

@@ -1,0 +1,39 @@
+@import '../../../variables';
+
+$primary: rgb(0, 179, 0);
+$secondary: rgb(255, 0, 0);
+$accent: rgb(255, 136, 0);
+
+.mat-button-toggle {
+  background-color: $white;
+}
+
+.mat-button-toggle-checked.opened {
+  background-color: $primary;
+  $color: white;
+}
+
+.mat-button-toggle-checked.closed {
+  background-color: $secondary;
+  $color: white;
+}
+
+.mat-button-toggle-checked.limited {
+  background-color: $accent;
+  $color: white;
+}
+
+
+form {
+  padding: 0;
+  border-radius: 3px;
+  background-color: $white;
+  box-shadow: 0 1px 1px -1px rgba(0, 0, 0, 1),
+    0 1px 2px 0 rgba(0, 0, 0, 1),
+    0 1px 2px 0 rgba(0, 0, 0, 1);
+}
+
+::ng-deep thead th {
+  // margin: 20px;
+  // padding: 20px;
+}

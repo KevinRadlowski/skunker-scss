@@ -16,12 +16,15 @@ import { BypassHtmlSecurity } from './bypass-html-security';
 import { GalleryModule } from '@ngx-gallery/core';
 import { LightboxModule } from '@ngx-gallery/lightbox';
 import { GallerizeModule } from '@ngx-gallery/gallerize';
+import { ConfirmationDialogService } from './confirmation-dialog.service';
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
   declarations: [
     AlertComponent,
     EnConstructionComponent,
-    BypassHtmlSecurity
+    BypassHtmlSecurity,
+    ConfirmationDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +59,12 @@ import { GallerizeModule } from '@ngx-gallery/gallerize';
     GalleryModule,
     LightboxModule,
     GallerizeModule
-  ]
+  ],
+  providers: [
+    ConfirmationDialogService
+  ],
+  entryComponents: [
+    ConfirmationDialogComponent
+  ],
 })
 export class SharedModule { }

@@ -4,44 +4,62 @@
   @include text-shadow(2px 2px 13px rgb(163, 0, 0), -2px -2px 13px rgb(163, 0, 0));
 }
 
-.titleDPS {
+%box-shadow-dps {
+  @include box-shadow(2px 2px 7px rgb(163, 0, 0), -2px -2px 7px rgb(163, 0, 0))
+}
+
+.header {
+  img {
+    border-radius: 50%;
+    margin: 15px;
+    background-color: rgb(163, 0, 0);
+    opacity: 1;
+    width: 60px;
+    height: 60px;
+    @extend %box-shadow-dps;
+  }
+}
+
+.titleDps {
   text-shadow: 10px 10px 25px rgb(163, 0, 0), -10px -10px 25px rgb(163, 0, 0), -10px 10px 25px rgb(163, 0, 0), 10px -10px 25px rgb(163, 0, 0);
   padding-top: 15px;
   color: rgb(255, 255, 255);
 }
 
-table {
+.rosterDpsList {
+  padding: 0;
+  margin: 0 0 30px 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.215);
+  background-color: rgba(0, 0, 0, 0.5);
   @extend %text-shadow-dps;
-  margin-bottom: 15px;
+  @extend %box-shadow-dps;
+  border-radius: 15px;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
 
-  :hover {
-    background-color: rgb(34, 34, 34);
+  mat-list {
+    padding: 8px 0 0 0;
+
+    .mat-list-title {
+      padding-left: 30px;
+      font-size: 18px;
+      border-bottom: 1px solid white;
+    }
+
+    mat-list-item {
+      width: 100%;
+      font-size: medium;
+      color: white;
+      // border-bottom: 1px solid white;
+      padding: 0;
+
+      &:last-child {
+        border: none;
+      }
+    }
+
+    mat-list-item:hover {
+      background-color: rgb(34, 34, 34);
+    }
   }
-
-  th {
-    font-size: large;
-  }
-
-  th,
-  td {
-    color: white;
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
-  }
-}
-
-a {
-  color: rgb(0, 195, 255);
-}
-
-.logoClass {
-  width: 25px;
-  margin-right: 5px;
-}
-
-img {
-  width: 25px;
-  margin-left: 5px;
 }
