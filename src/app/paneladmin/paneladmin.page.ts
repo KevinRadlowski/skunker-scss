@@ -1,5 +1,5 @@
 import { Component, OnDestroy, ViewChild, ChangeDetectorRef } from '@angular/core';
-import { MatSidenav } from '@angular/material';
+import { MatSidenav } from '@angular/material/sidenav';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { Router } from '@angular/router';
 import { GlobalEventsManager } from '../shared/global-events-manager';
@@ -18,7 +18,7 @@ export class PanelAdminPage implements OnDestroy {
     showNavBar = false;
     creerArticleLink = './dkp';
     listeArticlesLink = './rosters';
-    @ViewChild(MatSidenav, {static: false}) snav: MatSidenav;
+    @ViewChild(MatSidenav) snav: MatSidenav;
   
     private _mobileQueryListener: () => void;
   

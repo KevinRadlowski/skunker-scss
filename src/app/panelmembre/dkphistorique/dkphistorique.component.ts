@@ -1,7 +1,7 @@
 import { SelectionModel } from '@angular/cdk/collections';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatSort } from '@angular/material';
+import { MatSort } from '@angular/material/sort';
 
 export interface PeriodicElement {
   pseudo: string;

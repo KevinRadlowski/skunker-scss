@@ -1,6 +1,6 @@
 // tslint:disable: quotemark
 import { Component, OnInit, DoCheck } from '@angular/core';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import { TokenStorageService } from '../core/auth/token-storage.service';
 import { Router } from '@angular/router';
 import { take, tap } from 'rxjs/operators';

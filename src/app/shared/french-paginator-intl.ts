@@ -1,4 +1,4 @@
-import { MatPaginatorIntl } from '@angular/material';
+import { MatPaginatorIntl } from '@angular/material/paginator';
 
 const frenchRangeLabel = (page: number, pageSize: number, length: number) => {
   if (length === 0 || pageSize === 0) { return `${length} articles`; }

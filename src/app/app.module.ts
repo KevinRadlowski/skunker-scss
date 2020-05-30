@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatPaginatorIntl } from '@angular/material';
+import { MatPaginatorIntl } from '@angular/material/paginator';
 import { getFrenchPaginatorIntl } from './shared/french-paginator-intl';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
