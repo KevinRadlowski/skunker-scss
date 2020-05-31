@@ -2,7 +2,7 @@ import { Component, OnDestroy, ViewChild, ChangeDetectorRef } from '@angular/cor
 import { MatSidenav } from '@angular/material/sidenav';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { Router } from '@angular/router';
-import { GlobalEventsManager } from '../shared/global-events-manager';
+import { GlobalEventsManager } from '../shared/functions/global-events-manager';
 
 @Component({
   selector: 'app-panelmembre',

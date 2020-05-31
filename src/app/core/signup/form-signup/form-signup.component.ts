@@ -5,7 +5,7 @@ import { Membre } from 'src/app/core/modeles/membre';
 import { TokenStorageService } from 'src/app/core/auth/token-storage.service';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
-import { AlertService } from 'src/app/shared/alert.service';
+import { AlertService } from 'src/app/shared/services/alert.service';
 import { first } from 'rxjs/operators';
 import { AuthService } from 'src/app/core/auth/auth.service';
 

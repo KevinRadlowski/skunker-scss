@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatPaginatorIntl } from '@angular/material/paginator';
-import { getFrenchPaginatorIntl } from './shared/french-paginator-intl';
+import { getFrenchPaginatorIntl } from './shared/functions/french-paginator-intl';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 registerLocaleData(localeFr, 'fr');
@@ -21,7 +21,7 @@ import { PanelmembreModule } from './panelmembre/panelmembre.module';
 import { RostersModule } from './rosters/roster/rosters.module';
 
 import { SharedModule } from './shared/shared.module';
-import { GlobalEventsManager } from './shared/global-events-manager';
+import { GlobalEventsManager } from './shared/functions/global-events-manager';
 import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';

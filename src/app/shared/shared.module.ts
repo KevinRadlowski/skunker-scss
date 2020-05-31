@@ -11,12 +11,12 @@ import { AppRoutingModule } from '../app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ShareButtonsModule } from '@ngx-share/buttons';
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
-import { BypassHtmlSecurity } from './bypass-html-security';
+import { BypassHtmlSecurity } from './functions/bypass-html-security';
 
 import { GalleryModule } from '@ngx-gallery/core';
 import { LightboxModule } from '@ngx-gallery/lightbox';
 import { GallerizeModule } from '@ngx-gallery/gallerize';
-import { ConfirmationDialogService } from './confirmation-dialog.service';
+import { ConfirmationDialogService } from './services/confirmation-dialog.service';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 import { PageNonConnecte } from './page-non-connecte/page-non-connecte.page';
 

@@ -5,6 +5,7 @@ import { AccueilAdminPage } from './accueil-admin/accueil-admin.page';
 import { PanelAdminPage } from './paneladmin.page';
 import { RecrutementAdminPage } from './recrutement-admin/recrutement-admin.page';
 import { RosterAdminPage } from './roster-admin/roster-admin.page';
+import { MembreListAdminPage } from './membre-list-admin/membre-list-admin.page';
 
 
 const paneladminRoutes: Routes = [
@@ -15,6 +16,7 @@ const paneladminRoutes: Routes = [
       { path: 'recrutement', component: RecrutementAdminPage },
       { path: 'accueil', component: AccueilAdminPage },
       { path: 'roster', component: RosterAdminPage },
+      { path: 'membres-liste', component: MembreListAdminPage },
     ]
   }
 ];

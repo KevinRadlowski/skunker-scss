@@ -43,7 +43,7 @@ export class GalleryComponent implements OnInit {
     lightboxRef.setConfig({
       imageSize: ImageSize.Cover,
       thumbPosition: ThumbnailsPosition.Top,
-      loadingMode: 'indeterminate'
+      loadingStrategy: 'preload'
     });
 
     // Load items into the lightbox gallery ref

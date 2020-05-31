@@ -7,16 +7,23 @@ button {
   left: 0;
 }
 
+mat-nav-list {
+  padding: 0;
+}
+
 .sidenav {
   z-index: 0;
   background-image: url('/assets/img/background/dark-back.jpg');
   border-radius: 0;
-  width: 150px;
+  width: 175px;
 
   .mat-list-item {
     color: white;
-    border-bottom: 1px solid white;
     border-top: 1px solid white;
+
+    &:last-child {
+      border-bottom: 1px solid white;
+    }
   }
 
 }

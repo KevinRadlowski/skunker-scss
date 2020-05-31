@@ -2,24 +2,11 @@
 import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { Subject } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { AlertService } from 'src/app/shared/alert.service';
-import { ConfirmationDialogService } from 'src/app/shared/confirmation-dialog.service';
+import { AlertService } from 'src/app/shared/services/alert.service';
+import { ConfirmationDialogService } from 'src/app/shared/services/confirmation-dialog.service';
 import { RosterMembre } from '../models/Roster.model';
 import { PanelAdminService } from '../services/paneladmin.service';
 import { HttpErrorResponse } from '@angular/common/http';
-
-@Pipe({
-    name: 'search'
-})
-export class SearchPipe implements PipeTransform {
-    public transform(value, keys: string, term: string) {
-
-        if (!term) return value;
-        return (value || [])
-            .filter(item => keys.split(',')
-            .some(key => item.hasOwnProperty(key) && new RegExp(term, 'gi').test(item[key])));
-    }
-}
 
 @Component({
     selector: 'app-roster-admin',
