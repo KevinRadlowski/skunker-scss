@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  api: 'https://www.ngth.fr:8443/api' || 'https://ngth.fr:8443/api' || 'http://localhost:8080/api',
+  // api: 'http://localhost:8080/api',
 };
 
 /*

@@ -1,37 +1,38 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MembreService {
 
-  private baseUrl = 'http://localhost:8080/api/auth';
+  private readonly prefix = '/auth';
 
   constructor(private http: HttpClient) { }
 
-  getMembre(username: String): Observable<object> {
-    return this.http.get(`${this.baseUrl}/getone/${username}`);
+  getMembre(username: string): Observable<object> {
+    return this.http.get(`${environment.api}${this.prefix}/getone/${username}`);
   }
 
   getAdminMembre(id: number): Observable<object> {
-    return this.http.get(`${this.baseUrl}/adminget/${id}`);
+    return this.http.get(`${environment.api}${this.prefix}/adminget/${id}`);
   }
 
   updateMembre(id: number, value: any): Observable<object> {
-    return this.http.put(`${this.baseUrl}/${id}`, value);
+    return this.http.put(`${environment.api}${this.prefix}/${id}`, value);
   }
 
   updateMembrePassword(id: number, value: any): Observable<object> {
-    return this.http.put(`${this.baseUrl}/password/${id}`, value);
+    return this.http.put(`${environment.api}${this.prefix}/password/${id}`, value);
   }
 
   getMembreList(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`);
+    return this.http.get(`${environment.api}${this.prefix}`);
   }
 
-  deleteUser(username: String): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/deleteuser/${username}`);
+  deleteUser(username: string): Observable<any> {
+    return this.http.delete(`${environment.api}${this.prefix}/deleteuser/${username}`);
   }
 }

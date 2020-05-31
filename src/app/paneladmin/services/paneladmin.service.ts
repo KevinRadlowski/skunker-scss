@@ -2,15 +2,16 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { RosterMembre } from '../models/Roster.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PanelAdminService {
 
-  private recrutementUrl = 'http://localhost:8080/api/recrutement';
-  private rosterUrl = 'http://localhost:8080/api/roster';
-  private accueilUrl = 'http://localhost:8080/api/accueil';
+  private readonly prefixRecrutement = '/recrutement';
+  private readonly prefixRoster = '/roster';
+  private readonly prefixAccueil = '/accueil';
 
   constructor(private http: HttpClient) { }
 
@@ -19,11 +20,11 @@ export class PanelAdminService {
   */
 
   updateRecrutementValues(formValue): Observable<object> {
-    return this.http.put(`${this.recrutementUrl}/update-recrutement`, formValue);
+    return this.http.put(`${environment.api}${this.prefixRecrutement}/update-recrutement`, formValue);
   }
 
   getRecrutementValues(id: number): Observable<object> {
-    return this.http.get(`${this.recrutementUrl}/get-recrutement/${id}`);
+    return this.http.get(`${environment.api}${this.prefixRecrutement}/get-recrutement/${id}`);
   }
 
   /*
@@ -31,11 +32,11 @@ export class PanelAdminService {
   */
 
   updateDiscordLink(discordLink): Observable<object> {
-    return this.http.put(`${this.accueilUrl}/update-discord-link`, discordLink);
+    return this.http.put(`${environment.api}${this.prefixAccueil}/update-discord-link`, discordLink);
   }
 
   getDiscordLink(id: number): Observable<object> {
-    return this.http.get(`${this.accueilUrl}/get-discord-link/${id}`);
+    return this.http.get(`${environment.api}${this.prefixAccueil}/get-discord-link/${id}`);
   }
 
   /*
@@ -43,22 +44,22 @@ export class PanelAdminService {
   */
 
   postRosterMember(formValue: RosterMembre): Observable<RosterMembre> {
-    return this.http.post<RosterMembre>(`${this.rosterUrl}/post-roster-member`, formValue);
+    return this.http.post<RosterMembre>(`${environment.api}${this.prefixRoster}/post-roster-member`, formValue);
   }
 
   getRosterMember(id: number): Observable<object> {
-    return this.http.get(`${this.rosterUrl}/${id}`);
+    return this.http.get(`${environment.api}${this.prefixRoster}/${id}`);
   }
 
   updateRosterMember(id: number, value: RosterMembre): Observable<RosterMembre> {
-    return this.http.put<RosterMembre>(`${this.rosterUrl}/${id}`, value);
+    return this.http.put<RosterMembre>(`${environment.api}${this.prefixRoster}/${id}`, value);
   }
 
   getRosterMemberList(): Observable<RosterMembre[]> {
-    return this.http.get<RosterMembre[]>(`${this.rosterUrl}/roster-membre-list`);
+    return this.http.get<RosterMembre[]>(`${environment.api}${this.prefixRoster}/roster-membre-list`);
   }
 
   deleteRosterMember(id: number): Observable<any> {
-    return this.http.delete(`${this.rosterUrl}/${id}`);
+    return this.http.delete(`${environment.api}${this.prefixRoster}/${id}`);
   }
 }
