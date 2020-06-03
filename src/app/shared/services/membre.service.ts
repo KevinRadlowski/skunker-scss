@@ -33,12 +33,10 @@ export class MembreService {
     }
 
     getMembreList(): Observable<any> {
-        console.log("hello")
         return this.http.get(`${environment.api}${this.prefix}`);
     }
 
     deleteUser(username: string): Observable<any> {
         return this.http.delete(`${environment.api}${this.prefix}/deleteuser/${username}`);
     }
-
 }

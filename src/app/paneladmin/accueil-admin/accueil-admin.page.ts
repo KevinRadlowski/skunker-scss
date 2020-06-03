@@ -23,13 +23,11 @@ export class AccueilAdminPage implements OnInit {
 
     this.panelAdminService.getDiscordLink(1).pipe(
       tap(data => {
-        console.log(data);
         this.discordLink = data;
         this.discordForm.setValue({
           discord: this.discordLink.discord,
         })
 
-        console.log(this.discordForm.value);
       }),
       take(1),
     ).subscribe();
@@ -45,12 +43,9 @@ export class AccueilAdminPage implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.discordForm.value)
     try {
       this.loading = true;
       this.panelAdminService.updateDiscordLink(this.discordForm.value).subscribe(data => {
-        console.log(data);
-
       });
     } catch {
       this.loading = false;

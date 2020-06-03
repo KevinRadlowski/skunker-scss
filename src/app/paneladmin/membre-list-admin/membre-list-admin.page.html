@@ -22,40 +22,16 @@
         <td mat-cell *matCellDef="let membres"> {{membres.race}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="level">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Niveau</th>
-        <td mat-cell *matCellDef="let membres"> {{membres.level}} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="premierMetier">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>1er Métier</th>
-        <td mat-cell *matCellDef="let membres"> {{membres.premierMetier}} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="niveauPremierMetier">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Niveau 1er Métier</th>
-        <td mat-cell *matCellDef="let membres"> {{membres.niveauPremierMetier}} </td>
-      </ng-container>
-      <ng-container matColumnDef="secondMetier">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>2ème Métier</th>
-        <td mat-cell *matCellDef="let membres"> {{membres.secondMetier}} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="niveauSecondMetier">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Niveau 2ème Métier</th>
-        <td mat-cell *matCellDef="let membres"> {{membres.niveauSecondMetier}} </td>
-      </ng-container>
-
       <ng-container matColumnDef="role">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Rôle</th>
-        <td mat-cell *matCellDef="let membres"> {{membres.roles[0].name}} </td>
+        <td mat-cell *matCellDef="let membres"> {{membres.roles[0].name | translate}} </td>
       </ng-container>
 
       <i class="material-icons"></i>
 
       <ng-container matColumnDef="modifier">
         <th mat-header-cell *matHeaderCellDef>Modifier</th>
-        <td mat-cell *matCellDef="let membres"> <i [routerLink]="['/paneladmin/membres-list/modifiermembre', membres.id]"
+        <td mat-cell *matCellDef="let membres"> <i [routerLink]="['/gestion-gm/membres-list/modifiermembre', membres.id]"
             class="material-icons" style="color:blue; cursor: pointer;">edit</i> </td>
       </ng-container>
 
@@ -67,9 +43,32 @@
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
     </table>
     <mat-paginator paginator [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 20]" [showFirstLastButtons]="true" [length]="totalSize"
       [pageIndex]="currentPage" (page)="pageEvent = handlePage($event)" showFirstLastButtons></mat-paginator>
   </div>
 
 </div>
+
+
+
+<!-- <ion-col *ngFor="let child of this.children; let idx = index" size="12">
+  <premium-workspace-child-card
+    *ngIf="child.DELETEFLAG !== 1 && !isBeingEdited(idx)"
+    [child]="child"
+    [idx]=idx
+    (editClick)="onEditClick($event, idx)"
+    (childDelete)="onChildDelete($event)"
+    [dontShowAsCard]="dontShowAsCard"
+  ></premium-workspace-child-card>
+  <premium-workspace-shared-child-form
+    *ngIf="isBeingEdited(idx)"
+    [children]="children"
+    [rubric]="child.RUBRIQUE"
+    (formIsValidEvent)="onChildValidation($event)"
+    (formCancelationEvent)="onChildValidation($event)"
+    [dontShowAsCard]="dontShowAsCard"
+  ></premium-workspace-shared-child-form>
+</ion-col> -->

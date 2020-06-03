@@ -17,7 +17,6 @@ export class DescriptionComponent implements OnInit {
   ngOnInit() {
     this.panelAdminService.getRecrutementValues(1).pipe(
       tap(data => {
-        console.log(data);
         this.recrutement = data;
       }),
       take(1),

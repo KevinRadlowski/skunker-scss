@@ -6,7 +6,7 @@ import { SignupComponent } from './core/signup/signup.component';
 import { PageNonConnecte } from './shared/page-non-connecte/page-non-connecte.page';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/index', pathMatch: 'full' },
+  { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: 'en-construction', component: EnConstructionComponent},
   { path: 'non-connecte', component: PageNonConnecte},
   { path: 'login', component: LoginComponent },

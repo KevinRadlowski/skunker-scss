@@ -66,13 +66,12 @@ export class LoginComponent implements OnInit {
 
         this.roles = this.tokenStorage.getAuthorities();
 
-        if (this.roles[0] === 'ROLE_USER') { this.router.navigate(['../index']); }
-        if (this.roles[0] === 'ROLE_MEMBRE') { this.router.navigate(['../index']); }
-        if (this.roles[0] === 'ROLE_OFFICER') { this.router.navigate(['../index']); }
-        if (this.roles[0] === 'ROLE_ADMIN') { this.router.navigate(['../index']); }
+        if (this.roles[0] === 'ROLE_USER') { this.router.navigate(['/']); }
+        if (this.roles[0] === 'ROLE_MEMBRE') { this.router.navigate(['/']); }
+        if (this.roles[0] === 'ROLE_OFFICER') { this.router.navigate(['/']); }
+        if (this.roles[0] === 'ROLE_ADMIN') { this.router.navigate(['/']); }
       },
       error => {
-        console.log(error);
         this.errorMessage = error.error.message;
         this.isLoginFailed = true;
         this.loading = false;

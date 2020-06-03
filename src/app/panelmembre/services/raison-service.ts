@@ -30,14 +30,4 @@ export class RaisonService {
         ]
         return raids;
     }
-    // createUser(user: User) {
-    //     //Log user data in console
-    //     console.log("User Name: " + user.userName);
-    //     console.log("Profile Id: " + user.profile.prId);
-    //     console.log("Profile Name: " + user.profile.prName);
-    //     for (let i = 0; i < user.technologies.length; i++) {
-    //         console.log("Technology Id: " + user.technologies[i].techId);
-    //         console.log("Technology Name: " + user.technologies[i].techName);
-    //     }
-    // }
 }

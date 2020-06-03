@@ -10,7 +10,7 @@ import { MembreListAdminPage } from './membre-list-admin/membre-list-admin.page'
 
 const paneladminRoutes: Routes = [
   {
-    path: 'paneladmin', canActivate: [AuthGuardAdmin], component: PanelAdminPage,
+    path: 'gestion-gm', canActivate: [AuthGuardAdmin], component: PanelAdminPage,
     children: [
       { path: '', redirectTo: 'accueil', pathMatch: 'full' },
       { path: 'recrutement', component: RecrutementAdminPage },

@@ -16,7 +16,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 
 export class MembreListAdminPage implements OnInit {
-    displayedColumns: string[] = ['username', 'classe', 'race', 'level', 'premierMetier', 'niveauPremierMetier', 'secondMetier', 'niveauSecondMetier', 'role', 'modifier', 'supprimer'];
+    displayedColumns: string[] = ['username', 'classe', 'race', 'role', 'modifier', 'supprimer'];
     membres;
     public array: any;
     public pageSize = 5;
@@ -43,7 +43,6 @@ export class MembreListAdminPage implements OnInit {
 
         this.membreService.getMembreList().subscribe
             ((data: Membre[]) => {
-                console.log(data)
                 this.membres = new MatTableDataSource<Membre>(data);
                 setTimeout(() => {
                     this.membres.paginator = this.paginator;

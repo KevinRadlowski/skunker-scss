@@ -1,5 +1,9 @@
 {
     "open": "Ouvert",
     "limited": "Limité",
-    "closed": "Fermé"
+    "closed": "Fermé",
+    "ROLE_ADMIN": "Admin",
+    "ROLE_MEMBRE": "Membre",
+    "ROLE_USER": "Invité",
+    "ROLE_OFFICIER": "Officier"
 }

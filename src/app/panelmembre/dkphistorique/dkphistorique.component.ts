@@ -39,7 +39,6 @@ export class DkphistoriqueComponent implements OnInit {
   coloredRow: boolean[] = [];
   changeColor(index) {
     this.coloredRow[index] = !this.coloredRow[index];
-    console.log(index);
   }
 
   highlight(element: PeriodicElement) {

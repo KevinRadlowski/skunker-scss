@@ -58,8 +58,6 @@ export class NavbarComponent implements OnInit, DoCheck {
         } else { this.isMembre = false;}
       } else { this.isLogged = false; }
     }, 100);
-
-    // console.log(this.info)
   }
 
   ngOnInit() {
@@ -78,7 +76,7 @@ export class NavbarComponent implements OnInit, DoCheck {
   }
 
   redirectToPanelAdmin() {
-    this.router.navigate(['/paneladmin'])
+    this.router.navigate(['/gestion-gm'])
   }
 
   redirectToPanelMembre() {

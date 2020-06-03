@@ -40,7 +40,6 @@ export class RecrutementAdminPage implements OnInit {
     this.panelAdminService.getRecrutementValues(1).pipe(
       tap(
         (data) => {
-          console.log(data);
           this.recrutement = data;
           this.recrutementForm.setValue({
             chaman: this.recrutement.chaman,

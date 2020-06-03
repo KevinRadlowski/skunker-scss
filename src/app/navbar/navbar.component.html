@@ -7,7 +7,7 @@
       <a routerLink="/" class="homeLogo" fxLayoutAlign="none center">
         <img class="logo-navbar" src="/assets/img/navbar-logo1.png" alt="Logo">
       </a>
-      <a class="navlink" routerLink="/index" routerLinkActive="router-link-active">Accueil</a>
+      <a class="navlink" routerLink="" routerLinkActive="router-link-active" [routerLinkActiveOptions]="{ exact: true }">Accueil</a>
       <!-- <a class="navlink" routerLink="/blog" routerLinkActive="router-link-active">Articles</a> -->
       <a class="navlink" routerLink="/rosters" routerLinkActive="router-link-active">Rosters</a>
       <a class="navlink" routerLink="/en-construction" routerLinkActive="router-link-active">Guides</a>
@@ -18,10 +18,10 @@
       <p *ngIf="isLogged==true">Bonjour <span class="playerName">{{info.username}}</span> !</p>
       <button *ngIf="isInfo===false" class="registerButton" routerLink="/register">S'enregistrer</button>
       <button *ngIf="isInfo===false" class="loginButton" routerLink="/login">Connexion</button>
-      <button *ngIf="isLogged===true && isAdmin===true" class="panelAdminButton registerButton" routerLink="/paneladmin" routerLinkActive="button-link-active">Gestion GM</button>
+      <button *ngIf="isLogged===true && isAdmin===true" class="panelAdminButton registerButton" routerLink="/gestion-gm" routerLinkActive="button-link-active">Gestion GM</button>
       <button *ngIf="isLogged===true && (isMembre===true || isAdmin===true)" class="panelMembreButton registerButton" routerLink="/membre" routerLinkActive="button-link-active">Zone Membre</button>
       <button *ngIf="isLogged===true" class="loginButton" (click)="logout()"
-        routerLink="/index">Déconnexion</button>
+        routerLink="/">Déconnexion</button>
 
     </div>
   </div>
@@ -48,7 +48,7 @@
   <mat-sidenav-container class="sidenav-container">
     <mat-sidenav class="sidenavblack" #snav fxHide.gt-sm="true" [fixedInViewport]="true" fixedTopGap="56">
       <mat-nav-list>
-          <a mat-list-item class="navlink" (click)="snav.close();" routerLink="/index" routerLinkActive="router-link-active">Accueil</a>
+          <a mat-list-item class="navlink" (click)="snav.close();" routerLink="/" routerLinkActive="router-link-active">Accueil</a>
         <a mat-list-item class="navlink" (click)="snav.close();" routerLink="/rosters">Rosters</a>
         <a mat-list-item class="navlink" (click)="snav.close();" routerLink="/en-construction">Guides</a>
         <div class="ButtonDiscordRowXs" fxLayoutAlign="center center">

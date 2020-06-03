@@ -32,8 +32,6 @@ export class FormRosterAdminComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.eventsSubscription = this.memberId.subscribe((id) => { this.membreId = id, this.updateForm(id); });
     this.initForm();
-    // console.log(this.membreId);
-    // console.log(this.memberId);
   }
 
   ngOnDestroy() {
@@ -73,7 +71,6 @@ export class FormRosterAdminComponent implements OnInit, OnDestroy {
 
   updateForm(id) {
     this.paneladminService.getRosterMember(id).subscribe((data: RosterMembre) => {
-      // console.log(data);
       this.rosterMembre = data;
       this.rosterForm.patchValue({
         pseudo: this.rosterMembre.pseudo,
@@ -94,7 +91,6 @@ export class FormRosterAdminComponent implements OnInit, OnDestroy {
 
     this.paneladminService.postRosterMember(this.rosterForm.value)
       .subscribe(data => {
-        // console.log(data);
         this.memberAdded.emit('Membre ajouté à la liste!');
         this.loading = true;
         this.alertService.success('Le membre a été ajouté à la liste du roster.', true);
@@ -115,7 +111,6 @@ export class FormRosterAdminComponent implements OnInit, OnDestroy {
 
     this.paneladminService.updateRosterMember(this.rosterMembre.id, this.rosterForm.value)
       .subscribe(data => {
-        // console.log(data);
         this.memberAdded.emit('Membre édité avec succès!');
         this.loading = true;
         this.alertService.success('Le membre a bien été modifié.', true);

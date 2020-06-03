@@ -46,7 +46,6 @@ import { RuinesAhnQirajComponent } from './progress/ruines-ahn-qiraj/ruines-ahn-
     AccueilRoutingModule,
     NgbModalModule,
     TranslateModule.forChild(),
-
     FlatpickrModule.forRoot(),
     CalendarModule.forRoot({
       provide: DateAdapter,

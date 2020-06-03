@@ -8,6 +8,7 @@ import { RosterAdminPage } from './roster-admin/roster-admin.page';
 import { FormRosterAdminComponent } from './roster-admin/form-roster-admin/form-roster-admin.component';
 import { MembreListAdminPage } from './membre-list-admin/membre-list-admin.page';
 import { SearchPipe } from '../shared/pipes/search.pipe';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -23,7 +24,8 @@ import { SearchPipe } from '../shared/pipes/search.pipe';
   ],
   imports: [
     SharedModule,
-    PanelAdminRoutingModule
+    PanelAdminRoutingModule,
+    TranslateModule.forChild(),
   ],
 })
 export class PaneladminModule { }

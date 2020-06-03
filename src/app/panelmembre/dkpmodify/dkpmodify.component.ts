@@ -46,7 +46,6 @@ export class DkpmodifyComponent implements OnInit {
   }
 
   onFormSubmit() {
-    console.log("coucou test");
     this.submitted = true;
   }
 
