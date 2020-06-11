@@ -18,8 +18,8 @@
       <p *ngIf="isLogged==true">Bonjour <span class="playerName">{{info.username}}</span> !</p>
       <button *ngIf="isInfo===false" class="registerButton" routerLink="/register">S'enregistrer</button>
       <button *ngIf="isInfo===false" class="loginButton" routerLink="/login">Connexion</button>
-      <button *ngIf="isLogged===true && isAdmin===true" class="panelAdminButton registerButton" routerLink="/gestion-gm" routerLinkActive="button-link-active">Gestion GM</button>
-      <button *ngIf="isLogged===true && (isMembre===true || isAdmin===true)" class="panelMembreButton registerButton" routerLink="/membre" routerLinkActive="button-link-active">Zone Membre</button>
+      <button *ngIf="isLogged===true &&  (isAdmin===true || isOfficier===true)" class="panelAdminButton registerButton" routerLink="/gestion-gm" routerLinkActive="button-link-active">Gestion GM</button>
+      <button *ngIf="isLogged===true && (isMembre===true || isOfficier===true || isAdmin===true)" class="panelMembreButton registerButton" routerLink="/membre" routerLinkActive="button-link-active">Zone Membre</button>
       <button *ngIf="isLogged===true" class="loginButton" (click)="logout()"
         routerLink="/">Déconnexion</button>
 

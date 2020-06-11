@@ -8,6 +8,9 @@ import { AlertService } from 'src/app/shared/services/alert.service';
 import { MembreService } from '../../shared/services/membre.service';
 import { ConfirmationDialogService } from 'src/app/shared/services/confirmation-dialog.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { MatDialog } from '@angular/material/dialog';
+import { DetailsModalComponent } from 'src/app/shared/details-modal/details-modal.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: 'app-membre-list-admin',
@@ -16,8 +19,9 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 
 export class MembreListAdminPage implements OnInit {
-    displayedColumns: string[] = ['username', 'classe', 'race', 'role', 'modifier', 'supprimer'];
+    displayedColumns: string[] = ['username', 'role', 'modifier', 'detail'];
     membres;
+    membre: Membre;
     public array: any;
     public pageSize = 5;
     public currentPage = 0;
@@ -33,6 +37,7 @@ export class MembreListAdminPage implements OnInit {
         private membreService: MembreService,
         private alertService: AlertService,
         private confirmationDialogService: ConfirmationDialogService,
+        private modalService: NgbModal
     ) { }
 
     ngOnInit() {
@@ -71,6 +76,11 @@ export class MembreListAdminPage implements OnInit {
         this.array = part;
     }
 
+    openDetails(membre) {
+        const modalRef = this.modalService.open(DetailsModalComponent);
+        modalRef.componentInstance.membre = membre;
+    }
+
     public openDialog(i) {
         this.confirmationDialogService.confirm('Merci de confirmer.', 'Voulez-vous vraiment supprimer ce membre du roster ?')
             .then((confirmed) => {
@@ -85,11 +95,20 @@ export class MembreListAdminPage implements OnInit {
 
     deleteMembre(i) {
         this.membreService.deleteUser(i)
-          .subscribe(
-            data => {
-              this.alertService.success('Le compte a bien été supprimé.', true);
-            },
-            error => console.log(error));
-      }
+            .subscribe(
+                data => {
+                    this.alertService.success('Le compte a bien été supprimé.', true);
+                },
+                error => console.log(error));
+    }
+
+    onChanges(event, membre: Membre) {
+        this.membre = membre;
+        this.membreService.updateMembreRole(membre.id, event.value).subscribe((data) => {
+            this.alertService.success('Le rôle du membre a bien été modifié.', true);
+            console.log(data);
+            this.reloadData();
+        })
+    }
 
 }

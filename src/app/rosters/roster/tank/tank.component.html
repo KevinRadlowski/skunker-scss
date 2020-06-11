@@ -4,22 +4,31 @@
 
 <div class="rosterTankList row col-12">
   <mat-list class="col-6">
-    <div mat-subheader class="mat-list-title titleTank">Guerrier</div>
-    <mat-list-item *ngFor="let player of warMembers">
-      <img [src]="player.img" mat-list-icon>
-      <div mat-line>{{player.pseudo}}</div>
+    <div mat-subheader class="mat-list-title titleTank"><img src="/assets/img/class/warprot.png" class="header-icon">
+      Guerrier </div>
+    <mat-list-item *ngFor="let player of combinedWarMemberArray">
+      <!-- <img [src]="player.img" mat-list-icon> -->
+      <div mat-line 
+      [class.registered]="player.username" 
+      (click)="player.username && (isMembre===true || isOfficier===true || isAdmin===true) ? openDetails(player) : false"
+      >{{player.pseudo}}</div>
       <div mat-line> {{player.grade}} </div>
       <mat-divider></mat-divider>
     </mat-list-item>
   </mat-list>
 
   <mat-list class="col-6">
-    <div mat-subheader class="mat-list-title titleTank">Druide</div>
-    <mat-list-item *ngFor="let player of druidMembers">
-      <img [src]="player.img" mat-list-icon>
-      <div mat-line>{{player.pseudo}}</div>
-      <div mat-line> {{player.grade}} </div>
+    <div mat-subheader class="mat-list-title titleTank"><img src="/assets/img/class/druidferal.png" class="header-icon">
+      Druide</div>
+    <mat-list-item *ngFor="let player of combinedDruidMemberArray">
+      <!-- <img [src]="player.img" mat-list-icon> -->
+      <div mat-line 
+      [class.registered]="player.username" 
+      (click)="player.username && (isMembre===true || isOfficier===true || isAdmin===true) ? openDetails(player) : false"
+      >{{player.pseudo}}</div>
+      <div mat-line>{{player.grade}}</div>
       <mat-divider></mat-divider>
     </mat-list-item>
+
   </mat-list>
 </div>

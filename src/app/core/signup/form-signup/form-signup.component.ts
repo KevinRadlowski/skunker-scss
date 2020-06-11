@@ -73,16 +73,7 @@ export class FormSignupComponent implements OnInit {
 
   get f() { return this.formSignup.controls; }
 
-  isAdmin() {
-    this.info = {
-      username: this.token.getUsername(),
-      authorities: this.token.getAuthorities()
-
-    };
-  }
-
   ngOnInit() {
-    this.isAdmin();
   }
 
   createSignupForm(): FormGroup {
@@ -107,8 +98,8 @@ export class FormSignupComponent implements OnInit {
         level: null,
         premierMetier: null,
         secondMetier: null,
-        lvlPremierMetier: null,
-        lvlSecondMetier: null,
+        niveauPremierMetier: null,
+        niveauSecondMetier: null,
         email: [
           null,
           Validators.compose([Validators.email, Validators.required])
@@ -155,7 +146,9 @@ export class FormSignupComponent implements OnInit {
       return;
     }
     this.loading = true;
-    const membre: Membre = this.formSignup.value;
+    let membre: Membre = this.formSignup.value;
+    membre.roles = {id: 4, name: 'ROLE_ADMIN'};
+    console.log(membre)
     this.auth.createUser(membre)
       .pipe(first())
       .subscribe(
@@ -176,12 +169,10 @@ export class FormSignupComponent implements OnInit {
     this.selectedHomme = true;
     this.selectedFemme = false;
   }
-
   selectFemme() {
     this.selectedFemme = true;
     this.selectedHomme = false;
   }
-
   choiceAucunUn() {
     this.disableDepecageDeux = false;
     this.disableHerboristeDeux = false;
@@ -206,7 +197,6 @@ export class FormSignupComponent implements OnInit {
     this.disableAlchiUn = false;
     this.disableNiveauMetierDeux = true;
   }
-
   choiceDepecageUn() {
     this.disableDepecageDeux = true;
     this.disableHerboristeDeux = false;
@@ -231,7 +221,6 @@ export class FormSignupComponent implements OnInit {
     this.disableAlchiUn = false;
     this.disableNiveauMetierDeux = false;
   }
-
   choiceHerboUn() {
     this.disableDepecageDeux = false;
     this.disableHerboristeDeux = true;
@@ -256,7 +245,6 @@ export class FormSignupComponent implements OnInit {
     this.disableAlchiUn = false;
     this.disableNiveauMetierDeux = false;
   }
-
   choiceMineurUn() {
     this.disableDepecageDeux = false;
     this.disableHerboristeDeux = false;
@@ -281,7 +269,6 @@ export class FormSignupComponent implements OnInit {
     this.disableAlchiUn = false;
     this.disableNiveauMetierDeux = false;
   }
-
   choiceTdcUn() {
     this.disableDepecageDeux = false;
     this.disableHerboristeDeux = false;
@@ -306,7 +293,6 @@ export class FormSignupComponent implements OnInit {
     this.disableAlchiUn = false;
     this.disableNiveauMetierDeux = false;
   }
-
   choiceCouturierUn() {
     this.disableDepecageDeux = false;
     this.disableHerboristeDeux = false;
@@ -331,7 +317,6 @@ export class FormSignupComponent implements OnInit {
     this.disableAlchiUn = false;
     this.disableNiveauMetierDeux = false;
   }
-
   choiceEnchantUn() {
     this.disableDepecageDeux = false;
     this.disableHerboristeDeux = false;
@@ -356,7 +341,6 @@ export class FormSignupComponent implements OnInit {
     this.disableAlchiUn = false;
     this.disableNiveauMetierDeux = false;
   }
-
   choiceAlchiUn() {
     this.disableDepecageDeux = false;
     this.disableHerboristeDeux = false;
@@ -381,7 +365,6 @@ export class FormSignupComponent implements OnInit {
     this.disableAlchiUn = true;
     this.disableNiveauMetierDeux = false;
   }
-
   choiceForgeUn() {
     this.disableDepecageDeux = false;
     this.disableHerboristeDeux = false;
@@ -406,7 +389,6 @@ export class FormSignupComponent implements OnInit {
     this.disableAlchiUn = false;
     this.disableNiveauMetierDeux = false;
   }
-
   choiceIngeUn() {
     this.disableDepecageDeux = false;
     this.disableHerboristeDeux = false;
@@ -431,7 +413,6 @@ export class FormSignupComponent implements OnInit {
     this.disableAlchiUn = false;
     this.disableNiveauMetierDeux = false;
   }
-
   clickTauren() {
     this.disableDruide = false;
     this.disableChaman = false;
@@ -442,7 +423,6 @@ export class FormSignupComponent implements OnInit {
     this.disableMage = true;
     this.disableDemoniste = true;
   }
-
   clickOrc() {
     this.disableDruide = true;
     this.disableChaman = false;
@@ -453,7 +433,6 @@ export class FormSignupComponent implements OnInit {
     this.disableMage = true;
     this.disableDemoniste = false;
   }
-
   clickTroll() {
     this.disableDruide = true;
     this.disableChaman = false;
@@ -464,7 +443,6 @@ export class FormSignupComponent implements OnInit {
     this.disableMage = false;
     this.disableDemoniste = true;
   }
-
   clickMortVivant() {
     this.disableDruide = true;
     this.disableChaman = true;

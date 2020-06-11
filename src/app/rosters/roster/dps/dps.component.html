@@ -4,64 +4,80 @@
 
 <div class="rosterDpsList row col-12">
   <mat-list class="col-2">
-    <div mat-subheader class="mat-list-title titleDps">Voleur</div>
-    <mat-list-item *ngFor="let player of rogueMembers">
-      <img [src]="player.img" mat-list-icon>
-      <div mat-line>{{player.pseudo}}</div>
+    <div mat-subheader class="mat-list-title titleDps"><img src="/assets/img/class/rogue.jpg" class="header-icon"> Voleur</div>
+    <mat-list-item *ngFor="let player of combinedRogueMemberArray">
+      <!-- <img [src]="player.img" mat-list-icon> -->
+      <div mat-line 
+      [class.registered]="player.username" 
+      (click)="player.username && (isMembre===true || isOfficier===true || isAdmin===true) ? openDetails(player) : false"
+      >{{player.pseudo}}</div>
       <div mat-line> {{player.grade}} </div>
       <mat-divider></mat-divider>
     </mat-list-item>
   </mat-list>
 
   <mat-list class="col-2">
-    <div mat-subheader class="mat-list-title titleDps">Démoniste</div>
-    <mat-list-item *ngFor="let player of demoMembers">
-      <img [src]="player.img" mat-list-icon>
-      <div mat-line>{{player.pseudo}}</div>
+    <div mat-subheader class="mat-list-title titleDps"><img src="/assets/img/class/demoniste.jpg" class="header-icon"> Démoniste</div>
+    <mat-list-item *ngFor="let player of combinedDemoMemberArray">
+      <!-- <img [src]="player.img" mat-list-icon> -->
+      <div mat-line 
+      [class.registered]="player.username" 
+      (click)="player.username && (isMembre===true || isOfficier===true || isAdmin===true) ? openDetails(player) : false"
+      >{{player.pseudo}}</div>
       <div mat-line> {{player.grade}} </div>
       <mat-divider></mat-divider>
     </mat-list-item>
   </mat-list>
 
   <mat-list class="col-2">
-    <div mat-subheader class="mat-list-title titleDps">Chasseur</div>
-    <mat-list-item *ngFor="let player of huntMembers">
-      <img [src]="player.img" mat-list-icon>
-      <div mat-line>{{player.pseudo}}</div>
+    <div mat-subheader class="mat-list-title titleDps"><img src="/assets/img/class/hunt.jpg" class="header-icon"> Chasseur</div>
+    <mat-list-item *ngFor="let player of combinedHuntMemberArray">
+      <!-- <img [src]="player.img" mat-list-icon> -->
+      <div mat-line 
+      [class.registered]="player.username" 
+      (click)="player.username && (isMembre===true || isOfficier===true || isAdmin===true) ? openDetails(player) : false"
+      >{{player.pseudo}}</div>
       <div mat-line> {{player.grade}} </div>
       <mat-divider></mat-divider>
     </mat-list-item>
   </mat-list>
 
   <mat-list class="col-2">
-    <div mat-subheader class="mat-list-title titleDps">Mage</div>
-    <mat-list-item *ngFor="let player of mageMembers">
-      <img [src]="player.img" mat-list-icon>
-      <div mat-line>{{player.pseudo}}</div>
+    <div mat-subheader class="mat-list-title titleDps"><img src="/assets/img/class/mage.jpg" class="header-icon"> Mage</div>
+    <mat-list-item *ngFor="let player of combinedMageMemberArray">
+      <!-- <img [src]="player.img" mat-list-icon> -->
+      <div mat-line 
+      [class.registered]="player.username" 
+      (click)="player.username && (isMembre===true || isOfficier===true || isAdmin===true) ? openDetails(player) : false"
+      >{{player.pseudo}}</div>
       <div mat-line> {{player.grade}} </div>
       <mat-divider></mat-divider>
     </mat-list-item>
   </mat-list>
 
   <mat-list class="col-2">
-    <div mat-subheader class="mat-list-title titleDps">Guerrier</div>
-    <mat-list-item *ngFor="let player of warMembers">
-      <img [src]="player.img" mat-list-icon>
-      <div mat-line>{{player.pseudo}}</div>
+    <div mat-subheader class="mat-list-title titleDps"><img src="/assets/img/class/warrior.jpg" class="header-icon"> Guerrier</div>
+    <mat-list-item *ngFor="let player of combinedWarMemberArray">
+      <!-- <img [src]="player.img" mat-list-icon> -->
+      <div mat-line 
+      [class.registered]="player.username" 
+      (click)="player.username && (isMembre===true || isOfficier===true || isAdmin===true) ? openDetails(player) : false"
+      >{{player.pseudo}}</div>
       <div mat-line> {{player.grade}} </div>
       <mat-divider></mat-divider>
     </mat-list-item>
   </mat-list>
 
   <mat-list class="col-2">
-    <div mat-subheader class="mat-list-title titleDps">Chaman</div>
-    <mat-list-item *ngFor="let player of chamMembers">
-      <img [src]="player.img" mat-list-icon>
-      <div mat-line>{{player.pseudo}}</div>
+    <div mat-subheader class="mat-list-title titleDps"><img src="/assets/img/class/chaman.jpg" class="header-icon"> Chaman</div>
+    <mat-list-item *ngFor="let player of combinedChamMemberArray">
+      <!-- <img [src]="player.img" mat-list-icon> -->
+      <div mat-line 
+      [class.registered]="player.username" 
+      (click)="player.username && (isMembre===true || isOfficier===true || isAdmin===true) ? openDetails(player) : false"
+      >{{player.pseudo}}</div>
       <div mat-line> {{player.grade}} </div>
       <mat-divider></mat-divider>
     </mat-list-item>
   </mat-list>
-
-  
 </div>

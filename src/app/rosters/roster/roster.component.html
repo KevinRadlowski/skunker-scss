@@ -1,12 +1,12 @@
-<div class="container-fluid bodyRoster">
+<div *ngIf="membres" class="container-fluid bodyRoster">
 
   <div class="row col-12 d-flex justify-content-around">
-    <app-tank class="col-12 col-md-5"></app-tank>
-    <app-heal class="col-12 col-md-5"></app-heal>
+    <app-tank class="col-12 col-md-5" [isMembre]="isMembre" [isAdmin]="isAdmin" [isOfficier]="isOfficier" [membres]="membres"></app-tank>
+    <app-heal class="col-12 col-md-5" [isMembre]="isMembre" [isAdmin]="isAdmin" [isOfficier]="isOfficier" [membres]="membres"></app-heal>
   </div>
 
   <div class="row col-12 d-flex justify-content-center">
-    <app-dps class="col-md-11"></app-dps>
+    <app-dps class="col-md-11" [isMembre]="isMembre" [isAdmin]="isAdmin" [isOfficier]="isOfficier" [membres]="membres"></app-dps>
   </div>
 
 </div>

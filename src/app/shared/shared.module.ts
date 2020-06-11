@@ -16,9 +16,7 @@ import { BypassHtmlSecurity } from './functions/bypass-html-security';
 import { MaterialModule } from './material.module';
 import { PageNonConnecte } from './page-non-connecte/page-non-connecte.page';
 import { ConfirmationDialogService } from './services/confirmation-dialog.service';
-
-
-
+import { DetailsModalComponent } from './details-modal/details-modal.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +25,7 @@ import { ConfirmationDialogService } from './services/confirmation-dialog.servic
     BypassHtmlSecurity,
     ConfirmationDialogComponent,
     PageNonConnecte,
+    DetailsModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,9 +64,11 @@ import { ConfirmationDialogService } from './services/confirmation-dialog.servic
   ],
   providers: [
     ConfirmationDialogService,
+
   ],
   entryComponents: [
     ConfirmationDialogComponent,
+    DetailsModalComponent
   ],
 })
 export class SharedModule { }

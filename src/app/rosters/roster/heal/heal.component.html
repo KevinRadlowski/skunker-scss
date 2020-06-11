@@ -4,30 +4,39 @@
 
 <div class="rosterHealList row col-12">
   <mat-list class="col-4">
-    <div mat-subheader class="mat-list-title titleHeal">Prêtre</div>
-    <mat-list-item *ngFor="let player of priestMembers">
-      <img [src]="player.img" mat-list-icon>
-      <div mat-line>{{player.pseudo}}</div>
+    <div mat-subheader class="mat-list-title titleHeal"><img src="/assets/img/class/priest.jpg" class="header-icon"> Prêtre</div>
+    <mat-list-item *ngFor="let player of combinedPriestMemberArray">
+      <!-- <img [src]="player.img" mat-list-icon> -->
+      <div mat-line 
+      [class.registered]="player.username" 
+      (click)="player.username && (isMembre===true || isOfficier===true || isAdmin===true) ? openDetails(player) : false"
+      >{{player.pseudo}}</div>
       <div mat-line> {{player.grade}} </div>
       <mat-divider></mat-divider>
     </mat-list-item>
   </mat-list>
 
   <mat-list class="col-4">
-    <div mat-subheader class="mat-list-title titleHeal">Chaman</div>
-    <mat-list-item *ngFor="let player of chamanMembers">
-      <img [src]="player.img" mat-list-icon>
-      <div mat-line>{{player.pseudo}}</div>
+    <div mat-subheader class="mat-list-title titleHeal"><img src="/assets/img/class/chamheal.png" class="header-icon"> Chaman</div>
+    <mat-list-item *ngFor="let player of combinedChamMemberArray">
+      <!-- <img [src]="player.img" mat-list-icon> -->
+      <div mat-line 
+      [class.registered]="player.username" 
+      (click)="player.username && (isMembre===true || isOfficier===true || isAdmin===true) ? openDetails(player) : false"
+      >{{player.pseudo}}</div>
       <div mat-line> {{player.grade}} </div>
       <mat-divider></mat-divider>
     </mat-list-item>
   </mat-list>
 
   <mat-list class="col-4">
-    <div mat-subheader class="mat-list-title titleHeal">Druide</div>
-    <mat-list-item *ngFor="let player of druidMembers">
-      <img [src]="player.img" mat-list-icon>
-      <div mat-line>{{player.pseudo}}</div>
+    <div mat-subheader class="mat-list-title titleHeal"><img src="/assets/img/class/druidheal.png" class="header-icon"> Druide</div>
+    <mat-list-item *ngFor="let player of combinedDruidMemberArray">
+      <!-- <img [src]="player.img" mat-list-icon> -->
+      <div mat-line 
+      [class.registered]="player.username" 
+      (click)="player.username && (isMembre===true || isOfficier===true || isAdmin===true) ? openDetails(player) : false"
+      >{{player.pseudo}}</div>
       <div mat-line> {{player.grade}} </div>
       <mat-divider></mat-divider>
     </mat-list-item>

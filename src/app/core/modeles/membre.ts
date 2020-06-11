@@ -1,3 +1,5 @@
+import { Roles } from 'src/app/paneladmin/models/Roles.model';
+
 export class Membre {
     id: number;
     username: string;
@@ -8,5 +10,5 @@ export class Membre {
     niveauPremierMetier: number;
     niveauSecondMetier: number;
     level: number;
-    role: string[];
+    roles: Roles;
 }

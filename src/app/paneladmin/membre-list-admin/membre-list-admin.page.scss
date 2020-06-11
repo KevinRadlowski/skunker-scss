@@ -33,3 +33,7 @@
   th.mat-sort-header-sorted {
     color: black;
   }
+
+  ::ng-deep .mat-form-field-wrapper {
+    padding: 0;
+  }

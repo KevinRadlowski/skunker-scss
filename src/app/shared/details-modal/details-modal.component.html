@@ -1,0 +1,19 @@
+<div class="modal-header">
+    <h4 class="modal-title">Détail de {{membre.pseudo}}</h4>
+  </div>
+  <div class="modal-body">
+    <p>race : {{membre.race}}</p> 
+    <p>classe: {{membre.classe}}</p>
+    <p>niveau : {{membre.level}}</p> 
+    <p>role : {{membre.specialisation}}</p> 
+    <p>premier métier : {{membre.premierMetier}}</p>
+    <p>niveau premier métier : {{membre.niveauPremierMetier}}</p>
+    <p>second métier : {{membre.secondMetier}}</p>
+    <p>niveau second métier : {{membre.niveauSecondMetier}}</p>
+    <p></p>
+    <p></p>
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Fermer</button>
+  </div>

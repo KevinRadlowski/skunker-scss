@@ -8,6 +8,11 @@
   @include box-shadow(2px 2px 7px rgb(163, 0, 0), -2px -2px 7px rgb(163, 0, 0))
 }
 
+.registered {
+  color: rgb(0, 195, 255);
+  cursor: pointer;
+}
+
 .header {
   img {
     border-radius: 50%;
@@ -19,6 +24,14 @@
     @extend %box-shadow-dps;
   }
 }
+
+.header-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
 
 .titleDps {
   text-shadow: 10px 10px 25px rgb(163, 0, 0), -10px -10px 25px rgb(163, 0, 0), -10px 10px 25px rgb(163, 0, 0), 10px -10px 25px rgb(163, 0, 0);
@@ -41,25 +54,35 @@
     padding: 8px 0 0 0;
 
     .mat-list-title {
-      padding-left: 30px;
+
       font-size: 18px;
       border-bottom: 1px solid white;
+      display: flex;
+      justify-content: center;
     }
 
     mat-list-item {
+
       width: 100%;
       font-size: medium;
       color: white;
       // border-bottom: 1px solid white;
       padding: 0;
 
+
+
       &:last-child {
         border: none;
       }
     }
-
     mat-list-item:hover {
       background-color: rgb(34, 34, 34);
     }
   }
+  
+}
+
+.mat-list-base .mat-list-item .mat-line {
+  display: flex;
+  justify-content: center;
 }

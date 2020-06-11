@@ -17,19 +17,23 @@ export class MembreService {
     }
 
     getAdminMembre(id: number): Observable<object> {
-        return this.http.get(`$${environment.api}${this.prefix}/adminget/${id}`);
+        return this.http.get(`${environment.api}${this.prefix}/adminget/${id}`);
     }
 
     createMembre(customer: object): Observable<object> {
-        return this.http.post(`$${environment.api}${this.prefix}` + `/create`, customer);
+        return this.http.post(`${environment.api}${this.prefix}` + `/create`, customer);
     }
 
-    updateMembre(id: number, value: any): Observable<object> {
-        return this.http.put(`$${environment.api}${this.prefix}/${id}`, value);
+    updateMembre(id: number, value: any, roleChange: string): Observable<object> {
+        return this.http.put(`${environment.api}${this.prefix}/${id}`, value);
     }
 
     updateMembrePassword(id: number, value: any): Observable<object> {
-        return this.http.put(`$${environment.api}${this.prefix}/password/${id}`, value);
+        return this.http.put(`${environment.api}${this.prefix}/password/${id}`, value);
+    }
+
+    updateMembreRole(id: number, value: any): Observable<object> {
+        return this.http.put(`${environment.api}${this.prefix}/updaterole/${id}`, value);
     }
 
     getMembreList(): Observable<any> {

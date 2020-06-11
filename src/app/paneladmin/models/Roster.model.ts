@@ -1,3 +1,5 @@
+import { Roles } from './Roles.model';
+
 export class RosterMembre {
     id: number;
     pseudo: string;
