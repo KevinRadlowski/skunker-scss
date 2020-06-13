@@ -1,0 +1,36 @@
+<div class="container-fluid" *ngIf="membre">
+  <div class="row col-md-6">
+    <mat-card class="example-card">
+      <div class="row col-12 p-0 m-0 mb-3 justify-content-between align-items-center">
+        <h2 *ngIf="!showUpdateForm">INFORMATIONS DU COMPTE</h2>
+        <h2 *ngIf="showUpdateForm">MODIFIER MES INFORMATIONS</h2>
+        <button *ngIf="!showUpdateForm" class="btn btn-primary" (click)="toggleUpdateForm()">Mettre à jour</button>
+        <button *ngIf="showUpdateForm" class="btn btn-primary" (click)="toggleUpdateForm()">Annuler</button>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <mat-card-content>
+        <div *ngIf="!showUpdateForm">
+          <p>Pseudo : {{membre.username}}</p>
+          <p>Email : {{membre.email}}</p>
+        </div>
+        <app-member-account-form *ngIf="showUpdateForm" [membre]="membre"></app-member-account-form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="row col-md-6">
+    <mat-card class="example-card">
+      <div class="row col-12 p-0 m-0 justify-content-between align-items-center">
+        <h2 *ngIf="!showPasswordForm">MOT DE PASSE</h2>
+        <h2 *ngIf="showPasswordForm">MODIFIER LE MOT DE PASSE</h2>
+        <button *ngIf="!showPasswordForm" class="btn btn-primary" (click)="togglePasswordForm()">Modifier</button>
+        <button *ngIf="showPasswordForm" class="btn btn-primary" (click)="togglePasswordForm()">Annuler</button>
+      </div>
+      <mat-card-content>
+        <app-member-account-password (successPasswordUpdate)="togglePasswordForm()" *ngIf="showPasswordForm" [membre]="membre"></app-member-account-password>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

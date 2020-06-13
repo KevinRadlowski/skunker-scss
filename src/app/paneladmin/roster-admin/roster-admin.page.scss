@@ -2,7 +2,7 @@
 
 mat-form-field {
   height: auto;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.600);
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }
@@ -16,10 +16,18 @@ mat-form-field {
   padding: 2px;
 }
 
+mat-expansion-panel {
+  background-color: rgba(255, 255, 255, 0.600);
+}
+
 mat-list-item {
   background-color: #ebebeb;
   border-radius: 5px;
-  border: 1px solid white;
+  margin-bottom: 2px;
+
+  &:last-child {
+    margin: 0;
+  }
 }
 
 .item-list {
@@ -37,11 +45,11 @@ mat-icon {
 }
 
 .test {
-   width: 100%; 
+  width: 100%;
 }
 
 app-form-roster-admin {
-    max-width: 600px;
-    position: fixed;
-    padding-right: 3%; 
+  max-width: 600px;
+  position: fixed;
+  padding-right: 3%;
 }

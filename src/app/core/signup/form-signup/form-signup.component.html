@@ -58,9 +58,9 @@
       </label>
       <br>
       <label class="col passconfirm"
-        [ngClass]="formSignup.controls['password'].hasError('required') || formSignup.controls['password'].hasError('minlength') || formSignup.controls['password'].hasError('hasNumber')  ? '' : 'text-success'">
+        [ngClass]="formSignup.controls['password'].hasError('required') || formSignup.controls['password'].hasError('minlength') || formSignup.controls['password'].hasError('hasNumber') || formSignup.controls['password'].hasError('hasCapitalCase') || formSignup.controls['password'].hasError('hasSmallCase')  ? '' : 'text-success'">
         <i class="material-icons">{{ formSignup.controls['password'].hasError('required') ||
-                        formSignup.controls['password'].hasError('minlength') || formSignup.controls['password'].hasError('hasNumber') ? 'cancel' :
+                        formSignup.controls['password'].hasError('minlength') || formSignup.controls['password'].hasError('hasNumber')  || formSignup.controls['password'].hasError('hasCapitalCase') || formSignup.controls['password'].hasError('hasSmallCase') ? 'cancel' :
                         'check_circle' }}</i>
         Le mot de passe doit contenir au minimum 6 caractères, un chiffre et une majuscule!
       </label>

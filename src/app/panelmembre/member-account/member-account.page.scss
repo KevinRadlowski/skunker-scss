@@ -1,0 +1,39 @@
+@import "../../../variables";
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    background-color: #ebebeb;
+    border-radius: 5px;
+  }
+
+.container-fluid {
+    margin: 0;
+    padding: 0;
+
+    mat-card {
+
+        margin: 30px;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.600);
+
+        button {
+            width: 150px;
+            background-color: $primary;
+            border: none;
+          
+            &:hover {
+              background-color: $secondary;
+            }
+        }
+
+        h2 {
+            margin: 0;
+        }
+        
+        mat-card-content {
+            margin-top: 25px;
+        }
+    }
+    
+
+}
+

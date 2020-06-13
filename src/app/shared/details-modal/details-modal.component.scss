@@ -1,0 +1,47 @@
+@import "../../../variables";
+
+%text-shadow {
+  @include text-shadow(1px 1px 1px rgb(0, 0, 0), -1px -1px 1px rgb(0, 0, 0));
+}
+
+.card-head-img {
+    border-radius: 50%;
+    margin: 10px 15px;
+    width: 40px;
+    height: 40px;
+}
+
+.modal-header-text {
+    margin-left: 10px;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+.bodyModal {
+    background-image: url("/assets/img/background/logohorde.jpg");
+    background-size: cover;
+    color: white;
+}
+
+.first {
+    // height: 10px;
+    width: 100%;
+    margin-bottom: 5px;
+    background: rgb(34, 34, 34);
+}
+
+.second {
+    // height: 10px;
+    background: blue;
+    span {
+        color: rgb(250, 178, 69);
+        // font-weight: 700;
+        @extend %text-shadow;
+    }
+    p {
+        color: white;
+    }
+}

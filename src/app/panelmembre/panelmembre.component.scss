@@ -1,15 +1,22 @@
-  .sidenav {
-    background-image: url('../../assets/img/background/dark-back.jpg');
-    border-radius: 0;
-    width: 150px;
+mat-nav-list {
+  padding: 0;
+}
 
-      .mat-list-item {
-        color: white;
-        border-bottom: 1px solid white;
-        border-top: 1px solid white;
-      }
+.sidenav {
+  z-index: 0;
+  background-image: url('/assets/img/background/dark-back.jpg');
+  border-radius: 0;
+  width: 175px;
 
+  .mat-list-item {
+    color: white;
+    border-top: 1px solid white;
+
+    &:last-child {
+      border-bottom: 1px solid white;
+    }
   }
+}
 
   .material-icons {
     color: black;
@@ -18,9 +25,12 @@
 
   .sidenav-container {
     flex: 1;
-    min-height: 65vh;
+    min-height: 76vh;
+    background-image: url("/assets/img/background/sylvanas3.jpg");
+    background-size: cover;
+    background-attachment: fixed;
   }
-
+  
   .is-mobile .sidenav-container {
     flex: 1 0 auto;
   }

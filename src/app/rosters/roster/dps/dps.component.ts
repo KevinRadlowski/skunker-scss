@@ -52,9 +52,11 @@ export class DpsComponent implements OnInit {
         this.checkIfMageIsRegistred()
         this.checkIfWarIsRegistred()
         this.checkIfChamIsRegistred()
+
       }),
       take(1),
     ).subscribe();
+    console.log(this.combinedMageMemberArray)
   }
 
   openDetails(membre) {

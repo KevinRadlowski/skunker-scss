@@ -1,19 +1,35 @@
-<div class="modal-header">
-    <h4 class="modal-title">Détail de {{membre.pseudo}}</h4>
+<div class="bodyModal">
+  <div class="modal-header">
+    <div class="row">
+      <div mat-card-avatar class="example-header-image"><img class="card-head-img" [src]="membre.img"
+          alt="Classe du membre"></div>
+      <div class="modal-header-text">
+        <h4 class="modal-title">{{membre.pseudo}}</h4>
+        <h6>{{membre.level}} {{membre.race}} {{membre.classe}}</h6>
+      </div>
+    </div>
+    <p>{{membre.specialisation}}</p>
   </div>
   <div class="modal-body">
-    <p>race : {{membre.race}}</p> 
-    <p>classe: {{membre.classe}}</p>
-    <p>niveau : {{membre.level}}</p> 
-    <p>role : {{membre.specialisation}}</p> 
-    <p>premier métier : {{membre.premierMetier}}</p>
-    <p>niveau premier métier : {{membre.niveauPremierMetier}}</p>
-    <p>second métier : {{membre.secondMetier}}</p>
-    <p>niveau second métier : {{membre.niveauSecondMetier}}</p>
-    <p></p>
-    <p></p>
-
+    <div class="first">
+      <div [ngStyle]="{'width.%': membre.niveauPremierMetier / 3}" class="second">
+        <p><span>{{membre.premierMetier}}</span> {{membre.niveauPremierMetier}}/300</p>
+      </div>
+    </div>
+    <div class="first">
+      <div [ngStyle]="{'width.%': membre.niveauSecondMetier / 3}" class="second">
+        <p><span>{{membre.secondMetier}}</span> {{membre.niveauSecondMetier}}/300</p>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+    <h6>Patrons rares :</h6>
+    <div *ngFor="let patron of patrons">
+      <div>
+        <a href="{{patron.url}}" target="_blank" class="{{patron.quality}}">{{patron.name}}</a>
+      </div>
+    </div>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Fermer</button>
   </div>
+</div>

@@ -13,7 +13,7 @@ export class MembreService {
     constructor(private http: HttpClient) { }
 
     getMembre(username: string): Observable<object> {
-        return this.http.get(`${environment.api}${this.prefix}/get/${username}`);
+        return this.http.get(`${environment.api}${this.prefix}/getone/${username}`);
     }
 
     getAdminMembre(id: number): Observable<object> {
@@ -24,7 +24,7 @@ export class MembreService {
         return this.http.post(`${environment.api}${this.prefix}` + `/create`, customer);
     }
 
-    updateMembre(id: number, value: any, roleChange: string): Observable<object> {
+    updateMembre(id: number, value: any): Observable<object> {
         return this.http.put(`${environment.api}${this.prefix}/${id}`, value);
     }
 
